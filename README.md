@@ -4,8 +4,7 @@ A website for Mackenzie CPT
 ## Site Features
 
 - News
-- Algorithms
-- Data structures
+- Learn
 - Ranks
 - Editorials
 - Calendar
@@ -15,6 +14,10 @@ A website for Mackenzie CPT
 ### News
 
 The news section of the site will contain any updates or upcoming events that affect Mackenzie programmers. 
+
+### Learn
+
+A comprehensive collection of algorithms and data structures lessons. 
 
 ### Ranks
 
