@@ -1,3 +1,15 @@
+
+
 html{
-	background-color: #d9d9d9;
+    background-color: #d9d9d9;
+}
+
+::selection {
+    background: #b673e6;
+    color: #FFFFFF;
+}
+
+::-moz-selection {
+    background: #b673e6;
+    color: #FFFFFF;
 }
