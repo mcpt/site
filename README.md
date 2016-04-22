@@ -10,6 +10,7 @@ A website for the Mackenzie Computer Programming Team.
 - Calendar
 - Resources
 - About
+- Mobile
 
 ### News
 
@@ -38,3 +39,7 @@ A useful list of resources.
 ### About
 
 General site information and administrator contact information.  
+
+### Mobile
+
+There will be a mobile version of the site, automatically redirecting to m.mcpt.ca
