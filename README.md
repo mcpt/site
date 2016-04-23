@@ -26,7 +26,7 @@ Ranks will contain a list of the registered students and their ranks based on th
 
 ### Editorials
 
-Editorials of contests and problems relevant to the Mackenzie Computer Programming Team (MWC, CCC, ECOO). 
+Editorials of contests and problems relevant to the Mackenzie Computer Programming Team (MWC, CCC, JDCC, ECOO). 
 
 ### Calendar
 
