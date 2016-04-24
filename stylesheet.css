@@ -1,7 +1,15 @@
 
 
 html{
-    background-color: #d9d9d9;
+    background-color: #f2f2f2;
+}
+
+* {
+    font-family: Corbel;
+}
+
+h1 {
+    color: #b673e6;
 }
 
 ::selection {
