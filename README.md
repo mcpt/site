@@ -7,6 +7,7 @@ A website for the Mackenzie Computer Programming Team.
 - Learn
 - Ranks
 - Editorials
+- Online Judge
 - Calendar
 - Resources
 - About
@@ -27,6 +28,10 @@ Ranks will contain a list of the registered students and their ranks based on th
 ### Editorials
 
 Editorials of contests and problems relevant to the Mackenzie Computer Programming Team (MWC, CCC, JDCC, ECOO). 
+
+### Online Judge
+
+An online judge will be serve the purpose of occasional on-site timed contests not hosted on DMOJ. 
 
 ### Calendar
 
