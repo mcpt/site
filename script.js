@@ -1,8 +1,8 @@
 $(function() {
 	$("head").append("<link rel=\"icon\" type=\"image/png\" href=\"../icon.png\">"); // Icon
 	$("head").append("<meta name=\"theme-color\" content=\"#3f51b5\">"); // Chrome colour
-	$("#header").load("../header.html");
-	$("#footer").load("../footer.html");
+	$("#header-replace").load("../header.html");
+	$("#footer-replace").load("../footer.html");
 	
 	//Bootstrap core CSS
 	$("head").append("<link href=\"../bootstrap/css/bootstrap.min.css\" rel=\"stylesheet\">");
