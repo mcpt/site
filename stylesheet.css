@@ -1,9 +1,0 @@
-.top-nav-collapse {
-  background-color: #5c6bc0 !important;
-}
-
-@media only screen and (max-width: 768px) {
-  .navbar {
-    background-color: #5c6bc0 !important;
-  }
-}
