@@ -5,12 +5,12 @@ $(function() {
 	$("#footer").load("../footer.html");
 	
 	//Bootstrap core CSS
-	$("head").append("<link href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css\" rel=\"stylesheet\">");
+	$("head").append("<link href=\"../bootstrap/css/bootstrap.min.css\" rel=\"stylesheet\">");
 	//MDB core CSS
-	$("head").append("<link href=\"http://mdbootstrap.com/mdbcdn/mdb.min.css\" rel=\"stylesheet\">");
+	$("head").append("<link href=\"../mdb/css/mdb.min.css\" rel=\"stylesheet\">");
 	//Bootstrap core JavaScript
-	$("head").append("<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js\"></script>");
+	$("head").append("<script src=\"../bootstrap/js/bootstrap.min.js\"></script>");
 	//MDB core JavaScript
-	$("head").append("<script src=\"http://mdbootstrap.com/mdbcdn/mdb.min.js\"></script>");
+	$("head").append("<script src=\"../mdb/js/mdb.min.js\"></script>");
 });
 
