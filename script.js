@@ -1,5 +1,5 @@
 $(document).ready((function() {
-	$("head").append("<meta name=\"theme-color\" content=\"#3f51b5\">"); // Chrome colour
+	$("head").append("<meta name=\"theme-color\" content=\"#5C6BC0\">"); // Chrome colour
 	$("#header-replace").load("../header.html");
 	$("#footer-replace").load("../footer.html");
 	
