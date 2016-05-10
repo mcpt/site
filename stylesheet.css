@@ -1,8 +1,8 @@
 /* Catamaran font */
 @import url(https://fonts.googleapis.com/css?family=Catamaran);
 
-body {
-  font-family: Catamaran, sans serif;
+.navbar {
+    font-family: Catamaran, sans serif;
 }
 
 ::selection {
