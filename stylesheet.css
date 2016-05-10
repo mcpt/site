@@ -1,10 +1,6 @@
 /* Catamaran font */
 @import url(https://fonts.googleapis.com/css?family=Catamaran);
 
-.navbar {
-    font-family: Catamaran, sans serif;
-}
-
 ::selection {
     background: #3D5AFE;
     color: #FFFFFF;
