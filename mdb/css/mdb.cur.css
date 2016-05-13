@@ -8810,3 +8810,17 @@ a.waves-effect .waves-ripple {
   border-color: #4285F4;
   border-width: 3px;
 }
+
+/* Custom */
+
+h1 {
+  color: #C51162;
+}
+
+h2 {
+  color: #A71758;
+}
+
+h3 {
+  color: #8A1E4F;
+}
