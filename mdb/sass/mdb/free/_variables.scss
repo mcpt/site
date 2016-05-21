@@ -212,11 +212,14 @@ $icon-color: rgba(0,0,0,0.5);
 
 
 // Bootstrap variables
-$btn-default: #2BBBAD;
+$btn-default: $default-color;
 $btn-default-text: $darkbg-text;
 
-$btn-primary: $primary;
+$btn-primary: $primary-color;
 $btn-primary-text: $darkbg-text;
+
+$btn-secondary: $secondary-color;
+$btn-second-text: $darkbg-text;
 
 $btn-success: $success;
 $btn-success-text: $darkbg-text;

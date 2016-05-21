@@ -2538,6 +2538,12 @@ button.btn-floating {
     background-color: #4d5ec1 !important;
     color: #fff; }
 
+.btn-secondary {
+  background: #e91e63; }
+  .btn-secondary:hover, .btn-secondary:focus {
+    background-color: #eb3573 !important;
+    color: #fff; }
+
 .btn-success {
   background: #00C851; }
   .btn-success:hover, .btn-success:focus {
