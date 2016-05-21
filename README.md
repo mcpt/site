@@ -47,4 +47,4 @@ General site information and administrator contact information.
 
 ### Mobile
 
-There will be a mobile version of the site, automatically redirecting to m.mcpt.ca
+The site natively has beautiful mobile support and sizing. No redirect page/domain. 
