@@ -1,4 +1,4 @@
-# mcpt
+# mcpt.ca
 A website for the Mackenzie Computer Programming Team.
 
 ## Site Features
