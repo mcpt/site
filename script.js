@@ -5,6 +5,6 @@ $(document).ready(function() {
 	$("#header-replace").load("/header.html");
   // Add footer
 	$("#footer-replace").load("/footer.html");
-  // Latex support
+  // Latex
 	$("head").append("<script src=\"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML\"></script>");
 });
