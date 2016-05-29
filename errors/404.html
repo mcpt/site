@@ -26,6 +26,15 @@
 
       <p>This page doesn't exist :P (yet)</p>
       
+      <p class="url"></p>
+      
+      <script>
+        $(function() {
+          $(".url").append(document.createTextNode("You tried to access the URL: " + window.location.href + "."));
+        });
+      </script>
+      
+      
       <a class="btn btn-primary waves-effect" href="/">Home</a>
       
     </div>
