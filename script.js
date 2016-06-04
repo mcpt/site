@@ -6,5 +6,5 @@ $(document).ready(function() {
   // Add footer
 	$("#footer-replace").load("/footer.html");
   // Latex
-	$("head").append("<script src=\"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML\"></script>");
+	$("head").append("<script src=\"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML\"></script>");
 });
