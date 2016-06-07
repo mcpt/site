@@ -7,4 +7,5 @@ $(document).ready(function() {
 	$("#footer-replace").load("/footer.html");
   // Latex
 	$("head").append("<script src=\"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML\"></script>");
+  $("head").append("<script src=\"/ga.js\"></script>");
 });
