@@ -27,13 +27,13 @@ h3, .h3 {
 
 html {
     @media only screen and (min-width: 0) {
-        font-size: 16px; // 15
+        font-size: 15px; // 15
     }
     @media only screen and (min-width: $medium-screen) {
-        font-size: 17px; // 15.5
+        font-size: 15.5px; // 15.5
     }
     @media only screen and (min-width: $large-screen) {
-        font-size: 18px; // 16
+        font-size: 16px; // 16
     }
 }
 
