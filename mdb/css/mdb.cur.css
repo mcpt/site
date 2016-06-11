@@ -1915,7 +1915,7 @@
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
 
 a {
-  color: #0275d8;
+  color: #3f51b5;
   text-decoration: none;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent; }
@@ -2045,15 +2045,24 @@ h5,
 h6 {
   font-weight: 300; }
 
+h1, .h1 {
+  color: #C51162; }
+
+h2, .h2 {
+  color: #A71758; }
+
+h3, .h3 {
+  color: #8A1E4F; }
+
 @media only screen and (min-width: 0) {
   html {
-    font-size: 15px; } }
+    font-size: 16px; } }
 @media only screen and (min-width: 992px) {
   html {
-    font-size: 15.5px; } }
+    font-size: 17px; } }
 @media only screen and (min-width: 1200px) {
   html {
-    font-size: 16px; } }
+    font-size: 18px; } }
 
 .text-fluid {
   font-weight: 300; }
