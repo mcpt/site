@@ -11,7 +11,7 @@ footer.page-footer {
         color: rgba(255, 255, 255, .8);
         background-color: $rgba-black-light;
         text-align: center;
-        @extend .light;
+        @extend .light !optional;
     }
     a {
         color: #fff;

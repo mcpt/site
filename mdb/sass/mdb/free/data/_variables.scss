@@ -1,11 +1,11 @@
 // VARIABLES
 
 /*** Colors ***/
-$primary-color: color("mdb-color", "lighten-2") !default;
+$primary-color: #3F51B5 !default;
 $primary-color-light: lighten($primary-color, 15%) !default;
 $primary-color-dark: darken($primary-color, 15%) !default;
 
-$secondary-color: color("teal", "lighten-1") !default;
+$secondary-color: #E91E63 !default;
 $success-color: color("green", "base") !default;
 
 $link-color: color("light-blue", "darken-1") !default;
