@@ -32,7 +32,7 @@ $(document).ready(function() {
                 $("div.dropdown-menu a:nth-child(2)").addClass("active");
             } else if(url.substr(0, 5) == "about") {
                 $("ul.navbar-nav li:nth-child(5)").addClass("active");
-                $("div.dropdown-menu a:nth-child(5)").addClass("active");
+                $("div.dropdown-menu a:nth-child(3)").addClass("active");
             }
         }
     }, 50);
