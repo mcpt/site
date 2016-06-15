@@ -1,56 +1,28 @@
+// HELPERS
 // Center text on mobile
 .center-on-small-only {
-    @media #{$small-and-down} {
+    @media #{$medium-and-down} {
         text-align: center;
     }
 }
 
-// Maring & padding manipulation
-.no-margin {
-    margin: 0;
-}
-.no-top-mar {
-    margin-top: 0!important; 
-}
-
-.no-gutter > [class*=col-] {
-    padding-right: 0;
-    padding-left: 0;
-}
-
-.no-padding {
-    padding: 0;
-}
-
-.no-pad-mar {
-    margin: 0;
-    padding: 0;
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    p {
+        margin: 0;
+    }
+    ul {
+        text-align: center;
+        li {
+            margin-bottom: 1rem;
+        }
+    }
 }
 
-.extra-padding-05 {
-    padding: 0.5rem;
-}
-
-.extra-padding-1 {
-    padding: 1rem;
-}
-.extra-margin-1 {
-    padding: 1rem;
-}
-.extra-margin-2 {
-    padding: 2rem;
-}
-
-// Extra space
-.space-30 {
-    height: 30px;
-}
-
-.space-50 {
-    height: 30px;
-}
-
-.verticalcenter {
+.vertical-center {
     position: relative;
     top: 50%;
     -webkit-transform: translateY(-50%);
@@ -58,21 +30,40 @@
     transform: translateY(-50%);
 }
 
+.inline-ul > li {
+    display: inline;
+}
+
+.list-inline-div > div {
+    display: inline-block;
+}
+
 // Divider
+.hr-light {
+    background-color: #fff;
+    height: 0.5px;
+}
+.hr-dark {
+    background-color: #666;
+    height: 0.5px;
+}
+
 .divider-new {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    font-size: 2.5em;
     font-weight: 300;
     margin-top: 45px;
     margin-bottom: 45px;
+    h2 {
+        margin-top: 5px;
+    }
 }
 
 .divider-new::before {
     content: '';
-     height: 1.5px;
+    height: 1.5px;
     background: #666;
     flex: 1;
     margin: 0 .45em 0 0;
@@ -134,8 +125,55 @@
     }
 }
 
+.st-mdb {
+    border-left: 4px solid $mdb-color;
+    small {
+        border-left: 2px solid $mdb-color;
+    }
+}
+
 .divider-short {
     max-width: 50px;
     border-color: $primary-color;
     border-width: 3px;
-} 
+}
+
+// Blockquote contextual 
+.blockquote {
+    .bq-title {
+        font-weight: 400;
+        font-size: 1.5rem;
+        margin-bottom: 0;
+    }
+    p {
+        font-size: 1.1rem;
+    }
+}
+
+.bq-primary {
+    border-left: 3px solid $primary-color;
+    .bq-title {
+        color: $primary-color;
+    }
+}
+
+.bq-warning {
+    border-left: 3px solid $warning-color;
+    .bq-title {
+        color: $warning-color;
+    }
+}
+
+.bq-danger {
+    border-left: 3px solid $danger-color;
+    .bq-title {
+        color: $danger-color;
+    }
+}
+
+.bq-success {
+    border-left: 3px solid $success-color;
+    .bq-title {
+        color: $success-color;
+    }
+}

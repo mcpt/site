@@ -1,12 +1,26 @@
 /*!
- * Material Design for Bootstrap
- * Version: MDB FREE: 3.3.3
+/*!
+ * Material Design for Bootstrap 4
+ * Version: MDB FREE 4.0.0 
  *
  *
  * Copyright: Material Design for Bootstrap
- * www.mdbootstrap.com
+ * http://mdbootstrap.com/
  *
- * Read the license: http://mdbootstrap.com/wp-content/uploads/2015/09/MDB-License.pdf
+ * Read the license: http://mdbootstrap.com/license/
+ *
+ *
+ * Documentation: http://mdbootstrap.com/
+ *
+ * Getting started: http://mdbootstrap.com/getting-started/
+ *
+ * Tutorials: http://mdbootstrap.com/bootstrap-tutorial/
+ *
+ * Templates: http://mdbootstrap.com/templates/
+ *
+ * Support: http://mdbootstrap.com/forums/forum/support/
+ *
+ * Contact: office@mdbootstrap.com
  *
  * Atribution: Animate CSS, Twitter Bootstrap, Materialize CSS, Normalize CSS, Waves JS, WOW JS, Toastr, Chart.js , Hammer.js
  *
@@ -15,50 +29,34 @@
 @charset "UTF-8";  
 
 // MDB Framework //
- 
-// Mixins
-@import "mdb/free/prefixer";
-@import "mdb/free/mixins";
 
-@import "mdb/free/color"; 
+// Mixins
+@import "mdb/free/data/prefixer";
+@import "mdb/free/data/mixins";
 
 // Variables
-@import "mdb/free/variables";
+@import "mdb/free/data/colors"; 
+@import "mdb/free/data/variables-b4";
+@import "mdb/free/data/variables";  
 
-// Reset
-@import "mdb/free/normalize";
- 
 //Global
 @import "mdb/free/global"; 
   
-// Components  
+// MDB Free  
 @import "mdb/free/roboto"; 
-@import "mdb/free/buttons"; 
-@import "mdb/free/navbar";
-@import "mdb/free/shadows";
 @import "mdb/free/typography";
-@import "mdb/free/cards";  
-@import "mdb/free/dropdown";
-@import "mdb/free/tooltip";
-@import "mdb/free/scrollspy"; 
-@import "mdb/free/pagination";  
-@import "mdb/free/panel";
-@import "mdb/free/carousel";   
-@import "mdb/free/animations";  
-@import "mdb/free/forms-basic"; 
-@import "mdb/free/video-background"; 
-@import "mdb/free/parallax";
-@import "mdb/free/hover-effects";     
-@import "mdb/free/sections";     
+@import "mdb/free/animations";
+@import "mdb/free/waves";
+@import "mdb/free/helpers";
+@import "mdb/free/buttons";  
+@import "mdb/free/forms-basic";
+@import "mdb/free/cards-basic";  
+@import "mdb/free/navbars";  
+@import "mdb/free/hover-effects";  
+@import "mdb/free/footer";  
+@import "mdb/free/carousels-basic"; 
    
-// Animations
-@import "mdb/free/waves";   
-    
-// Helpers 
-@import "mdb/free/helpers";  
-
-
-
+ 
 
 
 

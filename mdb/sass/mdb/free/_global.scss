@@ -1,35 +1,44 @@
-/*********************
-  General classes
-**********************/
-
-body {
-    font-family: Catamaran, sans-serif;
-    overflow: auto !important;
+// GLOBAL STYLES
+// Z-levels
+.z-depth-0 {
+    box-shadow: none !important;
 }
 
-// Badges
-span.badge-md {
-    min-width: 3rem;
-    padding: 0 6px;
-    text-align: center;
-    font-size: 1rem;
-    line-height: inherit;
-    color: color('grey', 'darken-1');
-    position: absolute;
-    right: 15px;
-    @include box-sizing(border-box);
-    &.new {
-        font-weight: 300;
-        font-size: 0.8rem;
-        color: #fff;
-        background-color: $badge-bg-color;
-        border-radius: 2px;
-    }
-    &.new:after {
-        content: " new";
-    }
+.z-depth-1 {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
+.z-depth-1-half {
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+
+.z-depth-2 {
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.z-depth-3 {
+    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.z-depth-4 {
+    box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
+}
+
+.z-depth-5 {
+    box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
+}
+
+.hoverable {
+    transition: box-shadow .55s;
+    box-shadow: 0;
+}
+
+.hoverable:hover {
+    transition: box-shadow .45s;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+// Normalize
 a {
     color: $link-color;
     text-decoration: none;
@@ -50,188 +59,128 @@ ul {
     }
 }
 
-// Icon Styles
-i {
-    line-height: inherit;
-    &.left {
-        float: left;
-        margin-right: 10px;
-    }
-    &.right {
-        float: right;
-        margin-left: 10px;
-    }
-    &.tiny {
-        font-size: 1rem;
-    }
-    &.small {
-        font-size: 2rem;
-    }
-    &.medium {
-        font-size: 4rem;
-    }
-    &.large {
-        font-size: 6rem;
-    }
-}
-
-// Collections
-.collection {
-    margin: $element-top-margin 0 $element-bottom-margin 0;
-    border: 1px solid $collection-border-color;
-    border-radius: 2px;
-    overflow: hidden;
-    position: relative;
-    .collection-item {
-        background-color: $collection-bg-color;
-        line-height: 1.5rem;
-        padding: 10px 20px;
-        margin: 0;
-        border-bottom: 1px solid $collection-border-color;
-        // Avatar Collection
-        &.avatar {
-            min-height: 84px;
-            padding-left: 72px;
-            position: relative;
-            .circle {
-                position: absolute;
-                width: 42px;
-                height: 42px;
-                overflow: hidden;
-                left: 15px;
-                display: inline-block;
-                vertical-align: middle;
-            }
-            i.circle {
-                font-size: 18px;
-                line-height: 42px;
-                color: #fff;
-                background-color: #999;
-                text-align: center;
-            }
-            .title {
-                font-size: 16px;
-            }
-            p {
-                margin: 0;
-            }
-            .secondary-content {
-                position: absolute;
-                top: 16px;
-                right: 16px;
-            }
-        }
-        &:last-child {
-            border-bottom: none;
-        }
-        &.active {
-            background-color: $collection-active-bg-color;
-            color: $collection-active-color;
-        }
-    }
-    a.collection-item {
-        display: block;
-        @include transition(.25s);
-        color: $primary-color;
-        &:not(.active) {
-            &:hover {
-                background-color: $collection-hover-bg-color;
-            }
-        }
-    }
-    &.with-header {
-        .collection-header {
-            background-color: $collection-bg-color;
-            border-bottom: 1px solid $collection-border-color;
-            padding: 10px 20px;
-        }
-        .collection-item {
-            padding-left: 30px;
-        }
-        .collection-item.avatar {
-            padding-left: 72px;
-        }
-    }
-}
-
-// Made less specific to allow easier overriding
-.secondary-content {
-    float: right;
-    color: $primary-color;
-}
-// Labels
-
-.label {
+.jumbotron,
+.card,
+.label,
+.alert,
+.nav .nav-link,
+.navbar-toggler,
+.navbar,
+.breadcrumb,
+.page-item:last-child .page-link,
+.page-item:first-child .page-link,
+.pagination-lg .page-item:last-child .page-link,
+.pagination-lg .page-item:first-child .page-link,
+.pagination-sm .page-item:first-child .page-link,
+.pagination-sm .page-item:last-child .page-link,
+.list-group .list-group-item,
+.modal-content,
+.tooltip-inner,
+.popover,
+.dropdown-menu,
+.input-group-addon,
+.file-custom,
+.card .card-header {
     border-radius: 0;
 }
 
-// Footer 
-footer.page-footer {
-    margin-top: 3em;  
-    font-weight: 300;
-    .link-section {
-        padding-bottom: 20px;
-    }
-    .footer-content {
-        padding: 2em;
-    }
-    .footer-copyright {
-        overflow: hidden;
-        height: 50px;
-        line-height: 50px;
-        color: rgba(255, 255, 255, .8);
-    }
-    .column-title {
-        text-transform: uppercase;
-        margin-top: 15px;
-    }
-    a {
-        font-weight: 300;
-        font-size: 18px;
-        line-height: 40px;
-        color: #fff;
-    }
-    .social-section {
-        padding-top: 15px;
-        padding-bottom: 15px;
-        text-align: center;
-    }
-    .call-to-action {
-        text-align: center;
-        padding-bottom: 1.5rem;
-        padding-top: 1.5rem;
-        ul {
-            margin-bottom: 0;
-        }
-    }
-    .bordered {
-        border-bottom: 1px solid $rgba-grey-strong;
-    }
-    .padd-bott {
-        padding-bottom: 30px;
-    }
-    .pad-top {
-        padding-top: 30px;
-    }
+.jumbotron,
+.card,
+.list-group,
+.popover,
+.navbar,
+.dropdown-menu,
+.pagination {
+    @extend .z-depth-1;
 }
 
-@media only screen and (max-width: 768px) {
-    footer.page-footer {
-        .column-title {
-            margin-top: 2em;
-        }
-    }
-} 
-
-// Modal  
-.modal-content {
-    border-radius: 2px;
+.popover,
+.input-group-addon,
+.dropdown-menu {
+    border: 0;
 }
-/**
- * Shifting bacground fix
- */
+
+// Modal footer buttons fix
+.modal-footer .btn + .btn {
+    margin-bottom: 6px;
+}
+
+// Shifting bacground fix
 body.modal-open {
-  overflow: inherit;
-  padding-right: 0 !important;
+    overflow: inherit;
+    padding-right: 0 !important;
 }
 
+body {
+    overflow: auto !important;
+}
+
+// Card columns fix - cut edges of the cards
+.card-columns .card {
+    margin: 2px;
+}
+
+// Parallax
+.parallax {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+
+// Scrollspy free
+.nav-pills {
+    &.horizontal-spy {
+        .nav-item {
+            .active {
+                border-bottom: 2px solid $mdb-color;
+                border-left: none;
+            }
+            &:hover {
+                background-color: transparent;
+                color: $mdb-color;
+                font-weight: 500;
+                border-left: none;
+            }
+        }
+    }
+}
+
+//Nav normalize
+.nav-pills .nav-item.open .nav-link,
+.nav-pills .nav-item.open .nav-link:focus,
+.nav-pills .nav-item.open .nav-link:hover,
+.nav-pills .nav-link.active,
+.nav-pills .nav-link.active:focus,
+.nav-pills .nav-link.active:hover {
+    background-color: transparent;
+    color: #000;
+}
+
+//Disabled cursor
+.disabled {
+    cursor: not-allowed!important;
+}
+
+//Video responsive
+.video-fluid {
+    height: auto;
+    width: 100%;
+}
+
+//Media improvement
+.media {
+    img {
+        @extend .z-depth-1-half;
+    }
+}
+
+//Equal height columns
+.row-eq-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
