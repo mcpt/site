@@ -88,11 +88,23 @@
         <p>If code highlighting is avaiable, the following should look beautiful: </p>
         
 <pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
 using namespace std;
 
+vector&lt;int&gt; array = {1, 3, 10, 0x3af, 0156, 0158};
+
+// These are comments
+/** Block
+ *
+ *
+ *
+ *
+ *
+**/
 int main() {
-  cout &lt;&lt; "How do I look?" &lt;&lt; endl;
-  return 0;
+    array[4] = array[1] + array[2];
+    cout &lt;&lt; "Hello world!" &lt;&lt; 'c' &lt;&lt; endl;
+    return 0;
 }
 </code></pre>
         
