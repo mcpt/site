@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Love Guru MWC15 Editorial – MCPT</title>
+  
+  <script src="/jquery/jquery.js"></script>
+  <script src="/script.js"></script>
+  
+  <link href="/stylesheet.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/icon.png">
+  <link href="/bootstrap/css/bootstrap.cur.css" rel="stylesheet">
+  <link href="/mdb/css/mdb.cur.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="page">
+    <header>
+    <span id="header-replace"></span>
+    </header>
+    
+    <main>
+    <div class="container">
+      <div class="row">
+        <h1>Love Guru Editorial <a href="https://dmoj.ca/problem/mwc15c1p5"><small class="text-muted">mwc15c1p5</small></a></h1>
+        <hr>
+      </div>
+      
+      <div class="row">
+        <p>First of all, we should note that mod 10 is just taking the units digit (with the special case described for 0). The units digits of the powers of a number follows a pattern. Additionally, the only the units digit of the base of the power is relevant, meaning \(26^N \bmod {10}\) is equivalent to \(6^N \bmod {10}\). Either storing the number cycles or modding the power by 4 (the LCM of the cycle lengths of the digits) is sufficient to pass. </p>
+        
+        <h2>Time Complexity</h2>
+        <p>\(\mathcal{O}(L)\), where \(L\) is the total number of letters in the two names. </p>
+      </div>
+      
+      <div class="row">
+        <p><button class="btn btn-primary-outline" type="button" data-toggle="collapse" data-target="#code" aria-expanded="false">See Code</button></p>
+        
+        <div class="collapse" id="code">
+          <p>This code is in C++. </p>
+          <pre data-src="http://mcpt.ca/editorials/mwc/15/c1/p5/code.cpp"></pre>
+        </div>
+      </div>
+    </div>
+    </main>
+    
+    <footer>
+    <span id="footer-replace"></span>
+    </footer>
+  </div>
+  
+  <!--Scripts-->
+  <script type="text/javascript" src="/bootstrap/js/bootstrap.cur.js"></script>
+  <script type="text/javascript" src="/mdb/js/mdb.cur.js"></script>
+  
+</body>
+</html>

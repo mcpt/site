@@ -13,7 +13,7 @@ $(document).ready(function() {
   $("head").append("<script src=\"/ga.js\"></script>");
   // Prism
   $("head").append("<script src=\"/prism/prism.js\"></script>");
-  $("head").append("<link rel=\"stylesheet\" href=\"prism/prism.css\">");
+  $("head").append("<link rel=\"stylesheet\" href=\"/prism/prism.css\">");
     
 });
 
