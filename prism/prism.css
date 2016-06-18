@@ -175,7 +175,8 @@ pre[class*="language-"]:after {
 	font-weight: normal;
 }
 
-.token.bold {
+.token.bold,
+.token.keyword {
 	font-weight: bold;
 }
 .token.italic {
