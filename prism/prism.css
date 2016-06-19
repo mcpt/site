@@ -129,7 +129,7 @@ pre[class*="language-"]:after {
 
 .token.property,
 .token.tag {
-    color: #6004BC;
+    color: #3D5AFE;
 }
 
 .token.number,
@@ -140,7 +140,7 @@ pre[class*="language-"]:after {
 .token.function,
 .token.function-name,
 .token.class-name {
-    color: #B429FF;
+    color: #512DA8;
 }
 
 .token.selector,
@@ -337,7 +337,6 @@ div.prism-show-language > div.prism-show-language-label {
 	width: auto;
 	height: auto;
 	font-size: 0.9em;
-	border-radius: 0 0 0 5px;
 	padding: 0 0.5em;
 	text-shadow: none;
 	z-index: 1;
