@@ -146,7 +146,7 @@ pre[class*="language-"]:after {
 .token.selector,
 .token.attr-name,
 .token.string,
-.token.char,/*comment*/
+.token.char,
 .token.builtin,
 .token.inserted,
 .token.regex,
