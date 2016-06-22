@@ -173,7 +173,7 @@ pre[class*="language-"]:after {
 
 .token.bold,
 :not(.macro) > .token.keyword {
-	font-weight: bold;
+	font-weight:  600;
 }
 .token.italic {
 	font-style: italic;
