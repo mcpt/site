@@ -141,7 +141,6 @@ pre[class*="language-"]:after {
 .token.function-name,
 .token.class-name {
     color: #512DA8;
-		font-style: oblique;
 }
 
 .token.selector,
