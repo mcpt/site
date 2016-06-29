@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Template – MCPT</title>
+  <title>Scan Macro – MCPT/Resources</title>
   
   <!--Icon-->
   <link rel="icon" type="image/png" href="/icon.png">
@@ -69,20 +69,40 @@
   <main>
   <div class="container">
     <!--Content-->
+    <ol class="breadcrumb">
+      <li><a href="/">Home</a></li>
+      <li><a href="/resources">Resources</a></li>
+      <li class="active">Scan Macro</li>
+    </ol>
+    
     <div class="row">
-      <h1>Resources</h1>
-      <p>A list of various resources that may help you with programming.</p>
+      <h1>Scan Macro</h1>
+
+      <p>This is a super fast input method for <strong>positive integral data types for C/C++</strong> using standard io (via <code>getchar()</code>). </p>
+    </div>
+
+    <div class="row">
+      <h2>Code</h2>
+      <pre data-src="scan-macro.c"></pre>
+      
+      <p>Copy this code into the top of your program. </p>
+    </div>
+
+    <div class="row">
+      <h2>Usage</h2>
+      <p>The following is a sample use of the macro. It only reads one number at a time and works for all integral types: <code>int</code> and <code>long long</code>, etc. It takes care of whitespace. However, this only works on positive numbers.</p>
+      
+      <pre data-src="usage.c"></pre>
     </div>
     
     <div class="row">
-      <h2>Our Resources</h2>
+      <h1>Improved Version</h1>
       
-      <div class="list-group">
-        <a href="/resources/scan-macro" class="list-group-item">Fast integer scanning macro <small class="text-muted">(C++)</small></a>
-      </div>
+      <p>Here is a version that supports negative numbers. It is negligibly slower and requires an additional variable. The first version is recommended if you know that you aren't dealing with negative numbers. Usage remains the same. </p>
+      
+      <pre data-src="scan-macro2.c"></pre>
     </div>
-
-    </div>
+  </div>
   </main>
     
   <!--Footer-->
