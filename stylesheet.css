@@ -1,7 +1,7 @@
 /* Catamaran font */
 @import url(https://fonts.googleapis.com/css?family=Catamaran);
 
-/*Source Code Pro font*/
+/* Source Code Pro font*/
 @import url (https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600);
 
 h1 {
@@ -17,13 +17,13 @@ h3 {
 }
 
 ::selection {
-    background: #3D5AFE;
-    color: #FFFFFF;
+  background: #3D5AFE;
+  color: #FFFFFF;
 }
 
 ::-moz-selection {
-    background: #3D5AFE;
-    color: #FFFFFF;
+  background: #3D5AFE;
+  color: #FFFFFF;
 }
 
 html, body {
@@ -54,11 +54,17 @@ footer {
 }
 
 .noseldrag {
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-user-drag: none;
-    user-drag: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+/* Username */
+user {
+  color: #673AB7;
+  font-weight: 700;
 }
