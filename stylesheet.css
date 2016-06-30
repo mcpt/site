@@ -53,6 +53,7 @@ footer {
 	bottom: 0;
 }
 
+/* No selection nor dragging */
 .noseldrag {
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -67,4 +68,10 @@ footer {
 user {
   color: #673AB7;
   font-weight: 700;
+}
+
+
+a:hover > small.text-muted,
+small.text-muted > a:hover {
+  text-decoration: underline;
 }
