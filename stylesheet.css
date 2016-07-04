@@ -81,10 +81,6 @@ small.text-muted > a:hover {
   background-color: rgba(0, 0, 0, 0);
 }
 
-::-webkit-scrollbar-button {
-  background: rgba(63, 81, 181, 0.3);
-}
-
 ::-webkit-scrollbar-button:hover {
   background: #9fa8da;
 }
@@ -98,20 +94,19 @@ small.text-muted > a:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #3F51B5;
+  background-color: #9c27b0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #4d5ec1;
-  border-radius: 0;
-}
-
-::-webkit-scrollbar:hover {
-  background-color: rgba(63, 81, 181, 0.3);
+  background: #af2cc5;
 }
 
 ::-webkit-scrollbar-thumb:active {
-  background-color: #3b4895;
+  background-color: #882299;
+}
+
+::-webkit-scrollbar:hover {
+  background-color: rgba(156, 39, 176, 0.3);
 }
 
 ::-webkit-scrollbar-thumb:window-inactive {
@@ -119,5 +114,5 @@ small.text-muted > a:hover {
 }
 
 ::-webkit-scrollbar:window-inactive {
-  background-color: rgba(108, 108, 108, 0.3);
+  background-color: rgba(0, 0, 0, 0);
 }
