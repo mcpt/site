@@ -1,5 +1,5 @@
 # mcpt.ca
-A website for the Mackenzie Computer Programming Team located at [mcpt.ca](http://mcpt.ca)
+A website for the Mackenzie Computer Programming Team located at [mcpt.ca](mcpt.ca)
 
 ## Site Features
 
