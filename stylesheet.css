@@ -1,9 +1,6 @@
 /* Catamaran font */
 @import url(https://fonts.googleapis.com/css?family=Catamaran);
 
-/*Source Code Pro font*/
-@import url (https://fonts.googleapis.com/css?family=Source+Code+Pro);
-
 h1 {
   color: #C51162;
 }
@@ -38,7 +35,7 @@ html, body {
 }
 
 header {
-
+	
 }
 
 main {
