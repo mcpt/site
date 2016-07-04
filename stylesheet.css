@@ -75,3 +75,49 @@ a:hover > small.text-muted,
 small.text-muted > a:hover {
   text-decoration: underline;
 }
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-button {
+  background: rgba(63, 81, 181, 0.3);
+}
+
+::-webkit-scrollbar-button:hover {
+  background: #9fa8da;
+}
+
+::-webkit-scrollbar:vertical {
+  width: 10px;
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #3F51B5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4d5ec1;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar:hover {
+  background-color: rgba(63, 81, 181, 0.3);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: #3b4895;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background-color: #6c6c6c;
+}
+
+::-webkit-scrollbar:window-inactive {
+  background-color: rgba(108, 108, 108, 0.3);
+}
