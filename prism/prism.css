@@ -9,7 +9,7 @@ code[class*="language-"],
 pre[class*="language-"] {
 	color: black;
 	background: none;
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-family: 'Source Code Pro', 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
@@ -173,7 +173,7 @@ pre[class*="language-"]:after {
 
 .token.bold,
 :not(.macro) > .token.keyword {
-	font-weight: bold;
+	font-weight:  600;
 }
 .token.italic {
 	font-style: italic;
@@ -325,7 +325,7 @@ div.prism-show-language {
 	position: relative;
 }
 
-div.prism-show-language > div.prism-show-language-label {		
+div.prism-show-language > div.prism-show-language-label {
 	color: black;
 	background-color: #CFCFCF;
 	display: inline-block;

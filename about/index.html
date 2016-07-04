@@ -1,45 +1,100 @@
+<!--MCPT-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About – MCPT</title>
-
-  <link href="/stylesheet.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Template – MCPT</title>
+  
+  <!--Icon-->
   <link rel="icon" type="image/png" href="/icon.png">
+  <!--Theme Colour-->
+  <meta name="theme-color" content="#f48fb1">
+  <!--Bootstrap-->
   <link href="/bootstrap/css/bootstrap.cur.css" rel="stylesheet">
+  <!--MDB-->
   <link href="/mdb/css/mdb.cur.css" rel="stylesheet">
+  <!--Fontawesome-->
+  <link rel="stylesheet\" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+  <!--Prism-->
+  <link rel="stylesheet" href="/prism/prism.css">
+  <!--Custom Styles-->
+  <link href="/stylesheet.css" rel="stylesheet">
+  
+  <!--JQuery-->
   <script src="/jquery/jquery.js"></script>
-  <script src="/script.js"></script>
 </head>
 
 <body>
   <div class="page">
-    <header>
-    <span id="header-replace"></span>
-    </header>
-    
-    <main>
+  <!--Navbar-->
+  <header>
+  <nav class="navbar navbar-dark primary-color">
+    <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#navcollapse">
+      <i class="fa fa-bars"></i>
+    </button>
+
     <div class="container">
-      <div class="row">
-        <h1>About</h1>
-        <p>This is the official website for the William Lyon Mackenzie Collegiate Institue Computer Programming Team. The website is currently under construction, please visit us at the start of the 2016-2017 school year to see the full site in action!</p>
+      <div class=" collapse navbar-toggleable-xs" id="navcollapse">
+        <a class="navbar-brand waves-effect" href="/"><img src="/pics/silhouette.png" class="noseldrag" height="26px" width="26px" style="float:left;"> <strong>MCPT</strong></a>
+
+        <ul class="nav navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="/learn">Learn</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="/editorials">Editorials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="/ranks">Ranks</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="/oj">Online Judge</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle waves-effect" type="button" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Misc</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown1">
+              <a class="dropdown-item" href="/calendar">Calendar</a>
+              <a class="dropdown-item" href="/resources">Resources</a>
+              <a class="dropdown-item" href="/about">About</a>
+            </div>
+          </li>
+        </ul>
       </div>
-      
-      <a class="btn btn-primary-outline waves-effect" href="https://github.com/mcpt/site"><i class="fa fa-github left"></i> Github Repo</a>
-      
     </div>
-    </main>
+  </nav>
+  </header>
+
+  <main>
+  <div class="container">
+    <div class="row">
+      <h1>About</h1>
+      <p>This is the official website for the William Lyon Mackenzie Collegiate Institue Computer Programming Team. The website is currently under construction, please visit us at the start of the 2016-2017 school year to see the full site in action!</p>
+    </div>
+
+    <a class="btn btn-default-outline waves-effect" href="https://github.com/mcpt/site"><i class="fa fa-github left"></i> Github Repo</a>
+
+  </div>
+  </main>
     
-    <footer>
-    <span id="footer-replace"></span>
-    </footer>
+  <!--Footer-->
+  <footer class="page-footer primary-color center-on-small-only">
+    <div class="footer-copyright">
+      <div class="container-fluid">
+        &copy 2016 mcpt.ca
+      </div>
+    </div>
+  </footer>
   </div>
   
   <!--Scripts-->
+  <script src="/ga.js"></script>
+  <script src="/prism/prism.js"></script>
   <script type="text/javascript" src="/bootstrap/js/bootstrap.cur.js"></script>
   <script type="text/javascript" src="/mdb/js/mdb.cur.js"></script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+  <script src="/script.js"></script>
   
 </body>
 </html>

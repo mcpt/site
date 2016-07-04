@@ -1,6 +1,9 @@
 /* Catamaran font */
 @import url(https://fonts.googleapis.com/css?family=Catamaran);
 
+/* Source Code Pro font*/
+@import url (https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600);
+
 h1 {
   color: #C51162;
 }
@@ -14,13 +17,13 @@ h3 {
 }
 
 ::selection {
-    background: #3D5AFE;
-    color: #FFFFFF;
+  background: #3D5AFE;
+  color: #FFFFFF;
 }
 
 ::-moz-selection {
-    background: #3D5AFE;
-    color: #FFFFFF;
+  background: #3D5AFE;
+  color: #FFFFFF;
 }
 
 html, body {
@@ -35,7 +38,7 @@ html, body {
 }
 
 header {
-	
+
 }
 
 main {
@@ -50,12 +53,66 @@ footer {
 	bottom: 0;
 }
 
+/* No selection nor dragging */
 .noseldrag {
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-user-drag: none;
-    user-drag: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+/* Username */
+user {
+  color: #673AB7;
+  font-weight: 700;
+}
+
+
+a:hover > small.text-muted,
+small.text-muted > a:hover {
+  text-decoration: underline;
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-button:hover {
+  background: #9fa8da;
+}
+
+::-webkit-scrollbar:vertical {
+  width: 10px;
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #9c27b0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #af2cc5;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: #882299;
+}
+
+::-webkit-scrollbar:hover {
+  background-color: rgba(156, 39, 176, 0.3);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background-color: #6c6c6c;
+}
+
+::-webkit-scrollbar:window-inactive {
+  background-color: rgba(0, 0, 0, 0);
 }

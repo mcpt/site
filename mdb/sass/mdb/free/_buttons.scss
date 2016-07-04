@@ -156,34 +156,35 @@
 
 // Additional button styles
 .btn-primary-outline {
-    border: 2px solid $primary-color;
     color: $primary-color-dark;
+    border: 2px solid $primary-color;
     &:hover,
     &:focus {
         background-color: transparent;
         color: $primary-color;
+        border: 2px solid $primary-color-dark;
     }
 }
 
 .btn-secondary-outline {
-    border: 2px solid $secondary-color;
     color: $secondary-color-dark;
+    border: 2px solid $secondary-color;
     &:hover,
     &:focus {
         background-color: transparent;
         color: $secondary-color;
-        border: 2px solid $secondary-color;
+        border: 2px solid $secondary-color-dark;
     }
 }
 
 .btn-default-outline {
-    background-color: transparent;
-    border: 2px solid $default-color;
     color: $default-color-dark;
+    border: 2px solid $default-color;
     &:hover,
     &:focus {
         background-color: transparent;
         color: $default-color;
+        border: 2px solid $default-color-dark;
     }
 }
 
