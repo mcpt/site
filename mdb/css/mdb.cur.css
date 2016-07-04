@@ -1673,10 +1673,10 @@
   background-color: #0099CC !important; }
 
 .default-color {
-  background-color: #673AB7 !important; }
+  background-color: #9C27B0 !important; }
 
 .default-color-dark {
-  background-color: #4527A0 !important; }
+  background-color: #6A1B9A !important; }
 
 .primary-color {
   background-color: #3F51B5 !important; }
@@ -4732,11 +4732,11 @@ p.lead {
     background-color: #252f69 !important; }
 
 .btn-default {
-  background: #673AB7; }
+  background: #9C27B0; }
   .btn-default:hover, .btn-default:focus {
-    background-color: #7446c4 !important; }
+    background-color: #af2cc5 !important; }
   .btn-default.active {
-    background-color: #3b216a !important; }
+    background-color: #52145d !important; }
 
 .btn-success {
   background: #00C851; }
@@ -4790,11 +4790,11 @@ p.lead {
 
 .btn-default-outline {
   background-color: transparent;
-  border: 2px solid #673AB7;
-  color: #4527A0; }
+  border: 2px solid #9C27B0;
+  color: #6A1B9A; }
   .btn-default-outline:hover, .btn-default-outline:focus {
     background-color: transparent;
-    color: #673AB7; }
+    color: #9C27B0; }
 
 .btn-success-outline {
   border: 2px solid #00C851;
