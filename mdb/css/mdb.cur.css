@@ -4774,27 +4774,28 @@ p.lead {
     color: #000; }
 
 .btn-primary-outline {
-  border: 2px solid #3F51B5;
-  color: #283593; }
+  color: #283593;
+  border: 2px solid #3F51B5; }
   .btn-primary-outline:hover, .btn-primary-outline:focus {
     background-color: transparent;
-    color: #3F51B5; }
+    color: #3F51B5;
+    border: 2px solid #283593; }
 
 .btn-secondary-outline {
-  border: 2px solid #E91E63;
-  color: #ad1457; }
+  color: #ad1457;
+  border: 2px solid #E91E63; }
   .btn-secondary-outline:hover, .btn-secondary-outline:focus {
     background-color: transparent;
     color: #E91E63;
-    border: 2px solid #E91E63; }
+    border: 2px solid #ad1457; }
 
 .btn-default-outline {
-  background-color: transparent;
-  border: 2px solid #9C27B0;
-  color: #6A1B9A; }
+  color: #6A1B9A;
+  border: 2px solid #9C27B0; }
   .btn-default-outline:hover, .btn-default-outline:focus {
     background-color: transparent;
-    color: #9C27B0; }
+    color: #9C27B0;
+    border: 2px solid #6A1B9A; }
 
 .btn-success-outline {
   border: 2px solid #00C851;
