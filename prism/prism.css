@@ -45,7 +45,7 @@ pre[class*="language-"] {
 code[class*="language"] {
 	max-height: inherit;
 	height: 100%;
-	padding: 0 1em;
+	padding: 0 0.5em;
 	display: block;
 	overflow: auto;
 }
@@ -208,7 +208,7 @@ pre[class*="language-"].line-numbers {
 }
 
 pre[class*="language-"].line-numbers code {
-	padding-left: 3.8em;
+	padding-left: 3.3em;
 }
 
 pre[class*="language-"].line-numbers .line-numbers-rows {
