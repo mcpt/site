@@ -31,9 +31,6 @@ pre[class*="language-"] {
 pre[class*="language-"] {
 	position: relative;
 	margin: .5em 0;
-	-webkit-box-shadow: -1px 0px 0px 0px #e91e63, 0px 0px 0px 1px #dfdfdf;
-	-moz-box-shadow: -1px 0px 0px 0px #e91e63, 0px 0px 0px 1px #dfdfdf;
-	box-shadow: -1px 0px 0px 0px #e91e63, 0px 0px 0px 1px #dfdfdf;
 	border-left: 10px solid #e91e63;
 	background-color: #fafafa;
   background: #fafafa;
@@ -42,7 +39,7 @@ pre[class*="language-"] {
   background: -moz-radial-gradient(#ffffff, #f7f7f7);
   background: radial-gradient(#ffffff, #f7f7f7);
 	overflow: visible;
-	padding: 0;
+	padding: 0.5em 0;
 }
 
 code[class*="language"] {
@@ -220,16 +217,14 @@ pre[class*="language-"].line-numbers .line-numbers-rows {
 
 /* Plugin styles: Line Highlight */
 pre[class*="language-"][data-line] {
-	padding-top: 0;
-	padding-bottom: 0;
-	padding-left: 0;
+	padding: 0.5em 0;
 }
 pre[data-line] code {
 	position: relative;
 	padding-left: 4em;
 }
 pre .line-highlight {
-	margin-top: 0;
+	margin-top: 0.5em;
 }
 
 pre[data-line] {
