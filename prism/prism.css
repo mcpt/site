@@ -39,7 +39,7 @@ pre[class*="language-"] {
   background: -moz-radial-gradient(#ffffff, #f7f7f7);
   background: radial-gradient(#ffffff, #f7f7f7);
 	overflow: visible;
-	padding: 0.5em 0 0;
+	padding: 0.2em 0 0;
 }
 
 code[class*="language"] {
@@ -217,7 +217,7 @@ pre[class*="language-"].line-numbers .line-numbers-rows {
 
 /* Plugin styles: Line Highlight */
 pre[class*="language-"][data-line] {
-	padding: 0.5em 0 0;
+	padding: 0.2em 0 0;
 }
 pre[data-line] code {
 	position: relative;
