@@ -70,10 +70,13 @@ user {
   font-weight: 700;
 }
 
-
 a:hover > small.text-muted,
 small.text-muted > a:hover {
   text-decoration: underline;
+}
+
+.editorial-title > h1 {
+  margin-bottom: 0;
 }
 
 /* Custom scrollbar styles */
