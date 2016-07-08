@@ -89,11 +89,11 @@
       
       <p>Let's imagine the numbers on a number line. \(A\) is the answer, \(N_1\) and \(N_2\) are the guesses and \(M_1\) and \(M_2\) are the respective distances from the answer. </p>
       
-      <img src="/pics/jdcc15octa1.png">
+      <img src="/pics/jdcc15octa1.png" class="img-fluid">
       
       <p>We can derive the equation \(M = A - N\). For which in the example above, \(M_1\) is positive and \(M_2\) is negative. There are four cases of combinations of positive and negative differences (\(M\)), but we don't need to check them all. We just need to know if \(N_1 + M_1 = A\). </p>
       
-      <p>Let us use some equations. If \(M_1\) is positive, then \(N_1 + M_1 = A\), otherwise, it wouldn't. We can use a system of equations to check if M_1 is positive. \(| M_2 | = A - N_2\). We are given the differences as absolute values, so the equation is equivalent to \(M_2 = A - N_2\). Then we plug in \(A\): \(M_2 = | N_1 + M_1 - N_2 |\). If the equation holds true, then \(M_1\) is positive (output \(N_1 + M_1\)), otherwise, M_1 is negative (output \(N_1 - M_1\)). </p>
+      <p>Let us use some equations. If \(M_1\) is positive, then \(N_1 + M_1 = A\), otherwise, it wouldn't. We can use a system of equations to check if M_1 is positive. \(| M_2 | = A - N_2\). We are given the differences as absolute values, so the equation is equivalent to \(M_2 = A - N_2\). Then we plug in \(A\): \(M_2 = | N_1 + M_1 - N_2 |\). If the equation holds true, then \(M_1\) is positive (output \(N_1 + M_1\)), otherwise, \(M_1\) is negative (output \(N_1 - M_1\)). </p>
       
       <h2 class="h2-responsive">Time Complexity</h2>
       <p>\(\mathcal{O}(1)\)</p>
