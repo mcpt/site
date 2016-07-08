@@ -73,36 +73,30 @@
       <ol class="breadcrumb">
         <li><a href="/">Home</a></li>
         <li><a href="/editorials">Editorials</a></li>
-        <li><a href="/editorials/mwc">MWC</a></li>
-        <li class="active">Love Guru</li>
+        <li><a href="/editorials/jdcc">JDCC</a></li>
+        <li class="active">Guessing Game</li>
       </ol>
     </div>
     
     <div class="row editorial-title">
-      <h1>Love Guru Editorial <a href="https://dmoj.ca/problem/mwc15c1p5"><small class="text-muted">mwc15c1p5</small></a></h1>
+      <h1>Guessing Game Editorial <a href="LINK"><small class="text-muted">jdcc15octa</small></a></h1>
       <span style="line-height: 70%;"><i class="fa fa-pencil"></i><user>aurpine</user></span>
       <hr>
     </div>
     
     <div class="row">
-      <p>Firstly, note that mod 10 is equivalent to taking the units digit of the number. Then we can experiment with the numbers. </p>
+      <p>Mathematically find the last number. Since you are given the absolute distance from your guess to the answer, it is either above or below (positive or negative) the answer. </p>
       
-      <p>Let's look at the powers of 1: 1, 1, 1, 1... The pattern is that all the powers of 1 are 1. The same can be seen with 0. Evidently, these two numbers have patterns, cycles of length 1. </p>
+      <p>Let's imagine the numbers on a number line. \(A\) is the answer, \(N_1\) and \(N_2\) are the guesses and \(M_1\) and \(M_2\) are the respective distances from the answer. </p>
       
-      <p>Now, let's consider other digits. How about 2? 2, 4, 8, 16, 32, 64. The units are: 2, 4, 8, 6, 2, 4... The pattern is {2, 4, 8, 6}, a cycle of length 4! Now let's look at 3: 3, 9, 27, 81, 243. Also a cycle of length 4. In all the digits from 0 to 9, you'll see that there are cycle lengths of 1, 2 and 4. </p>
+      <img src="/pics/jdcc15octa1.png">
       
-      <p>We have only considered single digit numbers, but since the alphabet has 26 letters, let us consider two digit numbers. THe first two digit number, 10: 10, 100, 1000. It has the same cycle length as its units digit. This is because when multiplying, the only digit that can affect the units digit, is the units digit. Thus, all the other digits are insignificant and won't affect the cycle length. Meaning, 3, 13 and 23 all have the same cycle length. </p>
+      <p>We can derive the equation \(M = A - N\). For which in the example above, \(M_1\) is positive and \(M_2\) is negative. There are four cases of combinations of positive and negative differences (\(M\)), but we don't need to check them all. We just need to know if \(N_1 + M_1 = A\). </p>
       
-      <p>Now that we figured out the trick, there are two ways to implement it. </p>
+      <p>Let us use some equations. If \(M_1\) is positive, then \(N_1 + M_1 = A\), otherwise, it wouldn't. We can use a system of equations to check if M_1 is positive. \(| M_2 | = A - N_2\). We are given the differences as absolute values, so the equation is equivalent to \(M_2 = A - N_2\). Then we plug in \(A\): \(M_2 = | N_1 + M_1 - N_2 |\). If the equation holds true, then \(M_1\) is positive (output \(N_1 + M_1\)), otherwise, M_1 is negative (output \(N_1 - M_1\)). </p>
       
-      <p><strong>Method 1:</strong> Since the cycle lengths are 1, 2 and 4. The LCM of the cycle lengths is 4. Just mod the exponent by 4 before performing the operation. </p>
-      
-      <p><strong>Method 2:</strong> Have a hardcoded array of the cycles. </p>
-      
-      <pre data-src="cycle.cpp"></pre>
-
       <h2 class="h2-responsive">Time Complexity</h2>
-      <p>\(\mathcal{O}(L)\), where \(L\) is the total number of letters in the two names. </p>
+      <p>\(\mathcal{O}(1)\)</p>
     </div>
   </div>
   </main>
