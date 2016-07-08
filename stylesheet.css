@@ -80,6 +80,10 @@ small.text-muted > a:hover {
   margin-bottom: 0;
 }
 
+.editorial-title > hr {
+  margin-top: 0;
+}
+
 /* Bigger list font sizing */
 .large-list {
   font-size: 1.2em;
