@@ -75,9 +75,27 @@ small.text-muted > a:hover {
   text-decoration: underline;
 }
 
+/* Editorial title closer to author */
 .editorial-title > h1 {
   margin-bottom: 0;
 }
+
+/* Bigger list font sizing */
+.large-list {
+  font-size: 1.2em;
+}
+
+.large-list > li {
+  padding-left: 0.2em;
+}
+
+/* Temporary fix to button */
+.btn-block {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+
 
 /* Custom scrollbar styles */
 ::-webkit-scrollbar {
