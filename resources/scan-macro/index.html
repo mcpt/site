@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Scan Macro – MCPT/Resources</title>
+  <title>Template – MCPT</title>
   
   <!--Icon-->
   <link rel="icon" type="image/png" href="/icon.png">
@@ -16,7 +16,7 @@
   <!--MDB-->
   <link href="/mdb/css/mdb.cur.css" rel="stylesheet">
   <!--Fontawesome-->
-  <link rel="stylesheet\" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
   <!--Prism-->
   <link rel="stylesheet" href="/prism/prism.css">
   <!--Custom Styles-->
@@ -82,21 +82,21 @@
     </div>
 
     <div class="row">
-      <h2>Code</h2>
+      <h2 class="h2-responsive">Code</h2>
       <pre data-src="scan-macro.c"></pre>
       
       <p>Copy this code into the top of your program. </p>
     </div>
 
     <div class="row">
-      <h2>Usage</h2>
+      <h2 class="h2-responsive">Usage</h2>
       <p>The following is a sample use of the macro. It only reads one number at a time and works for all integral types: <code>int</code> and <code>long long</code>, etc. It takes care of whitespace. However, this only works on positive numbers.</p>
       
       <pre data-src="usage.c"></pre>
     </div>
     
     <div class="row">
-      <h1>Improved Version</h1>
+      <h1 class="h1-responsive">Improved Version</h1>
       
       <p>Here is a version that supports negative numbers. It is negligibly slower and requires an additional variable. The first version is recommended if you know that you aren't dealing with negative numbers. Usage remains the same. </p>
       
