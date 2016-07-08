@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Template – MCPT</title>
+  <title>Genetic Probability (mwc15c1p4) MWC Editorial – MCPT</title>
 
   <!--Icon-->
   <link rel="icon" type="image/png" href="/icon.png">
@@ -80,14 +80,14 @@
 
     <div class="row editorial-title">
       <h1>Genetic Probability Editorial <a href="https://dmoj.ca/problem/mwc15c1p4"><small class="text-muted">mwc15c1p4</small></a></h1>
-      <span style="line-height: 70%;"><i class="fa fa-pencil"></i><user>Hypnova</user></span>
+      <i class="fa fa-pencil"></i><user>Hypnova</user>
       <hr>
     </div>
 
     <div class="row">
       <p>This problem just requires the understanding of a simple concept; a genotype is a valid offspring of two parent genotypes if the value of all of its allele pairs are equal a possible combination of the parents genotypes.</p>
-      <p>For example, take two parent genotypes <code>Aa</code> and <code>Aa</code>, where \mathcal{A = 1}</strong> and \mathcal{a = 0} (values of capital/lowercase indicated by boolean vlaues). The possible combinations of these two parent genotypes are, \mathcal{A + A = 2},\mathcal{a + a = 0},\mathcal{A + a = 1}, and \mathcal{a + A = 1}.</p>
-      <p>Each of these offspring genotypes have a \mathcal{1/4} chance of occuring. When there are multiple allele pairs in a single genotype, the probability of the offspring with the specific given genotype is the product of the probabilities of each of its allele pairs being formed from that of its parents.</p>
+      <p>For example, take two parent genotypes <code>Aa</code> and <code>Aa</code>, where \(A = 1\)</strong> and \(a = 0\) (values of capital/lowercase indicated by boolean vlaues). The possible combinations of these two parent genotypes are, \(A + A = 2\), \(a + a = 0\), \(A + a = 1\), and \(a + A = 1\).</p>
+      <p>Each of these offspring genotypes have a \(\frac{1}{4}\) chance of occuring. When there are multiple allele pairs in a single genotype, the probability of the offspring with the specific given genotype is the product of the probabilities of each of its allele pairs being formed from that of its parents.</p>
       <h2 class="h2-responsive">Time Complexity</h2>
       <p>\(\mathcal{O}(N)\), where \(N\) is the total number of traits. </p>
     </div>
