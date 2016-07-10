@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Template – MCPT</title>
+  <title>404 Not Found – MCPT</title>
   
   <!--Icon-->
   <link rel="icon" type="image/png" href="/icon.png">
@@ -69,21 +69,23 @@
   <main>
   <div class="container">
     <div class="row">
-      <h1>404 Not Found</h1>
+      <div class="jumbotron">
+        <h1 class="display-1">404 Not Found</h1>
 
-      <p>This page doesn't exist :P (yet)</p>
+        <p class="lead">This page doesn't exist :P (yet)</p>
 
-      <p class="url"></p>
+        <p class="url"></p>
 
-      <script>
-        $(function() {
-          $(".url").append(document.createTextNode("You tried to access the URL: " + window.location.href + "."));
-        });
-      </script>
+        <script>
+          $(function() {
+            $(".url").append("You tried to access the URL: <code>" + window.location.href + "</code>.");
+          });
+        </script>
 
 
-      <a class="btn btn-primary waves-effect" href="/">Home</a>
+        <a class="btn btn-primary btn-lg waves-effect" href="/">Home</a>
 
+      </div>
     </div>
   </div>
   </main>
