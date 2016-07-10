@@ -84,6 +84,10 @@ small.text-muted > a:hover {
   margin-top: 0;
 }
 
+.editorial-title > user::before {
+  content: " ";
+}
+
 /* Bigger list font sizing */
 .large-list {
   font-size: 1.2em;
