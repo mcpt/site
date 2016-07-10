@@ -99,7 +99,10 @@ small.text-muted > a:hover {
   margin-right: 0;
 }
 
-
+/* Header links */
+a:hover > h2 {
+  color: #cc2972;
+}
 
 /* Custom scrollbar styles */
 ::-webkit-scrollbar {
