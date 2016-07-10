@@ -8,7 +8,8 @@ $primary-color-dark: darken($primary-color, 15%) !default;
 $secondary-color: #E91E63 !default;
 $success-color: color("green", "base") !default;
 
-$link-color: color("light-blue", "darken-1") !default;
+$link-color: color("blue", "darken-2");
+$link-hover-color: color("blue", "lighten-1");
 
 /*** Fonts ***/
 $roboto-font-path: "../font/roboto/" !default;

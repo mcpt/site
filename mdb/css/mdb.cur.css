@@ -1915,11 +1915,12 @@
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
 
 a {
-  color: #3f51b5;
+  color: #1976D2;
   text-decoration: none;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent; }
   a:hover, a:focus {
+    color: #42A5F5;
     text-decoration: none; }
 
 ul {

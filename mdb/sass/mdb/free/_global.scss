@@ -47,6 +47,7 @@ a {
     -webkit-tap-highlight-color: transparent;
     &:hover,
     &:focus {
+        color: $link-hover-color;
         text-decoration: none;
     }
 }
