@@ -1,0 +1,177 @@
+<!--MCPT-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Style – MCPT</title>
+  
+  <!--Icon-->
+  <link rel="icon" type="image/png" href="/icon.png">
+  <!--Theme Colour-->
+  <meta name="theme-color" content="#f48fb1">
+  <!--Bootstrap-->
+  <link href="/bootstrap/css/bootstrap.cur.css" rel="stylesheet">
+  <!--MDB-->
+  <link href="/mdb/css/mdb.cur.css" rel="stylesheet">
+  <!--Fontawesome-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+  <!--Prism-->
+  <link rel="stylesheet" href="/prism/prism.css">
+  <!--Custom Styles-->
+  <link href="/stylesheet.css" rel="stylesheet">
+  
+  <!--JQuery-->
+  <script src="/jquery/jquery.js"></script>
+</head>
+
+<body>
+  <div class="page">
+  <!--Navbar-->
+  <header>
+  <nav class="navbar navbar-dark primary-color">
+    <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#navcollapse">
+      <i class="fa fa-bars"></i>
+    </button>
+
+    <div class="container">
+      <div class=" collapse navbar-toggleable-xs" id="navcollapse">
+        <a class="navbar-brand waves-effect" href="/"><img src="/pics/silhouette.png" class="noseldrag" height="26px" width="26px" style="float:left;"> <strong>MCPT</strong></a>
+
+        <ul class="nav navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="/learn">Learn</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="/editorials">Editorials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="/ranks">Ranks</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="/oj">Online Judge</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle waves-effect" type="button" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Misc</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown1">
+              <a class="dropdown-item" href="/calendar">Calendar</a>
+              <a class="dropdown-item" href="/resources">Resources</a>
+              <a class="dropdown-item" href="/about">About</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  </header>
+
+  <main>
+  <div class="container">
+    <!--Content-->
+    <div class="row">
+      <h1>Style</h1>
+      
+      <p>Our opinionated programming techniques that may or may not enhance your programming and debugging. </p>
+    </div>
+    
+    <div class="row">
+      <h1 class="h1-responsive">Variable Naming</h1>
+      
+      <p>We find it more convenient to break some language specific naming convention. Here's ours. </p>
+      
+      <p>If a problem gives a constant variable, let's say \(N\), then we use that variable in our program. <code>int N;</code></p>
+      
+      <p>Let's say we are given an array of \(N\) elements. For loop variables, we will use the variable \(n\), the lowercase version of the given variable. </p>
+      
+      <pre class="language-java"><code>int[] array = new int[N];
+for(int n = 0; n &lt; N; n++) {
+  array[n] = in.nextInt(); // Example usage
+}</code></pre>
+      
+      <p>When given a constant lowercase variable (for example some old CCC problems), if possible, use a capitalized version in your code instead. This is so that your code is consistent across problems. </p>
+      
+      <hr>
+      
+      <p>Grid problems are pretty common. Typically, variable pairs are \(M, N\) and \(R, C\). Loop variables should be named accordingly. Note that typically, \(R\) will be given first. Rows translates to \(y\) in a coordinate. The following is an example of input with a grid problem. </p>
+      
+      <pre class="language-cpp"><code>for(int r = 0; r &lt; R; r++) { // Rows first
+  for(int c = 0; c &lt; C; c++) { // Then columns
+    // Read char or whatever is given
+  }
+}</code></pre>
+      
+      <hr>
+      
+      <p>For other variables, use a concise and descriptive variable name. You don't need the whole word, as long as you can understand it. <strong>Avoid exceeding 10 characters.</strong> We like to use a C++ and Java hybrid variable naming for multiple words: do not use underlines and do not use any capital letters. For example, <code>dist</code>, <code>cur</code> (usually used for current index, level, etc.), <code>maxdiff</code> (maximum difference duh!). </p>
+    </div>
+    
+    <div class="row">
+      <h1 class="h1-responsive">Variable Declaration</h1>
+      
+      <p>Where you declare your variables isn't too important. If you know for sure that you will use it in a method later, declare it globally. You could also declare it globally just to be safe. However, it may seem neater when declared within the main method. </p>
+      
+      <p>In C, multidimensional arrays cannot be initialized with a variable size, thus, you must initialize them globally with constraints stated in the problem. </p>
+    </div>
+    
+    <div class="row">
+      <h1 class="h1-responsive">Methods</h1>
+      
+      <p>Use the same naming convention for methods (the C++ and Java hybrid; you won't be given methods in a problem). Make sure that parameter naming doesn't interfere with global variables. </p>
+      
+      <p>When used well, methods can improve comprehension, however, with bad usage, it can clutter up your code. Use methods when you need to reuse a medium length snippet of code in multiple places. Use when it logically flows to use a method. Refrain from creating too many methods especially which aren't often used. Don't put all your code in a constructor and call it in the main method. In fact, never use a constructor (unless you're creating a custom class which you should also refrain from). </p>
+      
+      <p>Of course, you must use methods when utilizing recursion. </p>
+    </div>
+    
+    <div class="row">
+      <h1 class="h1-responsive">Indentation</h1>
+      
+      <p>This is our preferred style, take it or leave it. </p>
+      
+      <p>Use 4 spaces instead of tabs to indent. Spaces permit better compatibility. </p>
+      
+      <p>We like to use a K&amp;R variant. No spaces between a keyword or method amd parentheses nor between a variable and index brackets. Open brackets on the same line and closing brackets on a different line. Spaces used as necessary. Single line loops usually on the following line and single line if statements on the same line with no brackets for either. </p>
+      
+      <pre class="language-cpp"><code>int main() {
+  int a[] = {1, 2, 3 * (1 + 1)};
+
+  for(int i = 0; i &lt; 3; i++) {
+    if(i == 1) {
+      a[i + 1] = 0;
+      // Do something else
+    } else { // Same line
+      a[0] = i;
+      i = 0;
+    }
+  }
+  for(int i = 0; i &lt; 3; i++)
+    a[i] = i;
+  
+  if(a[0] == 1) return 1;
+}</code></pre>
+      
+    </div>
+  </div>  
+  </main>
+    
+  <!--Footer-->
+  <footer class="page-footer primary-color center-on-small-only">
+    <div class="footer-copyright">
+      <div class="container-fluid">
+        &copy 2016 mcpt.ca
+      </div>
+    </div>
+  </footer>
+  </div>
+  
+  <!--Scripts-->
+  <script src="/ga.js"></script>
+  <script src="/prism/prism.js"></script>
+  <script type="text/javascript" src="/bootstrap/js/bootstrap.cur.js"></script>
+  <script type="text/javascript" src="/mdb/js/mdb.cur.js"></script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+  <script src="/script.js"></script>
+  
+</body>
+</html>
