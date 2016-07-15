@@ -1,0 +1,256 @@
+<!--MCPT-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Prefix Sum Array – MCPT</title>
+  
+  <!--Icon-->
+  <link rel="icon" type="image/png" href="/icon.png">
+  <!--Theme Colour-->
+  <meta name="theme-color" content="#f48fb1">
+  <!--Bootstrap-->
+  <link href="/bootstrap/css/bootstrap.cur.css" rel="stylesheet">
+  <!--MDB-->
+  <link href="/mdb/css/mdb.cur.css" rel="stylesheet">
+  <!--Fontawesome-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+  <!--Prism-->
+  <link rel="stylesheet" href="/prism/prism.css">
+  <!--Custom Styles-->
+  <link href="/stylesheet.css" rel="stylesheet">
+  
+  <!--JQuery-->
+  <script src="/jquery/jquery.js"></script>
+</head>
+
+<body>
+  <div class="page">
+  <!--Navbar-->
+  <header>
+  <nav class="navbar navbar-dark primary-color">
+    <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#navcollapse">
+      <i class="fa fa-bars"></i>
+    </button>
+
+    <div class="container">
+      <div class=" collapse navbar-toggleable-xs" id="navcollapse">
+        <a class="navbar-brand waves-effect" href="/"><img src="/pics/silhouette.png" class="noseldrag" height="26px" width="26px" style="float:left;"> <strong>MCPT</strong></a>
+
+        <ul class="nav navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="/learn">Learn</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="/editorials">Editorials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="/ranks">Ranks</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="/oj">Online Judge</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle waves-effect" type="button" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Misc</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown1">
+              <a class="dropdown-item" href="/calendar">Calendar</a>
+              <a class="dropdown-item" href="/resources">Resources</a>
+              <a class="dropdown-item" href="/about">About</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  </header>
+
+  <main>
+  <div class="container">
+    <!--CONTENT-->
+    <div class="row">
+      <ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li><a href="/learn">Learn</a></li>
+        <li><a href="/learn/al">Algorithms</a></li>
+        <li class="active">Prefix Sum Array</li>
+      </ol>
+    </div>
+    
+    <div class="row">
+      <h1>Prefix Sum Array</h1>
+      <hr>
+    </div>
+    
+    <div class="row">
+        <p>
+            A prefix sum array is a data structure which is extremely useful and has numerous applications in competitive programming. Given an array of ~N~ numbers, a prefix sum array is able to calculate the sum of all numbers between any two indices of the array in ~O (1)~ time.
+            
+            <br><br>
+            To understand how this is done, a sample problem is given:
+        </p>
+        
+        <blockquote class = "blockquote">
+            Given an array ~arr~ consisting of ~N~ integers, answer ~Q~ queries, where each query asks for the value of ~arr [i] + arr [i + 1] + ... + arr [j - 1] + arr [j] ~ ~(0 \leq i, j \le N)~.
+        </blockquote>
+        
+        <p>
+            In other words, the problem asks to find the sum of the numbers in the array between indices <code>i</code> and <code>j</code> ~Q~ times. Note that <code>i</code> and <code>j</code> can have different values for each query, e.g. one query can ask for the sum between indices <code>0</code> and <code>3</code>, while another can ask for the sum between indices <code>1</code> and <code>4</code>.
+            
+            <br><br>
+            So how best to solve this? The first method that comes to mind is to simply add up the numbers for each query. This is implemented in the code snippet below:
+        </p>
+        
+        <pre class = "language-java">
+            <code>
+
+            // 0 <= start, end < arr.length, as stated in the problem
+            public static int getSumBetween (int [] arr, int start, int end) {
+                int sum = 0;
+                
+                for (int i = start; i <= end; i++) {
+                    sum += arr [i];
+                }
+            
+                return sum;
+            }
+            </code>
+        </pre>
+        
+        <p>
+            This method will be called for each query, and will correctly return the sum between the given indices. As this method will iterate through the entire array in the worst case, its runtime is O (N). As the method will be called once for each query, the overall program runtime will be O (NQ).
+            
+            If the number of queries is large, this program will perform very slowly, as for each query it will have to iterate through the entire array in the worst case.
+            
+            <br><br>
+            
+            However, there is a data structure made specifically to solve this type of problem, a prefix sum array! A prefix sum array is an array generated from the original array, with the ~i^{th}~ index of the prefix sum array storing the sum of values between indices <code>0</code> and <code>i - 1</code> (inclusive).
+
+            <br><br>
+            
+            An example is shown below (Note that an additional <code>0</code> is appended to the start of the prefix sum array for convenience when processing queries):
+            
+            <br><br>
+            
+            Original Array:
+            
+            <code>
+            [1, 2, 3, 4, 5, -2, 1]
+            </code>
+            
+            <br><br>
+            
+            Prefix Sum Array:
+            
+            <code>
+            [0, 1, 3, 6, 10, 15, 13, 14]
+            </code>
+            
+            <br><br>
+            
+            To find the sum of numbers between indices <code>2</code> and <code>5</code> (inclusive) of the array, we simply take the sum of numbers between indices <code>0</code> to <code>5</code>, and subtract the sum of numbers between indices <code>0</code> to <code>1</code>. This process will give us the sum of numbers between indices <code>2</code> and <code>5</code> of the original array.
+            
+            <br><br>
+            
+            <code>prefixSumArray [6]</code> represents the sum of the numbers between indices <code>0</code> to <code>5</code> (inclusive). This is because the ~i^{th}~ index of the prefix sum array stores the sum of values between indices <code>0</code> and <code>i - 1</code> (inclusive).
+            
+            <br><br>
+            
+            Following the same line of reasoning, <code>prefixSumArray [2]</code> represents the sum of the numbers between indices <code>0</code> to <code>1</code> (inclusive).
+            
+            <br><br>
+            
+            Therefore, to get the sum of the numbers between indices <code>2</code> to <code>5</code>, we must perform the operation <code>prefixSumArray [6] - prefixSumArray [2]</code>, which yields an answer of <code>13 - 3 = 10</code>. If you manually add the numbers between indices <code>2</code> to <code>5</code> in the original array, <code>[3, 4, 5, -2]</code>, you will get the same answer.
+            
+            <br><br>
+            
+            Creating a prefix sum array is relatively easy, as shown in the code snippet below:
+            
+        <pre class = "language-java">
+            <code>
+
+            public static int [] createPrefixSumArray (int [] arr) {
+                int [] prefixSumArray = new int [arr.length + 1];//one extra element, the 0 at the start of the prefix sum array
+
+                for (int i = 1; i <= arr.length; i++) {
+                    //the sum of values from indexes 0 to i = the sum of values from indexes 0 to i - 1 + the value at index i
+                    prefixSumArray [i] = prefixSumArray [i - 1] + arr [i - 1];
+                }
+
+                return prefixSumArray;
+            }
+            </code>
+        </pre>
+            
+            <br>
+            Finding the sum between any two indexes of a given array can be implemented as below:
+            <br>
+            
+        <pre class = "language-java">
+            <code>
+
+            //0 <= start, end < original array length
+            public static int [] getSumBetween (int [] prefixSumArray, int start, int end) {
+
+                /*prefixSumArray [end + 1] represents sum of numbers between indices 0 and end
+                prefixSumArray [start] represents sum of numbers between indices 0 and start - 1*/
+
+                return prefixSumArray [end + 1] - prefixSumArray [start];
+            }
+            </code>
+        </pre>
+            
+            <br>
+            
+            With the prefix sum array, querying the sum between two given indices of an array is now ~O (1)~, while creating the prefix sum array is ~O (N)~, where ~N~ is the number of elements in the original array. The total runtime to solve the given problem is now ~O (N + Q)~, which is a large improvement over the naive solution.
+        </p>
+        
+        <h1 class = "h1-responsive">Practice</h1>
+        <ul class = "large-list">
+            <li>
+                <a href="https://dmoj.ca/problem/dmopc14c2p4">DMOPC '14 Contest 2 P4: Deforestation</a>
+            </li>
+            
+            <li>
+                <a href="https://dmoj.ca/problem/gfssoc2j4">GFSSOC '14 Spring P4: Marathon</a>
+            </li>
+            
+            <li>
+                <a href="https://dmoj.ca/problem/mwc15c7p2">MWC '15 Contest 7 P2: Thief in the Night</a>
+            </li>
+            
+            <li>
+                <a href="https://dmoj.ca/problem/dmopc15c1p5">DMOPC '15 Contest 1 P5: Lelei and Dragon Scales</a> (challenge problem)
+            </li>
+        </ul>
+        
+        Hint for challenge problem: it requires a 2D prefix sum array, also known as a <a href = "https://en.wikipedia.org/wiki/Summed_area_table">summed area table</a>.
+        
+        <br><br>
+        
+    </div>
+    
+  </div>
+  </main>
+    
+  <!--Footer-->
+  <footer class="page-footer primary-color center-on-small-only">
+    <div class="footer-copyright">
+      <div class="container-fluid">
+        &copy 2016 mcpt.ca
+      </div>
+    </div>
+  </footer>
+  </div>
+  
+  <!--Scripts-->
+  <script src="/ga.js"></script>
+  <script src="/prism/prism.js"></script>
+  <script type="text/javascript" src="/bootstrap/js/bootstrap.cur.js"></script>
+  <script type="text/javascript" src="/mdb/js/mdb.cur.js"></script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+  <script src="/script.js"></script>
+  
+</body>
+</html>
