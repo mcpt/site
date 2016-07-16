@@ -85,18 +85,18 @@
     
     <div class="row">
         <p>
-            A prefix sum array is a data structure which is extremely useful and has numerous applications in competitive programming. Given an array of ~N~ numbers, a prefix sum array is able to calculate the sum of all numbers between any two indices of the array in ~O (1)~ time.
+            A prefix sum array is a data structure which is extremely useful and has numerous applications in competitive programming. Given an array of \{N\} numbers, a prefix sum array is able to calculate the sum of all numbers between any two indices of the array in \{O (1)\} time.
             
             <br><br>
             To understand how this is done, a sample problem is given:
         </p>
         
         <blockquote class = "blockquote">
-            Given an array ~arr~ consisting of ~N~ integers, answer ~Q~ queries, where each query asks for the value of ~arr [i] + arr [i + 1] + ... + arr [j - 1] + arr [j] ~ ~(0 \leq i, j \le N)~.
+            Given an array \{arr\} consisting of \{N\} integers, answer \{Q\} queries, where each query asks for the value of \{arr [i] + arr [i + 1] + ... + arr [j - 1] + arr [j]\} \{(0 \leq i, j \le N)\}.
         </blockquote>
         
         <p>
-            In other words, the problem asks to find the sum of the numbers in the array between indices <code>i</code> and <code>j</code> ~Q~ times. Note that <code>i</code> and <code>j</code> can have different values for each query, e.g. one query can ask for the sum between indices <code>0</code> and <code>3</code>, while another can ask for the sum between indices <code>1</code> and <code>4</code>.
+            In other words, the problem asks to find the sum of the numbers in the array between indices <code>i</code> and <code>j</code> \{Q\} times. Note that <code>i</code> and <code>j</code> can have different values for each query, e.g. one query can ask for the sum between indices <code>0</code> and <code>3</code>, while another can ask for the sum between indices <code>1</code> and <code>4</code>.
             
             <br><br>
             So how best to solve this? The first method that comes to mind is to simply add up the numbers for each query. This is implemented in the code snippet below:
@@ -119,13 +119,13 @@
         </pre>
         
         <p>
-            This method will be called for each query, and will correctly return the sum between the given indices. As this method will iterate through the entire array in the worst case, its runtime is O (N). As the method will be called once for each query, the overall program runtime will be O (NQ).
+            This method will be called for each query, and will correctly return the sum between the given indices. As this method will iterate through the entire array in the worst case, its runtime is \{O (N)\}. As the method will be called once for each query, the overall program runtime will be \{O (NQ)\}.
             
             If the number of queries is large, this program will perform very slowly, as for each query it will have to iterate through the entire array in the worst case.
             
             <br><br>
             
-            However, there is a data structure made specifically to solve this type of problem, a prefix sum array! A prefix sum array is an array generated from the original array, with the ~i^{th}~ index of the prefix sum array storing the sum of values between indices <code>0</code> and <code>i - 1</code> (inclusive).
+            However, there is a data structure made specifically to solve this type of problem: a prefix sum array! A prefix sum array is an array generated from the original array, with the \{i^\{th}\} index of the prefix sum array storing the sum of values between indices <code>0</code> and <code>i - 1</code> (inclusive).
 
             <br><br>
             
@@ -153,7 +153,7 @@
             
             <br><br>
             
-            <code>prefixSumArray [6]</code> represents the sum of the numbers between indices <code>0</code> to <code>5</code> (inclusive). This is because the ~i^{th}~ index of the prefix sum array stores the sum of values between indices <code>0</code> and <code>i - 1</code> (inclusive).
+            <code>prefixSumArray [6]</code> represents the sum of the numbers between indices <code>0</code> to <code>5</code> (inclusive). This is because the \{i^\{th}\} index of the prefix sum array stores the sum of values between indices <code>0</code> and <code>i - 1</code> (inclusive).
             
             <br><br>
             
@@ -203,7 +203,7 @@
             
             <br>
             
-            With the prefix sum array, querying the sum between two given indices of an array is now ~O (1)~, while creating the prefix sum array is ~O (N)~, where ~N~ is the number of elements in the original array. The total runtime to solve the given problem is now ~O (N + Q)~, which is a large improvement over the naive solution.
+            With the prefix sum array, querying the sum between two given indices of an array is now \{O (1)\}, while creating the prefix sum array is \{O (N)\}, where \{N\} is the number of elements in the original array. The total runtime to solve the given problem is now \{O (N + Q)\}, which is a large improvement over the naive solution.
         </p>
         
         <h1 class = "h1-responsive">Practice</h1>
