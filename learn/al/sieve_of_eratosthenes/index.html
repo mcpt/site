@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Array Mapping – Learn Algorithms – MCPT</title>
+  <title>Sieve of Eratosthenes – Learn Data Structures – MCPT</title>
   
   <!--Icon-->
   <link rel="icon" type="image/png" href="/icon.png">
@@ -73,63 +73,79 @@
       <ol class="breadcrumb">
         <li><a href="/">Home</a></li>
         <li><a href="/learn">Learn</a></li>
-        <li><a href="/learn/ds">Data Structures</a></li>
-        <li class="active">Array Mapping</li>
+        <li><a href="/learn/al">Algorithms</a></li>
+        <li class="active">Sieve of Eratosthenes</li>
       </ol>
     </div>
     
     <div class="row">
-      <h1>Array Mapping</h1>
+      <h1>Sieve of Eratosthenes</h1>
       <hr>
     </div>
     
     <div class="row">
-      <p>Array Mapping is a technique used to associate a <em>key</em> with a <em>value</em>. Primitive arrays <em>map</em> the <em>key</em> type (<code>int</code>) to a <em>value</em> (the type of the array). In this lesson, we will explore mapping with letters as <em>keys</em>. </p>
+      <p>Sieve of Eratosthenes is an algorithm for quickly generating all the prime numbers below a maximum number. </p>
       
-      <pre class="language-java"><code>array[0] = 1;</code></pre>
+      <p>The algorithm is based on the fact that a multiple of a prime number (other than itself) cannot be a prime number. </p>
       
-      <p>Notice the <code>0</code> as the accessing index. This is the key. With arrays, the key is always an <code>int</code>. </p>
+      <p>First, a boolean array is created in the size up to the maximum number initialized to <code>true</code> (except for <code>0</code> and <code>1</code>). The array holds whether or not the number has been discovered as a prime number. </p>
       
-      <p>However, we can take advantage of the properties of a <code>char</code>. chars are easily casted to an <code>int</code>. </p>
+      <p>Loop through all the numbers in the range \(2 .. \sqrt M\), we will see why. If the current number is a prime, then loop through its multiples and set their prime status to <code>false</code>. However, as an optimization, some of the multiples would have already been set to false, so we need not to start from \(2 n\). All the primes below \(n\) would have already been found and their multiples processed. Thus, we can start the loop from \(n^2\). Similarly, we only need to loop through the numbers \(2 .. \sqrt M\) because after \(\sqrt M\), any prime numbers found would only disprove the primeness of numbers that are past the range. </p>
       
+      <p>Depending on what we want to do, we can loop through the prime array again and generate a list of all the prime numbers. Or maybe we want to check whether or not a number is prime. </p>
+      
+    </div>
+      
+    <div class="row">
+      <h1 class="h1-responsive">Implementation</h1>
       <hr>
       
-      <h1 class="h1-responsive">Example</h1>
+      <pre class="language-java"><code>
+      boolean[] isPrime = new boolean[M + 1];
+      Arrays.fill(isPrime, true); // Need to import java.util.Arrays;
+      isPrime[0] = false;
+      isPrime[1] = false;
       
-      <p><strong>Problem:</strong> Find the number of occurences of each letter in a word. </p>
+      for(int i = 2; i * i &lt;= M; i++) {
+          if(isPrime[i]) {
+              for(int j = i * i; j &lt;= M; j += i)
+                isPrime[j] = false;
+          }
+      }
       
-      <p>We need to <em>map</em> each letter to an index in the array. Let's use <code>a</code> to <code>0</code>, <code>b</code> to <code>1</code>... <code>z</code> to <code>25</code>. Conveniently, ASCII values of letters are in the same order, just with a different starting number. </p>
+      // Optional: Generate a list of primes
+      ArrayList&lt;Integer&gt; primes = new ArrayList&lt;Integer&gt;
+      for(int i = 2; i &lt;= M; i++)
+          if(isPrime[i]) primes.add(i);
+      </code></pre>
       
-      <pre class="language-java"><code>String word = "hello";
-int[] occ = new int[26]; // Occurences
-for(char c: word.toCharArray())
-    occ[c - 'a']++; // 'a' for lowercase and 'A' for uppercase</code></pre>
+      <h2 class="h2-responsive">Time Complexity</h2>
       
-      <p>Mapping isn't limited to only letters though, it can be used with more characters. Just use a bigger array. </p>
+      <p>\(\mathcal{O}(M \log \log M)\), where \(M\) is the maximum to calculate to. </p>
       
-      <pre class="language-java"><code>String word = "mcpt.ca";
-int[] occ = new int[256]; // Much more ASCII values
-for(char c: word.toCharArray())
-    occ[c]++;
-
-// Print the occurences of only lowercase letters
-for(char i = 'a'; i &lt;= 'z'; i++)
-    System.out.println("The letter " + i + " occurs " + occ[i] + " times");</code></pre>
+      <h2 class="h2-responsive">Space Complexity</h2>
       
-      <p>Array mapping can also be used with other keys such as digits: counting the occurences of digits. Later on, we will learn mapping with other data types, such as <code>double</code>, <code>String</code> and even custom classes. </p>
-      
+      <p>\(\mathcal{O}(M)\), where \(M\) is the maximum to calculate to. </p>
+    </div>
+    
+    <div class="row">
+      <h1 class="h1-responsive">Conclusion</h1>
       <hr>
+      
+      <p>Sieve is a very fast algorithm for generating prime numbers within a range. You can tell whether or not a number is prime in constant time (great for answering queries). However, the algorithm requires the use of a large array. </p>
     </div>
     
     <div class="row">
       <h1 class="h1-responsive">Practice</h1>
-
+      <hr>
+      
       <ul class="large-list">
-        <li><a href="https://dmoj.ca/problem/ccc11s1">CCC '11 S1: English or French?</a></li>
-        <li><a href="EH">JDCC '15 November C: eLettery</a></li>
-        <li><a href="https://dmoj.ca/problem/ccc16s1">CCC '16 S1: Ragaman</a></li>
-        <li><a href="MEH">JDCC '14 February C: Disordered Alphabet</a></li>
+        <li><a href="https://dmoj.ca/problem/mwc15c6p2">MWC '15 #6 P2: Breadwinners</a></li>
+        <li><a href="https://dmoj.ca/problem/dmopc15c1p4">DMOPC '15 Contest 1 P4 - Itami and Candy</a></li>
+        <li><a href="https://dmoj.ca/problem/phantom2">DMOJ: The Third Cellar</a></li>
+        <li><a href="https://dmoj.ca/problem/dmopc15c1p4">FHC '15 Round 1: Homework</a> (requires modifying the algorithm)</li>
       </ul>
+      
     </div>
     
   </div>
