@@ -84,7 +84,7 @@
     </div>
     
     <div class="row">
-      <p>Sieve of Eratosthenes is an algorithm for quickly generating all the prime numbers below a maximum number. </p>
+      <p>Sieve of Eratosthenes is an algorithm for quickly generating all the prime numbers below a maximum number \(M\). </p>
       
       <p>The algorithm is based on the fact that a multiple of a prime number (other than itself) cannot be a prime number. </p>
       
@@ -109,7 +109,7 @@
       for(int i = 2; i * i &lt;= M; i++) {
           if(isPrime[i]) {
               for(int j = i * i; j &lt;= M; j += i)
-                isPrime[j] = false;
+                  isPrime[j] = false;
           }
       }
       
