@@ -108,6 +108,11 @@ a:hover > h2 {
   color: #cc2972;
 }
 
+/* No Mathjax blue outline */
+:focus {
+  outline: none;
+}
+
 /* Custom scrollbar styles */
 ::-webkit-scrollbar {
   background-color: rgba(0, 0, 0, 0);
