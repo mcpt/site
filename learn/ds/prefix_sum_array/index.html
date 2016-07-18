@@ -73,7 +73,7 @@
       <ol class="breadcrumb">
         <li><a href="/">Home</a></li>
         <li><a href="/learn">Learn</a></li>
-        <li><a href="/learn/al">Data Structures</a></li>
+        <li><a href="/learn/ds">Data Structures</a></li>
         <li class="active">Prefix Sum Array</li>
       </ol>
     </div>
@@ -84,8 +84,6 @@
     </div>
     
     <div class="row">
-      <p><small>Note that all the indices used in this lesson are 0-indexed. </small></p>
-      
       <p>The prefix sum array is a data structure used to quickly solve range-sum queries. </p>
 
       <blockquote class = "blockquote">Given an array \(a\) of \(N\) integers, answer \(Q\) queries: the sum of all the elements in the range \([i, j]\)</blockquote>
@@ -126,7 +124,7 @@
 
       <p>In short, the sum of the range \([i, j]\) is <code>ps[j + 1] - ps[i]</code>. </p>
       
-      <p>You may have noticed that the prefix sum array has an extra element. This is because</p>
+      <p>You may have noticed that the prefix sum array has an extra element, the <code>0</code> at the start of the array. This makes it more convenient to handle queries asking for the sum of the range \([0,i]\).</p>
       
     </div>
     
@@ -137,15 +135,12 @@
       <p>Creating a prefix sum array is relatively easy, as shown in the code snippet below:</p>
 
       <pre class="language-java"><code>
-        public static int[] createPrefixSumArray (int [] arr) {
-            int[] prefixSumArray = new int[arr.length + 1]; // one extra element, the 0 at the start of the prefix sum array
+        //a is the original array
+        int[] ps = new int[a.length + 1]; // one extra element, the 0 at the start of the prefix sum array
 
-            for (int i = 1; i &lt;= arr.length; i++) {
-                // the sum of values from indexes 0 to i = the sum of values from indexes 0 to i - 1 + the value at index i
-                prefixSumArray[i] = prefixSumArray[i - 1] + arr[i - 1];
-            }
-
-            return prefixSumArray;
+        for (int i = 1; i &lt;= a.length; i++) {
+            // the sum of values from indexes 0 to i = the sum of values from indexes 0 to i - 1 + the value at index i
+            ps[i] = ps[i - 1] + a[i - 1];
         }
       </code></pre>
 
@@ -153,14 +148,13 @@
 
       <pre class="language-java"><code>
         //0 &lt;= start, end &lt; original array length
-        public static int[] getSumBetween (int[] prefixSumArray, int start, int end) {
+        // ps[end + 1] represents sum of numbers between indices 0 and end
+        // ps[start] represents sum of numbers between indices 0 and start - 1
 
-            // prefixSumArray[end + 1] represents sum of numbers between indices 0 and end
-            // prefixSumArray[start] represents sum of numbers between indices 0 and start - 1
-
-            return prefixSumArray[end + 1] - prefixSumArray[start];
-        }
+        return ps[end + 1] - ps[start];
       </code></pre>
+        
+      <p>Notice that when querying for the range \([0, i]\), <code>ps[start] = 0</code> due to the extra element appended to the start. Without this element (or an if statement to handle the special case where <code>start == 0</code>), the snippet would return an incorrect answer.</p>
 
       <p>With the prefix sum array, querying the sum between two given indices of an array is now \(O (1)\), while creating the prefix sum array is \(O (N)\), where \(N\) is the number of elements in the original array. The total runtime to solve the given problem is now \(O (N + Q)\), which is a large improvement over the naive solution.</p>
     </div>
