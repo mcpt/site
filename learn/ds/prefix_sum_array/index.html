@@ -139,7 +139,6 @@
         int[] ps = new int[a.length + 1]; // one extra element, the 0 at the start of the prefix sum array
 
         for(int i = 1; i &lt;= a.length; i++) {
-            // the sum of values from indexes 0 to i = the sum of values from indexes 0 to i - 1 + the value at index i
             ps[i] = ps[i - 1] + a[i - 1];
         }
       </code></pre>
@@ -149,9 +148,6 @@
       <pre class="language-java"><code>
         // 0 &lt;= start, end &lt; original array length
         public static int query (int[] ps, int start, int end) {
-        
-            // ps[end + 1] represents sum of numbers between indices 0 and end
-            // ps[start] represents sum of numbers between indices 0 and start - 1
             return ps[end + 1] - ps[start];
         }
       </code></pre>
