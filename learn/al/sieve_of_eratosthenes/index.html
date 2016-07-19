@@ -127,7 +127,7 @@
       }
       
       // Optional: Generate a list of primes
-      ArrayList&lt;Integer&gt; primes = new ArrayList&lt;Integer&gt;
+      ArrayList&lt;Integer&gt; primes = new ArrayList&lt;Integer&gt();
       for(int i = 2; i &lt;= M; i++)
           if(isPrime[i]) primes.add(i);
       </code></pre>
@@ -139,10 +139,7 @@
       <h3 class="h3-responsive">Space Complexity</h3>
       
       <p>\(\mathcal{O}(M)\), where \(M\) is the maximum to calculate to. </p>
-    </div>
-    
-    <div class="row">
-      <h1 class="h1-responsive">Conclusion</h1>
+      
       <hr>
       
       <p>Sieve is a very fast algorithm for generating prime numbers within a range. You can tell whether or not a number is prime in constant time (great for answering queries). However, the algorithm requires the use of a large array. </p>
