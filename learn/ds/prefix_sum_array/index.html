@@ -135,10 +135,10 @@
       <p>Creating a prefix sum array is relatively easy, as shown in the code snippet below:</p>
 
       <pre class="language-java"><code>
-        //a is the original array
+        // a is the original array
         int[] ps = new int[a.length + 1]; // one extra element, the 0 at the start of the prefix sum array
 
-        for (int i = 1; i &lt;= a.length; i++) {
+        for(int i = 1; i &lt;= a.length; i++) {
             // the sum of values from indexes 0 to i = the sum of values from indexes 0 to i - 1 + the value at index i
             ps[i] = ps[i - 1] + a[i - 1];
         }
@@ -147,11 +147,13 @@
       <p>Finding the sum between any two indexes of a given array can be implemented as below:</p>
 
       <pre class="language-java"><code>
-        //0 &lt;= start, end &lt; original array length
-        // ps[end + 1] represents sum of numbers between indices 0 and end
-        // ps[start] represents sum of numbers between indices 0 and start - 1
-
-        return ps[end + 1] - ps[start];
+        // 0 &lt;= start, end &lt; original array length
+        public static int query (int[] ps, int start, int end) {
+        
+            // ps[end + 1] represents sum of numbers between indices 0 and end
+            // ps[start] represents sum of numbers between indices 0 and start - 1
+            return ps[end + 1] - ps[start];
+        }
       </code></pre>
         
       <p>Notice that when querying for the range \([0, i]\), <code>ps[start] = 0</code> due to the extra element appended to the start. Without this element (or an if statement to handle the special case where <code>start == 0</code>), the snippet would return an incorrect answer.</p>
