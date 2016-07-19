@@ -86,13 +86,13 @@
     <div class="row">
       <p>The prefix sum array is a data structure used to quickly solve range-sum queries. </p>
 
-      <blockquote class = "blockquote">Given an array \(a\) of \(N\) integers, answer \(Q\) queries: the sum of all the elements in the range \([i, j]\)</blockquote>
+      <blockquote class = "blockquote">Given an array \(a\) of \(N\) integers, answer \(Q\) queries: the sum of all the elements in the range \([start, j]\)</blockquote>
 
       <p>To solve this problem, we could sum up the given range for each query, but that would be worst case \(\mathcal{O}(N)\) per query. If there are many queries, the program will be extremely slow. The fact that the array doesn't change throughout the query tells us that we must use preprocessing: <strong>prefix sum array</strong>!</p>
       
       <p>There are \(N^2\) unique ranges in an array. Creating a \(N^2\) sized array to hold the sums of each possible range would be excessive. The prefix sum array only uses a \(N\) sized array.</p>
       
-      <p>Like in the name, the array holds the sum of all the elements before the given index. <code>ps[i]</code> of the prefix sum array contains the sum of the array indices \([0, i)\).</p>
+      <p>Like in the name, the array holds the sum of all the elements before the given index. <code>ps[]</code> of the prefix sum array contains the sum of the array indices \([0, i)\).</p>
       
       <hr>
       
@@ -122,9 +122,9 @@
       
       <p>It adds up. We want the sum of the range \([2, 3]\). <code>-2 + 1 = -1 = ps[4] - ps[2] = 6 - 7</code></p>
 
-      <p>In short, the sum of the range \([i, j]\) is <code>ps[j + 1] - ps[i]</code>. </p>
+      <p>In short, the sum of the range \([start, end]\) is <code>ps[end + 1] - ps[start]</code>. </p>
       
-      <p>You may have noticed that the prefix sum array has an extra element, the <code>0</code> at the start of the array. This makes it more convenient to handle queries asking for the sum of the range \([0,i]\).</p>
+      <p>You may have noticed that the prefix sum array has an extra element, the <code>0</code> at the start of the array. This makes it more convenient to handle queries asking for the sum of the range \([0,end]\).</p>
       
     </div>
     
@@ -146,7 +146,7 @@
       <p>Finding the sum between any two indexes of a given array can be implemented as below:</p>
 
       <pre class="language-java"><code>
-        // 0 &lt;= start, end &lt; original array length
+        // 0 &lt;= start &le; end &lt; original array length
         public static int query (int start, int end) {
             return ps[end + 1] - ps[start];
         }
