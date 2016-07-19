@@ -132,27 +132,25 @@
       <h1 class="h1-responsive">Implementation</h1>
       <hr>
 
-      <p>Creating a prefix sum array is relatively easy, as shown in the code snippet below:</p>
+      <p>Constructing a prefix sum array is relatively easy, as shown in the code snippet below where <code>ps</code> is the new prefix sum array, <code>a</code> is the original array, and <code>N</code> is the original array size. </p>
 
       <pre class="language-java"><code>
-        // a is the original array
-        int[] ps = new int[a.length + 1]; // one extra element, the 0 at the start of the prefix sum array
+        int[] ps = new int[N + 1]; // An extra element, the 0 at the start of the prefix sum array
 
-        for(int i = 1; i &lt;= a.length; i++) {
-            ps[i] = ps[i - 1] + a[i - 1];
+        for(int n = 1; n &lt;= N; n++) {
+            ps[n] = ps[n - 1] + a[n - 1];
         }
       </code></pre>
 
-      <p>Finding the sum between any two indexes of a given array can be implemented as below:</p>
+      <p>Finding the sum between any two indexes of a given array can be implemented as below. The method assumes that the constraints <code>0 &lt; l &le; r &lt; N</code> are held. </p>
 
       <pre class="language-java"><code>
-        // 0 &lt;= start &le; end &lt; original array length
-        public static int query (int start, int end) {
-            return ps[end + 1] - ps[start];
+        public static int sum(int l, int r) { // Left and right ends of the range
+            return ps[r + 1] - ps[l];
         }
       </code></pre>
     
-      <p>Notice that when querying for the range \([0, i]\), <code>ps[start] = 0</code> due to the extra element appended to the start. Without this element (or an if statement to handle the special case where <code>start == 0</code>), the snippet would return an incorrect answer.</p>
+      <p>Notice that when querying for the range \([0, i]\), <code>ps[l] = 0</code> due to the extra element appended to the start. Without this element (or an if statement to handle the special case where <code>start == 0</code>), the program would crash due to an index out of bounds (-1).</p>
     </div>
         
     <div class="row">
