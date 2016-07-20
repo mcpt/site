@@ -145,11 +145,3 @@ a:hover > h2 {
 ::-webkit-scrollbar:hover {
   background-color: rgba(156, 39, 176, 0.3);
 }
-
-::-webkit-scrollbar-thumb:window-inactive {
-  background-color: #6c6c6c;
-}
-
-::-webkit-scrollbar:window-inactive {
-  background-color: rgba(0, 0, 0, 0);
-}
