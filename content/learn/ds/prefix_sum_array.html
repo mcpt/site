@@ -1,0 +1,116 @@
++++
+title = "Prefix Sum Array – Learn Data Structures"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/learn">Learn</a></li>
+    <li><a href="/learn/ds">Data Structures</a></li>
+    <li class="active">Prefix Sum Array</li>
+  </ol>
+</div>
+
+<div class="row">
+  <h1>Prefix Sum Array</h1>
+  <hr>
+</div>
+
+<div class="row">
+  <p>The prefix sum array is a data structure used to quickly solve range-sum queries. </p>
+
+  <blockquote class = "blockquote">Given an array \(a\) of \(N\) integers, answer \(Q\) queries: the sum of all the elements in the range \([start, j]\)</blockquote>
+
+  <p>To solve this problem, we could sum up the given range for each query, but that would be worst case \(\mathcal{O}(N)\) per query. If there are many queries, the program will be extremely slow. The fact that the array doesn't change throughout the queries tells us that we must use preprocessing: <strong>prefix sum array</strong>!</p>
+
+  <p>There are \(N^2\) unique ranges in an array. Creating a \(N^2\) sized array to hold the sums of each possible range would be excessive. The prefix sum array only uses a \(N\) sized array.</p>
+
+  <p>Like in the name, the array holds the sum of all the elements before the given index. <code>ps[]</code> of the prefix sum array contains the sum of the array indices \([0, i)\).</p>
+
+  <hr>
+
+  <p>Given the following array</p>
+
+  <img class="img-fluid" src="../img/prefix_sum_array1.png"><br>
+
+  <p>The prefix sum array will look like: </p>
+
+  <img class="img-fluid" src="../img/prefix_sum_array2.png"><br>
+
+  <hr>
+
+  <img class="img-fluid" src="../img/prefix_sum_array3.png"><br>
+
+  <p><code>ps[4]</code> has a value of <code>6</code>. It corresponds to the sum of the range \([0, 3]\). </p>
+
+  <img class="img-fluid" src="../img/prefix_sum_array4.png"><br>
+
+  <p>Say we want only the range \([2, 3]\). We have 2 extra elements in the sum, so we must subtract them. </p>
+
+  <img class="img-fluid" src="../img/prefix_sum_array5.png"><br>
+
+  <p>The subtracted region is the first two elements: <code>ps[2]</code>. </p>
+
+  <img class="img-fluid" src="../img/prefix_sum_array6.png"><br>
+
+  <p>It adds up. We want the sum of the range \([2, 3]\). <code>-2 + 1 = -1 = ps[4] - ps[2] = 6 - 7</code></p>
+
+  <p>In short, the sum of the range \([start, end]\) is <code>ps[end + 1] - ps[start]</code>. </p>
+
+  <p>You may have noticed that the prefix sum array has an extra element, the <code>0</code> at the start of the array. This makes it more convenient to handle queries asking for the sum of the range \([0,end]\).</p>
+
+</div>
+
+<div class="row">    
+  <h1 class="h1-responsive">Implementation</h1>
+  <hr>
+
+  <p>Constructing a prefix sum array is relatively easy, as shown in the code snippet below where <code>ps</code> is the new prefix sum array, <code>a</code> is the original array, and <code>N</code> is the original array size. </p>
+
+  <pre class="language-java"><code>
+    int[] ps = new int[N + 1]; // An extra element, the 0 at the start of the prefix sum array
+
+    for(int n = 1; n &lt;= N; n++) {
+        ps[n] = ps[n - 1] + a[n - 1];
+    }
+  </code></pre>
+
+  <p>Finding the sum between any two indexes of a given array can be implemented as below. The method assumes that the constraints <code>0 &lt; l &le; r &lt; N</code> are held. </p>
+
+  <pre class="language-java"><code>
+    public static int sum(int l, int r) { // Left and right ends of the range
+        return ps[r + 1] - ps[l];
+    }
+  </code></pre>
+
+  <p>Notice that when querying for the range \([0, i]\), <code>ps[l] = 0</code> due to the extra element appended to the start. Without this element (or an if statement to handle the special case where <code>start == 0</code>), the program would crash due to an index out of bounds (-1).</p>
+</div>
+
+<div class="row">
+  <h3 class="h3-responsive">Time Complexity</h3>
+
+  <p><strong>Construction: </strong> \(\mathcal{O}(N)\), where \(N\) is the size of the original array.</p>
+  <p><strong>Sum Query: </strong> \(\mathcal{O}(1)\)</p>
+</div>
+
+<div class="row">
+  <h3 class="h3-responsive">Space Complexity</h3>
+
+  <p>\(\mathcal{O}(N)\), where \(N\) is the size of the original array.</p>
+</div>
+
+<div class="row">
+  <hr>
+  <p>The prefix sum array is a data structure which allows fast calculation of the sum of a given range of numbers. With the prefix sum array, the total runtime to solve the given problem is now \(\mathcal{O}(N+Q)\), which is a large improvement over the naive solution.</p>
+
+  <h1 class = "h1-responsive">Practice</h1>
+  <hr>
+
+  <ul class = "large-list">
+    <li><a href="https://dmoj.ca/problem/dmopc14c2p4">DMOPC '14 Contest 2 P4: Deforestation</a></li>
+    <li><a href="https://dmoj.ca/problem/gfssoc2j4">GFSSOC '14 Spring P4: Marathon</a></li>
+    <li><a href="https://dmoj.ca/problem/mwc15c7p2">MWC '15 Contest 7 P2: Thief in the Night</a></li>
+  </ul>
+
+</div>

@@ -1,0 +1,32 @@
++++
+title = "Genetic Probability (mwc15c1p4) Editorial"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/editorials">Editorials</a></li>
+    <li><a href="/editorials/mwc">MWC</a></li>
+    <li><a href="/editorials/mwc/15">2015</a></li>
+    <li><a href="/editorials/mwc/15/c1">Contest 1</a></li>
+    <li class="active">Genetic Probability</li>
+  </ol>
+</div>
+
+<div class="row editorial-title">
+  <h1>Genetic Probability Editorial <a href="https://dmoj.ca/problem/mwc15c1p4"><small class="text-muted">mwc15c1p4</small></a></h1>
+  <i class="fa fa-pencil"></i><user>Hypnova</user>
+  <hr>
+</div>
+
+<div class="row">
+  <p>This problem just requires the understanding of a simple concept; a genotype is a valid offspring of two parent genotypes if the value of all of its allele pairs are equal a possible combination of the parents genotypes.</p>
+
+  <p>For example, take two parent genotypes <code>Aa</code> and <code>Aa</code>, where \(A = 1\) and \(a = 0\) (values of capital/lowercase indicated by boolean vlaues). The possible combinations of these two parent genotypes are, \(A + A = 2\), \(a + a = 0\), \(A + a = 1\), and \(a + A = 1\).</p>
+
+  <p>Each of these offspring genotypes have a \(\frac{1}{4}\) chance of occuring. When there are multiple allele pairs in a single genotype, the probability of the offspring with the specific given genotype is the product of the probabilities of each of its allele pairs being formed from that of its parents.</p>
+
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <p>\(\mathcal{O}(N)\), where \(N\) is the total number of traits. </p>
+</div>

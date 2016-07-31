@@ -1,0 +1,40 @@
++++
+title = "Search"
+
++++
+
+<div class="row">
+  <h1>Search</h1>
+</div>
+
+<!--<div class="row">
+  <div class="md-form">
+    <input type="text" id="search-form" class="form-control" name="q">
+    <button type="button" class="btn btn-primary btn-lg" id="search-button"><i class="fa fa-search fa-lg"></i></button>
+  </div>
+</div>-->
+
+<div class="row">
+  <form class="" method="get" action="/search/">
+    <div class="md-form form-group">
+      <input type="text" id="search-form" class="form-control" name="q">
+      <label for="search-form"><i class="fa fa-search fa-lg"></i></label>
+    </div>
+  </form>
+</div>
+
+
+<div class="row">
+  <script>
+    (function() {
+      var cx = '012895563859240204582:wrjsw3bfjwa';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+  <gcse:searchresults-only></gcse:searchresults-only>
+</div>

@@ -1,0 +1,120 @@
++++
+title = "2D Prefix Sum Array – Learn Data Structures"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/learn">Learn</a></li>
+    <li><a href="/learn/ds">Data Structures</a></li>
+    <li class="active">2D Prefix Sum Array</li>
+  </ol>
+</div>
+
+<div class="row">
+  <h1>2D Prefix Sum Array</h1>
+  <hr>
+</div>
+
+<div class="row">
+  <p>The 2D Prefix Sum Array handles queries for the sum of a rectangular region on a grid (2D array). </p>
+
+  <p>The underlying structure is a simple 2D array of size <code>[C + 1][R + 1]</code>, where <code>C</code> and <code>R</code> are the respective sizes of the original array. </p>
+
+  <p>Say we have this grid, full of 1s. </p>
+
+  <img class="img-fluid" src="../img/2dpsa1.png"><br>
+
+  <p>The prefix sum array would look like. </p>
+
+  <img class="img-fluid" src="../img/2dpsa2.png"><br>
+
+  <p><code>ps[c][r]</code>, contains the sum of the region \([(0, 0), (c - 1, r - 1)]\). <code>ps[3][3]</code> has a value of <code>9</code>. </p>
+
+  <img class="img-fluid" src="../img/2dpsa3.gif"><br>
+
+  <p>Say we only wanted the sum of the region \([(1, 2), (2 ,2)]\). We would have an extra region, highlighted in red. </p>
+
+  <img class="img-fluid" src="../img/2dpsa4.png"><br>
+
+  <p>We must subtract the region. However, when we use two rectangles to subtract the region, we have subtracted another rectangular region an additional time. Thus, we must add it back. </p>
+
+  <img class="img-fluid" src="../img/2dpsa5.gif"><br>
+
+  <p>Our final expression for the sum is: <code>ps[3][3] - ps[1][2] - ps[2][2] + ps[0][1] = 9 - 3 - 6 + 2 = 2</code></p>
+
+  <img class="img-fluid" src="../img/2dpsa6.png"><br>
+
+  <p>A generalized formula for the sum of a rectangle \([(c_1, r_1), (c_2, r_2)]\) is <code>ps[c<sub>2</sub> + 1][r<sub>2</sub> + 1] - ps[c<sub>1</sub>][r<sub>2</sub> + 1] - ps[c<sub>2</sub> + 1][r<sub>1</sub>] + ps[c<sub>1</sub>][r<sub>1</sub>]</code></p>
+</div>
+
+<div class="row">
+  <h2 class="h2-responsive">Construction</h2>
+  <hr>
+
+  <p>Construction is done iteratively from top to bottom, left to right. At each point, the respective rectangular region excluding the right-bottommost square is summed, and added to the right-bottommost square from the original array. Green represents the already calculated sums. Gold is the current square. </p>
+
+  <img class="img-fluid" src="../img/2dpsa7.png"><br>
+
+  <p>Similar to summing up a rectangular region, there will be a repeated region which will be subtracted. </p>
+
+  <img class="img-fluid" src="../img/2dpsa8.png"><br>
+
+
+</div>
+
+<div class="row">
+  <h1 class="h1-responsive">Implementation</h1>
+  <hr>
+
+  <p>Construction of a 2D prefix sum array <code>ps</code> from array <code>a</code> of size <code>C</code> by <code>R</code>. </p>
+
+  <pre class="language-java"><code>
+    int[] ps = new int[C + 1][R + 1];
+
+    for(int r = 1; r &lt;= R; r++) {
+        for(int c = 0; c &lt;= C; c++) {
+            ps[c][r] = ps[c - 1][r] + ps[c][r - 1] + a[c - 1][r - 1];
+        }
+    }
+  </code></pre>
+
+  <p>Query sum of rectangular region with left-top corner at \((c_1, r_1)\) and bottom-right corner at \((c_2, r_2)\). </p>
+
+  <pre class="language-java"><code>
+    public static int sum(int c1, int r1, int c2, int r2) {
+        return ps[c2 + 1][r2 + 1] - ps[c1][r2 + 1] - ps[c2 + 1][r1] + ps[c1][r1];
+    }
+  </code></pre>
+
+  <p>Alternatively, if the rectangular region is represented by \([(c, r), (c + w + 1, r + h + 1)]\). \((c, r)\) is the starting square, and the rectangle is \(w\) square wide and \(h\) squares high. </p>
+
+  <pre class="language-java"><code>
+    public static int sum(int c, int r, int w, int h) {
+        return ps[c + w + 1][r + h + 1] - ps[c][r + h + 1] - ps[c + h + 1][r] + ps[c][r];
+    }
+  </code></pre>
+
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <p><strong>Construction:</strong> \(\mathcal{O}(CR)\)</p>
+  <p><strong>Sum Query:</strong> \(\mathcal{O}(1)\)</p>
+
+
+  <h3 class="h3-responsive">Space Complexity</h3>
+  <p>\(\mathcal{O}(CR)\)</p>
+
+  <hr>
+
+  <p>The 2D prefix sum array is slightly more complicated than the 1D version, but still very fast. How about 3D prefix sum arrays?</p>
+</div>
+
+<div class="row">
+  <h1 class="h1-responsive">Practice</h1>
+  <hr>
+
+  <ul class="large-list">
+    <li><a href="https://dmoj.ca/problem/dmopc15c1p5">DMOPC '15 Contest 1 P5 - Lelei and Dragon Scales</a></li>
+    <li><a href="https://dmoj.ca/problem/mec16p6">MEC '16 P6 - Instruments of the Ghostwriters</a></li>
+  </ul>
+</div>

@@ -1,0 +1,28 @@
++++
+title = "Test Candy (jdcc15octc) Editorial"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/editorials">Editorials</a></li>
+    <li><a href="/editorials/jdcc">JDCC</a></li>
+    <li class="active">Test Candy</li>
+  </ol>
+</div>
+
+<div class="row editorial-title">
+  <h1>Test Candy Editorial <a href="LINK"><small class="text-muted">jdcc15octc</small></a></h1>
+  <i class="fa fa-pencil"></i><user>aurpine</user>
+  <hr>
+</div>
+
+<div class="row">
+  <p>We'll use the assumption that we can minimize the number of candy given by making the class average exactly 50%. First, we find the average of all the scores. Then we subtract 50% from the marks to find how much we have to adjust all the marks by. </p>
+
+  <p>After finding our adjustment value, we go through all the marks to figure out who passes. If the mark + adjustment is at least a 50%, then we add one more to our candy counter. Output the final value of the counter. </p>
+
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <p>\(\mathcal{O}(N)\), where \(N\) is the number of students. </p>
+</div>

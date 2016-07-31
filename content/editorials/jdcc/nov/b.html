@@ -1,0 +1,40 @@
++++
+title = "Icy Spiral (jdcc15novb) Editorial"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/editorials">Editorials</a></li>
+    <li><a href="/editorials/jdcc">JDCC</a></li>
+    <li><a href="/editorials/jdcc/15">2015</a></li>
+    <li><a href="/editorials/jdcc/15/nov">November</a></li>
+    <li class="active">Icy Spiral</li>
+  </ol>
+</div>
+
+<div class="row editorial-title">
+  <h1>Icy Spiral Editorial <a href="LINK"><small class="text-muted">jdcc15novb</small></a></h1>
+  <i class="fa fa-pencil"></i><user>aurpine</user>
+  <hr>
+</div>
+
+<div class="row">
+  <p>Let's look at an example. </p>
+
+  <img src="/pics/jdcc15novb1.png" class="img-fluid" width="500px">
+
+  <p>The two rinks require the same number of turns. What they have in common is the same number of rows, and the fact that the number of columns exceeds the number of rows. The number of turns is dependent on the magnitude of the greater dimension. </p>
+
+  <img src="/pics/jdcc15novb2.png" class="img-fluid" width="500px">
+
+  <p>The second rink has one more row, and as a result, it has 2 more turns. Now, some edge cases. </p>
+
+  <img src="/pics/jdcc15novb3.png" class="img-fluid" width="300px">
+
+  <p>Let \(X\) be the magnitude of the smallest row or column. We can formulate \(2 \times (X - 1)\) as the number of turns. This expression also passes the two edge cases. Sub the actual value of \(X\) to get the final formula \(2 \times (\min (H, W) - 1)\). </p>
+
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <p>\(\mathcal{O}(1)\)</p>
+</div>
