@@ -1,0 +1,51 @@
++++
+title = "Scan Macro"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/resources">Resources</a></li>
+    <li class="active">Scan Macro</li>
+  </ol>
+</div>
+
+<div class="row">
+  <h1>Scan Macro</h1>
+
+  <p>This is a super fast input method for <strong>positive integral data types for C/C++</strong> using standard io (via <code>getchar()</code>). </p>
+</div>
+
+<div class="row">
+  <h2 class="h2-responsive">Code</h2>
+  <pre class="language-c"><code>
+    #define scan(x) do{while((x=getchar())&lt;'0');for(x-='0';'0'&lt;=(_=getchar());x=(x&lt;&lt;3)+(x&lt;&lt;1)+_-'0');}while(0)
+    char _;
+  </code></pre>
+
+  <p>Copy this code into the top of your program. </p>
+</div>
+
+<div class="row">
+  <h2 class="h2-responsive">Usage</h2>
+  <p>The following is a sample use of the macro. It only reads one number at a time and works for all integral types: <code>int</code> and <code>long long</code>, etc. It takes care of whitespace. However, this only works on positive numbers.</p>
+
+  <pre class="language-c"><code>
+    int num1;
+    scan(num1);
+    long long num2;
+    scan(num2);
+  </code></pre>
+</div>
+
+<div class="row">
+  <h1 class="h1-responsive">Improved Version</h1>
+
+  <p>Here is a version that supports negative numbers. It is negligibly slower and requires an additional variable. The first version is recommended if you know that you aren't dealing with negative numbers. Usage remains the same. </p>
+
+  <pre class="language-c"><code>
+    #define scan(x) do{while((_n=getchar())&lt;45);if(_n-45)x=_n;else x=getchar();for(x-=48;47&lt;(_=getchar());x=(x&lt;&lt;3)+(x&lt;&lt;1)+_-48);if(_n&lt;46)x=-x;}while(0)
+    char _, _n;
+  </code></pre>
+</div>

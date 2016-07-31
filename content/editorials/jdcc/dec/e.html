@@ -1,0 +1,43 @@
++++
+title = "Fireworks (jdcc15dece) Editorial"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/editorials">Editorials</a></li>
+    <li><a href="/editorials/jdcc">JDCC</a></li>
+    <li><a href="/editorials/jdcc/15">2015</a></li>
+    <li><a href="/editorials/jdcc/15/dec">December</a></li>
+    <li class="active">Fireworks</li>
+  </ol>
+</div>
+
+<div class="row editorial-title">
+  <h1>Fireworks Editorial <a href="LINK"><small class="text-muted">jdcc15dece</small></a></h1>
+  <i class="fa fa-pencil"></i><user>aurpine</user>
+  <hr>
+</div>
+
+<div class="row">
+  <p>This is a classic <a href="/learn/ds/difference_array">difference array</a> problem. Increase the total brightness by \(B\) at \(A\) and decrease it by \(B\) at \(A + L\). </p>
+
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <p>\(\mathcal{O}(N)\)</p>
+
+  <h3 class="h3-responsive">Space Complexity</h3>
+  <p>\(\mathcal{O}(N)\)</p>
+</div>
+
+<div class="row">
+  <h1 class="h1-responsive">Optimization</h1>
+
+  <p>Since there are a maximum of \(10^7\) seconds in a show but \(10^4\) fireworks, we don't need such a big array that will mainly be empty. We can use <a href="/learn/al/coordinate_compression">coordinate compression</a> to speed up the program and to reduce memory usage. However, both methods pass. Use a map as the difference array. </p>
+
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <p>\(\mathcal{O}(M log M)\)</p>
+
+  <h3 class="h3-responsive">Space Complexity</h3>
+  <p>\(\mathcal{O}(M)\)</p>
+</div>

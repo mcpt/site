@@ -1,0 +1,67 @@
+<!--MCPT-->
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>{{ .Title }} - {{ .Site.Title }}</title>
+  
+  <!--Icon-->
+  <link rel="icon" type="image/png" href="{{ .Site.BaseURL }}img/icon.png">
+  <!--Theme Colour-->
+  <meta name="theme-color" content="#f48fb1">
+  <!--Bootstrap-->
+  <link href="{{ .Site.BaseURL }}css/bootstrap.css" rel="stylesheet">
+  <!--MDB-->
+  <link href="{{ .Site.BaseURL }}css/mdb.css" rel="stylesheet">
+  <!--Fontawesome-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+  <!--Prism-->
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/prism.css">
+  <!--Custom Styles-->
+  <link href="{{ .Site.BaseURL }}css/style.css" rel="stylesheet">
+  
+  <!--JQuery-->
+  <script src="{{ .Site.BaseURL }}js/jquery.js"></script>
+</head>
+
+<body>
+  <div class="page">
+  <!--Navbar-->
+  <header>
+  <nav class="navbar navbar-dark primary-color">
+    <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#navcollapse">
+      <i class="fa fa-bars"></i>
+    </button>
+
+    <div class="container">
+      <div class=" collapse navbar-toggleable-xs" id="navcollapse">
+        <a class="navbar-brand waves-effect" href="/"><img src="{{ .Site.BaseURL }}img/silhouette.png" class="noseldrag" height="26px" width="26px" style="float:left;"><strong>CPT</strong></a>
+
+        <ul class="nav navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="{{ .Site.BaseURL }}learn">Learn</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="{{ .Site.BaseURL }}editorials">Editorials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="{{ .Site.BaseURL }}ranks">Ranks</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="{{ .Site.BaseURL }}oj">Online Judge</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle waves-effect" type="button" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Misc</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown1">
+              <a class="dropdown-item" href="{{ .Site.BaseURL }}calendar">Calendar</a>
+              <a class="dropdown-item" href="{{ .Site.BaseURL }}resources">Resources</a>
+              <a class="dropdown-item" href="{{ .Site.BaseURL }}about">About</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  </header>

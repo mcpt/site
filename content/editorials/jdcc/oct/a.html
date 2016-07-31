@@ -1,0 +1,36 @@
++++
+title = "Guessing Game (jdcc15octa) Editorial"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/editorials">Editorials</a></li>
+    <li><a href="/editorials/jdcc">JDCC</a></li>
+    <li><a href="/editorials/jdcc/15">2015</a></li>
+    <li><a href="/editorials/jdcc/15/oct">October</a></li>
+    <li class="active">Guessing Game</li>
+  </ol>
+</div>
+
+<div class="row editorial-title">
+  <h1>Guessing Game Editorial <a href="LINK"><small class="text-muted">jdcc15octa</small></a></h1>
+  <i class="fa fa-pencil"></i><user>aurpine</user>
+  <hr>
+</div>
+
+<div class="row">
+  <p>Mathematically find the last number. Since you are given the absolute distance from your guess to the answer, it is either above or below (positive or negative) the answer. </p>
+
+  <p>Let's imagine the numbers on a number line. \(A\) is the answer, \(N_1\) and \(N_2\) are the guesses and \(M_1\) and \(M_2\) are the respective distances from the answer. </p>
+
+  <img src="/pics/jdcc15octa1.png" class="img-fluid">
+
+  <p>We can derive the equation \(M = A - N\). For which in the example above, \(M_1\) is positive and \(M_2\) is negative. There are four cases of combinations of positive and negative differences (\(M\)), but we don't need to check them all. We just need to know if \(N_1 + M_1 = A\). </p>
+
+  <p>Let us use some equations. If \(M_1\) is positive, then \(N_1 + M_1 = A\), otherwise, it wouldn't. We can use a system of equations to check if M_1 is positive. \(| M_2 | = A - N_2\). We are given the differences as absolute values, so the equation is equivalent to \(M_2 = A - N_2\). Then we plug in \(A\): \(M_2 = | N_1 + M_1 - N_2 |\). If the equation holds true, then \(M_1\) is positive (output \(N_1 + M_1\)), otherwise, \(M_1\) is negative (output \(N_1 - M_1\)). </p>
+
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <p>\(\mathcal{O}(1)\)</p>
+</div>
