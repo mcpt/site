@@ -1,0 +1,48 @@
++++
+title = "CCC (jdcc15decc) – Problems"
+row = true
++++
+
+<span class="editorial-title">
+  <h1>CCC <small class="text-muted">jdcc15decc</small></h1>
+  <i class="fa fa-pencil"></i><user>rtilikay</user>
+  <hr>
+</span>
+
+<p>You have been tasked with hosting the annual Christmas Carol Competition at your school. This year, you've received hundreds of submissions and being too lazy to read through all of them, you decide to write a program that will judge the submitted songs for you. </p>
+
+<p>Your program will give each song a score based on how well it rhymes. For any pair of two lines, that pair's rhyme score is equal to the longest common suffix the last words of each line share. For example, the rhyme score for the two lines <code>That light</code> and <code>Shines bright</code> would be 4, as the longest suffix that <code>light</code> and <code>bright</code> share is <code>ight</code>, which is four letters long. </p>
+
+<p>Both Matthew and Emily don't care about any of the small presents—they only want the big present. If they split the presents optimally, which child is guaranteed to receive the big present?</p>
+
+<hr>
+
+<h2 class="h2-responsive">Input</h2>
+
+<p>The first line of the input provides the number of test cases, \(T\) \((1 \le T \le 100)\). \(T\) test cases follow. Each test case begins with an integer \(N\) \((1 \le N \le 100)\), the number of lines in the song. \(N\) lines follow, each containing a line of the song. Each line will contain only lowercase or uppercase letters and your program should NOT be case-sensitive. </p>
+
+<h2 class="h2-responsive">Output</h2>
+
+<p>For each test case, output one integer, the song's score.</p>
+<hr>
+
+<h2 class="h2-responsive">Sample Input</h2>
+
+<pre class="language-none"><code>2
+4
+Is this the real life
+Is this just fantasy
+Caught in a landslide
+No escape from reality
+4
+Yo yo it's Kayne West
+I'm the Kanye best
+If you put me to the Kayne test
+I'll show you I'm no Kanye jest
+</code></pre>
+
+<h2 class="h2-responsive">Sample Output</h2>
+
+<pre class="language-none"><code>2
+18
+</code></pre>

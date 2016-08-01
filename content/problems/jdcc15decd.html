@@ -1,0 +1,52 @@
++++
+title = "Skiing (jdcc15decd) – Problems"
+row = true
++++
+
+<span class="editorial-title">
+  <h1>Skiing <small class="text-muted">jdcc15decd</small></h1>
+  <i class="fa fa-pencil"></i><user>rtilikay</user>
+  <hr>
+</span>
+
+<p>At the Yellow Mountain ski resort, one can find one of the best ski hills in the province. Not only is it the tallest, but one can take tons of unique routes down the hill! </p>
+
+<p>A map of the hill is given as a square grid of N rows and columns. Places where one can ski are marked with <code>O</code>'s, while trees and other impassible terrain are marked with <code>X</code>'s. </p>
+
+<p>Skiers can start at any of the open spaces at the top of the hill and can ski to one of the three squares directly or diagonally below them. They can end their descent at any of the open places at the bottom of the hill. Given a map of the hill, figure out in how many unique ways one can descend down the hill. </p>
+
+<hr>
+
+<h2 class="h2-responsive">Input</h2>
+
+<p>The first line of the input provides the number of test cases, \(T\) \((1 \le T \le 100)\). \(T\) test cases follow. Each test case begins with an integer \(N\) \((1 \le N \le 100)\). \(N\) lines follow, each containing \(N\) characters, either an <code>X</code> or <code>O</code>. </p>
+
+<h2 class="h2-responsive">Output</h2>
+
+<p>For each test case, your program should output one integer: the number of unique routes one can take down the hill, modulo \(1,000,000,007\). </p>
+<hr>
+
+<h2 class="h2-responsive">Sample Input</h2>
+
+<pre class="language-none"><code>2
+3
+OXO
+XOX
+OXO
+3
+OOO
+XXO
+XOX
+</code></pre>
+
+<h2 class="h2-responsive">Sample Output</h2>
+
+<pre class="language-none"><code>4
+2
+</code></pre>
+
+<h2 class="h2-responsive">Explanation for Sample Output</h2>
+
+<p>In the first case, these are the four routes a skier can take: </p>
+
+<img class="img-fluid" src="../img/jdcc15decd1.png"><br>

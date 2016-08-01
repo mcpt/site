@@ -1,0 +1,46 @@
++++
+title = "Splitting Presents (jdcc15decb) – Problems"
+row = true
++++
+
+<span class="editorial-title">
+  <h1>Splitting Presents <small class="text-muted">jdcc15decb</small></h1>
+  <i class="fa fa-pencil"></i><user>rtilikay</user>
+  <hr>
+</span>
+
+<p>On Christmas morning, Matthew and Emily rush down the stairs excited to open their presents. They find \(N\) presents, one of which is the biggest present they've ever seen! After examining the presents, they find that the presents don't specify their recipients, which causes them to start fighting over who gets the big present. In order to stop the kids' fighting, their parents devise a way for the kids to split the presents.</p>
+
+<p>They split the presents as follows: Emily goes first and takes up to \(M\) presents for herself. Then Matthew takes up to \(M\) presents for himself. The two kids alternate taking up to \(M\) presents, however they aren't allowed to take the big present until all the other presents have been distributed. Furthermore, during each child's turn, they must take at least one present.</p>
+
+<p>Both Matthew and Emily don't care about any of the small presents—they only want the big present. If they split the presents optimally, which child is guaranteed to receive the big present?</p>
+
+<hr>
+
+<h2 class="h2-responsive">Input</h2>
+
+<p>The first line of input provides the number of test cases, \(T\) \((1 \le T \le 100)\). \(T\) test cases follow. Each test case consists of one integer \(N\) \((1 \le N \le 100)\). </p>
+
+<h2 class="h2-responsive">Output</h2>
+
+<p>For each test case, your program should output either <code>Emily</code> or <code>Matthew</code>, the name of the child who will get the big present. </p>
+<hr>
+
+<h2 class="h2-responsive">Sample Input</h2>
+
+<pre class="language-none"><code>3
+5 3
+12 3
+14 5
+</code></pre>
+
+<h2 class="h2-responsive">Sample Output</h2>
+
+<pre class="language-none"><code>Emily
+Matthew
+Emily
+</code></pre>
+
+<h2 class="h2-responsive">Explanation for Sample Output</h2>
+
+<p>In the first test case, Emily can take one present on her turn, leaving 4 presents in total. Then, whether Matthew takes 1, 2, or 3 presents, Emily can take 3, 2, or 1 presents respectively on the turn after, guaranteeing her the big present. </p>
