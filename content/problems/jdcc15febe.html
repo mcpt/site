@@ -1,0 +1,61 @@
++++
+title = "Pocket Change (jdcc15febe) – Problems"
+row = true
++++
+
+<span class="editorial-title">
+  <h1>Pocket Change <small class="text-muted">jdcc15febe</small></h1>
+  <i class="fa fa-pencil"></i><user>rtilikay</user>
+  <hr>
+</span>
+
+<p>Rosie hates nothing more than carrying change. As a result, whenever she goes shopping she uses the opportunity to get rid of as much change as she can. She does this as follows: </p>
+
+<ol>
+  <li>Her total comes out to \(K\) cents</li>
+  <li>She gives the grocer \(K + L\) cents</li>
+  <li>The grocer gives back L cents in the most efficient manner possible</li>
+</ol>
+
+<p>For example, if Rosie is in Canada, her total is \(K = 60\), and Rosie has \(4\) nickels and \(3\) quarters, she can give the grocer \(4\) nickels and two quarters (\(K+L = 70\)). The grocer would then give her a dime (\(L = 10\) in change.  This way, Rosie is able to get rid of \(5\) coins, leaving her with \(2\) in total. </p>
+
+<p>Rosie has perfected this technique for Canada, however she loves to travel and wants to maximize her coin lossage everywhere. Given the \(N\) types of coins the grocer has (assume the grocer has more than enough of every coin), the \(M\) coins that Rosie has, and her total \(K\), find the minimum number of coins she can have after the transaction. </p>
+
+<hr>
+
+<h2 class="h2-responsive">Input</h2>
+
+<p>The first line of the input provides the number of test cases, \(T\) \((1 \le T \le 100)\). \(T\) test cases follow. Each test case begins with three integers \(N\), \(M\), \(K\) \((1 \le N, M \le 100, 1 \le K \le 1,000)\). </p>
+
+<p>The next line contains \(N\) integers, the types of coins that the grocer has. Each of the grocer's coins will have a value that is less than \(10,000\) and the grocer is able to give out any amount of change. </p>
+
+<p>The line after that contains \(M\) integers, the coins that Rosie has (she has one of each). The total value of all her coins will be between \(K\) and \(10,000\).</p>
+
+<p><strong>Note:</strong> For the first \(50\%\) of cases, \(M = 1\). </p>
+
+<h2 class="h2-responsive">Output</h2>
+
+<p>For each test case, your program should output one integer: the minimum number of coins that Rosie can have after the transaction. </p>
+
+<hr>
+
+<h2 class="h2-responsive">Sample Input</h2>
+
+<pre class="language-none"><code>2
+5 7 60
+5 10 25 100 200
+5 5 5 5 25 25 25
+5 1 100
+1 9 12 19 24
+200
+</code></pre>
+
+<h2 class="h2-responsive">Sample Output</h2>
+
+<pre class="language-none"><code>2
+5
+</code></pre>
+
+<h2 class="h2-responsive">Explanation for Sample Output</h2>
+
+<p>The first case is described in the problem statement. In the second case, Rosie has no choice except to give grocer her \(200\) coin. Then, the grocer optimally gives her \(100\) cents in change using three \(24\) coins, one \(19\) coin and one \(9\) coin. Hence, Rosie is left with \(5\) coins. </p>

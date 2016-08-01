@@ -1,0 +1,60 @@
++++
+title = "Ants on a Log (jdcc15febb) – Problems"
+row = true
++++
+
+<span class="editorial-title">
+  <h1>Ants on a Log <small class="text-muted">jdcc15febb</small></h1>
+  <i class="fa fa-pencil"></i><user>rtilikay</user>
+  <hr>
+</span>
+
+<p>Ibrahim loves to spend time enjoying nature. One day, he was looking at a log and  discovered a colony of ants walking along it. All the ants were walking along the log at the same speed of 1 unit per second, however some ants were walking left while others were walking right. When two ants would collide, they both turned around and walked in the direction they came from. Once an ant reached either end of the log, it jumped off the log. </p>
+
+<p>Ibrahim enjoyed watching the ants scurry around, however he wondered how long it would take for all of the ants to jump off the log. Being his only programmer friend, he has asked you to help him solve this problem.</p>
+
+<hr>
+
+<h2 class="h2-responsive">Input</h2>
+
+<p>The first line of input provides the number of test cases, \(T\) \((1 \le T \le 100)\). \(T\) test cases follow. Each test case begins with one line containing integers \(N\), \(L\) \((1 \le N, L \le 100)\). The next \(N\) lines each contain an integer \(P\) \((0 \le P \le L)\), the position of the ant, and <code>left</code>code> or <code>right</code>, the direction the ant is travelling. </p>
+
+<p>Each ant travels at 1 unit per second and jumps off if they are travelling left and reach \(P = 0\) or if they are travelling right and reach \(P = L\). </p>
+
+<p><strong>Note:</strong> No two ants will start at the same position.</p>
+
+<h2 class="h2-responsive">Output</h2>
+
+<p>For each test case, your program should output an integer: the time it takes for all the ants to jump off the log. </p>
+
+<hr>
+
+<h2 class="h2-responsive">Sample Input</h2>
+
+<pre class="language-none"><code>2
+3 3
+0 right
+3 left
+2 right
+2 5
+2 right
+4 left
+</code></pre>
+
+<h2 class="h2-responsive">Sample Output</h2>
+
+<pre class="language-none"><code>3
+4
+</code></pre>
+
+<h2 class="h2-responsive">Explanation for Sample Output</h2>
+
+<p>In the second test case, the ants walk for one second before colliding at \(P = 3\). </p>
+
+<p>Then, the ant going right turns around and goes left, taking 3 seconds to reach \(P = 0\) (travelling for \(1+3=4\) seconds in total).</p>
+
+<p>Meanwhile, the ant that was going left turns around and goes right, taking \(2\) seconds to reach \(P = 5\) (travelling \(1+2=3\) seconds in total). </p>
+
+<p>This means that it takes \(4\) seconds for both ants to jump off the log.</p>
+
+<p><strong>Note:</strong> This is a difficult problem to approach, but it's easier than it looks. I recommend drawing out a few test cases by hand to get an idea of how to solve this problem.</p>

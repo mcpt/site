@@ -1,0 +1,49 @@
++++
+title = "Roadwork (jdcc15febd) – Problems"
+row = true
++++
+
+<span class="editorial-title">
+  <h1>Roadwork <small class="text-muted">jdcc15febd</small></h1>
+  <i class="fa fa-pencil"></i><user>rtilikay</user>
+  <hr>
+</span>
+
+<p>Andy's dream has always been to be the mayor of a city. To realize his dream, he has decided to build his own city: Andyville. He builds \(N\) buildings in Andyville and since he is a programmer, he connects them with a super efficient road system. In fact, each of the buildings in his town is connected to every other building through exactly one unique route (which means that there are no circular routes). </p>
+
+<p>After building his city, Andy realizes that as a result of his efficient system, driving around his city is incredibly arduous: routes are often incredibly long and involve lots of U-turns. Giving into the complaints of his citizens, Andy decides to build another road so that a circular route is formed. Find the length of the longest circular route that he can make. </p>
+
+<hr>
+
+<h2 class="h2-responsive">Input</h2>
+
+<p>The first line of the input provides the number of test cases, \(T\) \((1 \le T \le 100)\). \(T\) test cases follow. Each test case begins with an integer \(N\) \((2 \le N \le 200,000)\). \(N-1\) lines follow, each containing two integers \(A\), \(B\) \((1 \le A, B \le N)\) signifying that a road exists between buildings \(A\) and \(B\). </p>
+
+<h2 class="h2-responsive">Output</h2>
+
+<p>For each test case, your program should output one integer: the length of the longest circular route he can make by creating a new road between two buildings. </p>
+
+<hr>
+
+<h2 class="h2-responsive">Sample Input</h2>
+
+<pre class="language-none"><code>2
+3
+1 2
+1 3
+5
+1 2
+1 3
+1 4
+4 5
+</code></pre>
+
+<h2 class="h2-responsive">Sample Output</h2>
+
+<pre class="language-none"><code>3
+4
+</code></pre>
+
+<h2 class="h2-responsive">Explanation for Sample Output</h2>
+
+<p>In the first test case, connecting buildings \(2\) and \(3\) forms a circular route that contains three buildings \((1, 2, 3)\). In the second case, connecting buildings \(2\) and \(5\) would result in a circular route of four buildings \((1, 2, 4, 5)\). Connecting buildings \(3\) and \(5\) would also result in a circular route of length \(4\). </p>
