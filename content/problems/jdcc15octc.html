@@ -1,0 +1,49 @@
++++
+title = "Test Candy (jdcc15octa) – Problems"
+row = true
++++
+
+<span class="editorial-title">
+  <h1>Test Candy <small class="text-muted">jdcc15octc</small></h1>
+  <i class="fa fa-pencil"></i><user>rtilikay</user>
+  <hr>
+</span>
+
+<p>After a slew of poor test results, Ms. Dyke has decided to give the students who pass her tests candy as incentive for everyone to work harder. Unfortunately, candy is apparently really expensive and the department has little money. To work around this, she has decided to adjust her student's marks (by adding or subtracting some constant value from each mark) in order to minimize the amount of candy she needs to give out. However, she can't have the class average be less than \(50\%\) or she'll get in trouble! </p>
+
+<p>Ms. Dyke has picked you to figure out what is the minimum number of candy she can give out, don't let her down! </p>
+
+<hr>
+
+<h2 class="h2-responsive">Input</h2>
+
+<p>The first line of the input provides the number of test cases, \(T\) \((1 \le T \le 100)\). \(T\) test cases follow. The first line of each test case provides the number of students in her class, \(N\) \((2 \le N \le 1000)\). The next \(N\) lines each contain a real number \(M\) \((0 \le M \le 100)\), the mark of one of her students. Marks are given in increasing order and no two marks are the same. </p>
+
+<h2 class="h2-responsive">Output</h2>
+
+<p>A single integer denoting the minimum amount of candy she needs to give out. </p>
+
+<hr>
+
+<h2 class="h2-responsive">Sample Input</h2>
+
+<pre class="language-none"><code>2
+3
+60.0
+70.0
+80.0
+3
+0.0
+0.15
+0.3
+</code></pre>
+
+<h2 class="h2-responsive">Sample Output</h2>
+
+<pre class="language-none"><code>1
+2
+</code></pre>
+
+<h2 class="h2-responsive">Explanation for Sample Output</h2>
+
+<p>In the first case, the average is \(71.6667\%\) so she can lower everyone's mark by \(21\%\), meaning only the \(80\%\) person passed the test. In the second case, she has to raise the mark by at least \(49.85\%\), so the two highest marks must be above average. </p>
