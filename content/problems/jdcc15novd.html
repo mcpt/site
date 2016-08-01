@@ -1,0 +1,43 @@
++++
+title = "eLettery (jdcc15novd) – Problems"
+row = true
++++
+
+<span class="editorial-title">
+  <h1>eLettery <small class="text-muted">jdcc15novd</small></h1>
+  <i class="fa fa-pencil"></i><user>rtilikay</user>
+  <hr>
+</span>
+
+<p>Reyno's family has an unusual tradition: upon buying your bus ticket, you check if it's lucky (and if it is, you eat it, but that's beside the point). Each ticket has a serial number containing an even number of digits, and a ticket is considered lucky if the sum of the digits in the first half of the number equals the sum of digits of the second half. </p>
+
+<p>For example, <code>113311</code> and <code>113005</code> are both lucky, but <code>113331</code> is not; the next ticket after <code>113331</code> that is lucky is <code>113401</code>. </p>
+
+<p>Given the serial number of a ticket, find the serial number of the next lucky ticket. </p>
+
+<hr>
+
+<h2 class="h2-responsive">Input</h2>
+
+<p>The first line on input contains \(T\) \((1 \le T \le 100)\), the number of test cases. \(T\) test cases follow. Each test case contains an integer \(N\), \((1 \le N \le 10^{100})\), the serial number of a ticket. N will have an even number of digits and may be given with leading zeroes, however \(N\) will never have every single digit be nine. </p>
+
+<h2 class="h2-responsive">Output</h2>
+
+<p>For each test case, your program should output one integer, the next lucky ticket. </p>
+
+<hr>
+
+<h2 class="h2-responsive">Sample Input</h2>
+
+<pre class="language-none"><code>3
+113005
+113331
+123456789123455789
+</code></pre>
+
+<h2 class="h2-responsive">Sample Output</h2>
+
+<pre class="language-none"><code>113014
+113401
+123456789123455799
+</code></pre>

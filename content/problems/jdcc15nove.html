@@ -1,0 +1,61 @@
++++
+title = "Randomize (jdcc15nove) – Problems"
+row = true
++++
+
+<span class="editorial-title">
+  <h1>Randomize <small class="text-muted">jdcc15nove</small></h1>
+  <i class="fa fa-pencil"></i><user>rtilikay</user>
+  <hr>
+</span>
+
+<p>For her new ICS assignment, Caroline needs to design a program that uses random numbers. However, she discovers that Ms. Dyke has forbidden using any built-in functions! Now, she needs to create a random number generator to make her assignment work. After checking online, she finds that random numbers can be generated using the following function: </p>
+
+$$F(0) = SEED$$
+
+$$F(N) = (A \times F(N - 1) + B) \bmod P$$
+
+<p>Given the serial number of a ticket, find the serial number of the next lucky ticket. </p>
+
+<p>Where \(SEED\) is some initial value between \(0\) and \(P-1\) inclusive. After some tinkering she finds that for most values of \(A\), \(B\), and \(P\), the generated numbers quickly fall into a repeating cycle. She'd like to figure out which values of \(A\), \(B\), and \(P\) produce the best results and has enlisted your help to find the average length of a cycle for one set of values. </p>
+
+<p><strong>Note:</strong> The cycle length for some value of \(SEED\) is defined as smallest value \(N\) for which \(F(N)\) produces a number already in the sequence. For example, if \(SEED=1\), \(F(1)=2\), \(F(2)=3\), and \(F(3)=3\), then the cycle length is \(3\), as \(3\) was already in the sequence. </p>
+
+<p>The average length of a cycle is defined as the average of the cycle lengths for every possible value of \(SEED\). </p>
+
+<hr>
+
+<h2 class="h2-responsive">Input</h2>
+
+<p>The first line of the input provides the number of test cases, \(T\) \((1 \le T \le 100)\). \(T\) test cases follow. Each test case contains 3 integers, \(A\), \(B\), and \(P\) \((1 \le A, B, P \le 10^6)\). </p>
+
+<p>For the first \(20\%\) of cases, \(A, B, P \le 10^3\). </p>
+
+<h2 class="h2-responsive">Output</h2>
+
+<p>For each test case, your program should output one real number, rounded to 6 decimal places, the average length of a cycle.  </p>
+
+<hr>
+
+<h2 class="h2-responsive">Sample Input</h2>
+
+<pre class="language-none"><code>2
+3 2 5
+4 5 3
+</code></pre>
+
+<h2 class="h2-responsive">Sample Output</h2>
+
+<pre class="language-none"><code>3.400000
+3.000000
+</code></pre>
+
+<h2 class="h2-responsive">Explanation for Sample Output</h2>
+
+<p>In the second test case, if you start with a SEED of 0, then </p>
+
+$$F(1) = 4(0) + 5 \bmod 3 = 2$$
+$$F(2) = 4(2) + 5 \bmod 3 = 1$$
+$$F(3) = 4(1) + 5 \bmod 3 = 0$$
+
+<p>Since \(0\) is already in the sequence, the cycle length is \(3\). Starting with \(1\) or \(2\) will also result in a cycle length of \(3\), so the average cycle length is \(3\). </p>
