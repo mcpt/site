@@ -1,0 +1,54 @@
++++
+title = "Domino Tilings (jdcc15mare) – Problems"
+row = true
++++
+
+<span class="editorial-title">
+  <h1>Domino Tilings <small class="text-muted">jdcc15mare</small></h1>
+  <i class="fa fa-pencil"></i><user>rtilikay</user>
+  <hr>
+</span>
+
+<p>David's favourite activity in the world is playing with dominoes. David especially loves to arrange the dominoes into neat rectangles. Luckily for him, he has found that there are many different ways to tile a rectangle. He wonders in how many different ways can he tile a rectangle with \(N\) rows and \(M\) columns.</p>
+
+<p>Remember that dominoes are \(1 \times 2\) blocks that can be arranged horizontally or vertically. To make his life easier, he won't be counting any tilings that contain a complete column of horizontal tiles. For example, if \(N = 3\) then the following pattern is forbidden:</p>
+
+<hr>
+
+<h2 class="h2-responsive">Input</h2>
+
+<p>The first line of input provides the number of test cases, \(T\) \((1 \le T \le 100)\). \(T\) test cases follow. Each test case contains two integers \(N\), \(M\) \((1 \le N \le 6, 1 \le M \le 10^{15})\).</p>
+
+<p>For the first \(30 \%\) of cases, \(N \times M \le 40\).</p>
+<p>For the first \(70\%\) of cases, \(M \le 50\).</p>
+
+<h2 class="h2-responsive">Output</h2>
+
+<p>For each test case, your program should output the number of ways to tile the rectangle with dominoes, modulo \(1000000007\).</p>
+
+<hr>
+
+<h2 class="h2-responsive">Sample Input</h2>
+
+<pre class="language-none"><code>1
+1 10
+2 10
+3 4
+3 10
+6 20
+</code></pre>
+
+<h2 class="h2-responsive">Sample Output</h2>
+
+<pre class="language-none"><code>0
+1
+6
+162
+461383751
+</code></pre>
+
+<h2 class="h2-responsive">Explanation for Sample Output</h2>
+
+<p>In the first test case, placing a horizontal block would count as a complete column of horizontal tiles, which means that there are no valid tilings.</p>
+<p>In the second test case, the only valid tiling is one of vertical blocks, since placing a horizontal block would force you to place another one in the same column.</p>
+<p>In the third test case, here is an example tiling:</p>

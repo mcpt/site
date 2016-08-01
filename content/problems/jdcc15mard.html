@@ -1,0 +1,110 @@
++++
+title = "RSA (jdcc15mard) – Problems"
+row = true
++++
+
+<span class="editorial-title">
+  <h1>RSA <small class="text-muted">jdcc15mard</small></h1>
+  <i class="fa fa-pencil"></i><user>rtilikay</user>
+  <hr>
+</span>
+
+<p>Reyno has invented his own encryption algorithm (called Reyno's Super Algorithm), which he uses to encrypt messages he sends to his friends. His algorithm works as follows:</p>
+
+<ol>
+  <li>He writes down his message. If it has an odd length, he adds a space to the end.</li>
+  <li>He breaks his message into pairs of characters, forming \(N\) pairs in total.</li>
+  <li>He converts each pair into a number by multiplying the ASCII value of the first character by \(128\) and adding the value of the second character.</li>
+  <li>He generates \(N\) pseudo-random numbers \(a_{1}, a_{2}, a_{3}, ..., a_{N}\).</li>
+  <li>He multiplies the value of the first pair by \(a_{1}\) and outputs the result modulo \(40009\) (which is prime).</li>
+  <li>He repeats step 5 for the second, third, fourth, etc. pair until he encrypts the entire message.</li>
+</ol>
+
+<p>To generate the random numbers, he uses a linear congruential generator (which you have seen before). His generator uses the function:</p>
+<p>\(a_{K} = 1997 \times a_{K}-1 \bmod 40009\)</p>
+
+<p>Which means that to generate the \(K^{th}\) random number \(a_{K}\), he multiplies the \(K-1^{th}\) number \(a_{K}-1\) by \(1997\) modulo \(40009\). For the first number \(a_{1}\), also known as the seed value, he picks a random number that he really likes.</p>
+
+<p>Reyno thinks his algorithm is unbreakable. Can you prove him wrong?</p>
+
+<hr>
+
+<h2 class="h2-responsive">Input</h2>
+
+<p>The first line of the input provides the number of test cases, \(T\) \((1 \le T \le 100)\). \(T\) test cases follow. Each test case begins with the integer \(N\) \((1 \le N \le 1000)\). The next line contains \(N\) integers, the encrypted values of the message.</p>
+
+<p>For \(50 \% \) of the cases, Reyno picks a seed value less than or equal to \(1000\) and only uses uppercase letters and spaces</p>
+
+<h2 class="h2-responsive">Output</h2>
+
+<p>For each test case, output the original message. If there are multiple solutions, output the one with the smallest seed value.</p>
+
+<hr>
+
+<h2 class="h2-responsive">Sample Input</h2>
+
+<pre class="language-none"><code>3
+6
+9285 14187 23117 13153 39535 12859
+19
+11055 2553 29781 23952 11741 3298 15519 1333 12875 23540 747 19405 34018 37512 25977 36696 20201 2481 20533
+9
+35534 39644 22348 34428 2726 25535 33105 3555 6320
+</code></pre>
+
+<h2 class="h2-responsive">Sample Output</h2>
+
+<pre class="language-none"><code>HELLO WORLD
+THIS IS REYNO'S UNBREAKABLE ALGORITHM
+FOUR MILK NO SUGAR
+</code></pre>
+
+<h2 class="h2-responsive">Explanation for Sample Output</h2>
+
+<p>In the first test case, Reyno uses a seed value of \(1\), which means the encryption works as follows:</p>
+
+<div class="table-responsive">
+  <table class="table table-hover">
+    <tr>
+      <th>Value</th>
+      <th>Original Pair (Value)</th>
+      <th>Encrypted Value</th>
+    </tr>
+
+    <tr>
+      <td>1</td>
+      <td><code>HE</code> (9285)</td>
+      <td>9285</td>
+    </tr>
+
+    <tr>
+      <td>1997</td>
+      <td><code>LL</code> (9804)</td>
+      <td>14187</td>
+    </tr>
+
+    <tr>
+      <td>27118</td>
+      <td><code>O </code> (10144)</td>
+      <td>23117</td>
+    </tr>
+
+    <tr>
+      <td>22469</td>
+      <td><code>WO</code> (11215)</td>
+      <td>13153</td>
+    </tr>
+
+    <tr>
+      <td>20504</td>
+      <td><code>RL</code> (10572)</td>
+      <td>39535</td>
+    </tr>
+
+    <tr>
+      <td>17281</td>
+      <td><code>D </code> (8736)</td>
+      <td>12859</td>
+    </tr>
+  </table>
+</div>

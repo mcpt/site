@@ -1,0 +1,76 @@
++++
+title = "Mazecrawler (jdcc15marc) – Problems"
+row = true
++++
+
+<span class="editorial-title">
+  <h1>Mazecrawler <small class="text-muted">jdcc15marc</small></h1>
+  <i class="fa fa-pencil"></i><user>rtilikay</user>
+  <hr>
+</span>
+
+<p>For Mactoberfest, Mackenzie has decided to set up a maize maze for everyone to try and solve. Alex's teacher has just taken the class to try it out and the students quickly raced to solve the maze. However, Alex has realized that the longer he spends in the maze, the more class time he gets to skip!</p>
+
+<p>The maze is set up as an \(N \times N\) grid of either walls (marked with <code>#</code>) or places he can walk (marked with <code>.</code>). Alex wants to take as long as he can to find his way out, however he needs to be careful. If his teacher catches him walking in circles, then she will suspend him! Obviously, Alex would hate being forced to skip school, so he won't visit any location more than once. Help Alex figure out the length of the longest path that he can take to exit the maze.</p>
+
+<hr>
+
+<h2 class="h2-responsive">Input</h2>
+
+<p>The first line of input provides the number of test cases, \(T\) \((1 \le T \le 100)\). \(T\) test cases follow. Each test case starts with an integer \(N\) \((1 \le N \le 10)\). \(N\) lines follow, each containing \(N\) characters, which describe the maze. A character is either <code>.</code> (place Alex can walk), <code>#</code> (wall), <code>A</code> (Alex's starting location), or <code>E</code> (the exit).</p>
+
+<h2 class="h2-responsive">Output</h2>
+
+<p>For each test case, your program should output the length of the longest path that Alex can take to the exit.</p>
+<hr>
+
+<h2 class="h2-responsive">Sample Input</h2>
+
+<pre class="language-none"><code>3
+4
+A...
+.##.
+....
+...E
+5
+A....
+.....
+###..
+E##..
+.....
+5
+E...#
+##..#
+###.#
+##A.#
+.....
+</code></pre>
+
+<h2 class="h2-responsive">Sample Output</h2>
+
+<pre class="language-none"><code>12
+19
+9
+</code></pre>
+
+<h2 class="h2-responsive">Explanation for Sample Output</h2>
+
+<p>The paths are outlined with numbers modulo \(10\) below:</p>
+
+<pre class="language-none"><code>A123
+.##4
+8765
+901E
+
+A3478
+12569
+###10
+E##23
+87654
+
+E87.#
+##65#
+###4#
+##A3#
+..12.
+</code></pre>
