@@ -1,0 +1,340 @@
++++
+title = "Big O Notation – Learn Algorithms"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/learn">Learn</a></li>
+    <li><a href="/learn/al">Algorithms</a></li>
+    <li class="active">Big O Notation</li>
+  </ol>
+</div>
+
+<div class="row">
+  <h1>Big O Notation</h1>
+  <hr>
+</div>
+
+<div class="row">
+  <p class="lead">Big O is a mathematical notation used to describe the worst-case performance of an algorithm or data structure. More specifically, it represents the number of operations an algorithm executes or the amount of memory a data structure takes. These two, are respectively called <mark>time complexity</mark> and <mark>space complexity</mark>. </p>
+  
+  <p>Big O notation looks like a math function: \(\mathcal{O}(1)\)</p>
+  
+  <p>The contents of the brackets represents the performace. Variables may be used. Generally, the variables \(N\) is used, however, more variables may be needed and some may be defined in a problem given. It is convention to use a single letter as a variable. We prefer uppercase ones. </p>
+  
+  <p>Big O describes the worst case scenario or at least a plausible worst case. This makes it easier to quantify the complexity. </p>
+  
+  <p>Another rule is that only the dominating factors are used. This means that coefficients and lower order terms are discarded. </p>
+  
+  $$ \mathcal{O}(2N^2 + 6N) = \mathcal{O}(N^2) $$
+  
+  <hr>
+</div>
+  
+<div class="row">
+  <h1 class="h1-responsive">Determining Complexity</h1>
+  
+  <p>Complexity is determined by analyzing the number of operations an algorithm performs or the amount of memory allocated by a data structure. For example, if a program looks like the following. Then the complexity is \(\mathcal O (N)\)</p>
+  
+  <pre class="language-java"><code>
+    for(int n = 0; n &lt; N; n++) {
+        // Do something in O(1)
+    }
+  </code></pre>
+  
+  <p>Similarly, the following is \(\mathcal O (NM)\)</p>
+  
+  <pre class="language-java"><code>
+    for(int n = 0; n &lt; N; n++) {
+        for(int m = 0; m &lt; M; m++) {
+            // Do something else in O(1)
+        }
+    }
+  </code></pre>
+  
+  <p>\(\mathcal O (1)\) is considered something like doing an addition operation, accessing a variable, etc. </p>
+  
+  <p>Logarithmic complexity (\(\mathcal O (\log N)\)) typicals comes from some kind of <a href="/learn/al/binary_search">binary search</a>. </p>
+  
+  <hr>
+</div>
+
+<div class="row">
+  <h1 class="h1-responsive">Common Complexities</h1>
+  
+  <p>We will now compare many common complexities. The upperbound on both axes is 100. </p>
+  
+  <img class="img-fluid" src="../img/big_o_notation1.png" width="400"><br>
+  
+  <p>Now this is the same graph except on a bigger scale. The upperbound on both axes is 10000. </p>
+  
+  <img class="img-fluid" src="../img/big_o_notation2.png" width="400"><br>
+  
+  <p>However, there are a couple of complexities that aren't didn't include here because they grow too quickly to be graphed. We will look at them on a logarithmic scale. The upperbound on both axes is 100. </p>
+  
+  <img class="img-fluid" src="../img/big_o_notation3.png" width="400"><br>
+  
+  <h1 class="h1-responsive">Constraints</h1>
+  
+  <p>Knowing the maximum constraint of an algorithm is a useful in figuring out the time complexity required to solve a given problem. </p>
+  
+  <p>The following is a table of the maximum values of \(N\) that a given complexity can handle with the assumption that the computer can handle \(10,000,000\) operations per second and that you only have a second of run time. However, actual limits may differ depending on the system. The following is an approximation. </p>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <table class="table table-sm table-striped">
+      <thead class="thead-default">
+        <tr>
+          <th>Complexity</th>
+          <th>Maximum Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>\(\mathcal O (1)\)</td>
+          <td>N/A</td>
+        </tr>
+        <tr>
+          <td>\(\mathcal O (\log N)\)</td>
+          <td>\(10^{3,000,000}\)</td>
+        </tr>
+        <tr>
+          <td>\(\mathcal O (\sqrt N)\)</td>
+          <td>\(10^{14}\)</td>
+        </tr>
+        <tr>
+          <td>\(\mathcal O (N)\)</td>
+          <td>\(10^7\)</td>
+        </tr>
+        <tr>
+          <td>\(\mathcal O (N \log N)\)</td>
+          <td>\(1,600,000\)</td>
+        </tr>
+        <tr>
+          <td>\(\mathcal O (N^2)\)</td>
+          <td>\(3,000\)</td>
+        </tr>
+        <tr>
+          <td>\(\mathcal O (N^2 \log N)\)</td>
+          <td>\(1,700\)</td>
+        </tr>
+        <tr>
+          <td>\(\mathcal O (N^3)\)</td>
+          <td>\(200\)</td>
+        </tr>
+        <tr>
+          <td>\(\mathcal O (N^4)\)</td>
+          <td>\(56\)</td>
+        </tr>
+        <tr>
+          <td>\(\mathcal O (2^N)\)</td>
+          <td>\(23\)</td>
+        </tr>
+        <tr>
+          <td>\(\mathcal O (N!)\)</td>
+          <td>\(10\)</td>
+        </tr>
+        <tr>
+          <td>\(\mathcal O (N^N)\)</td>
+          <td>\(8\)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <p>Inversely, here is the same table for complexity given \(N = 100\). </p>
+  
+  <div class="col-sm-6">
+    <table class="table table-sm table-striped">
+      <thead class="thead-default">
+        <tr>
+          <th>Complexity</th>
+          <th>Operations</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>\(\mathcal O (1)\)</td>
+          <td>\(1\)</td>
+        </tr>
+        <tr>
+          <td>\(\mathcal O (\log N)\)</td>
+          <td>\(7\)</td>
+        </tr>
+        <tr>
+          <td>\(\mathcal O (\sqrt N)\)</td>
+          <td>\(10\)</td>
+        </tr>
+        <tr>
+          <td>\(\mathcal O (N)\)</td>
+          <td>\(100\)</td>
+        </tr>
+        <tr>
+          <td>\(\mathcal O (N \log N)\)</td>
+          <td>\(665\)</td>
+        </tr>
+        <tr>
+          <td>\(\mathcal O (N^2)\)</td>
+          <td>\(10,000\)</td>
+        </tr>
+        <tr>
+          <td>\(\mathcal O (N^2 \log N)\)</td>
+          <td>\(66,439\)</td>
+        </tr>
+        <tr>
+          <td>\(\mathcal O (N^3)\)</td>
+          <td>\(1,000,000\)</td>
+        </tr>
+        <tr>
+          <td>\(\mathcal O (N^4)\)</td>
+          <td>\(100,000,000\)</td>
+        </tr>
+        <tr>
+          <td>\(\mathcal O (2^N)\)</td>
+          <td>\(10^{30}\)</td>
+        </tr>
+        <tr>
+          <td>\(\mathcal O (N!)\)</td>
+          <td>\(10^{158}\)</td>
+        </tr>
+        <tr>
+          <td>\(\mathcal O (N^N)\)</td>
+          <td>\(10^{200}\)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <p><a class="btn btn-primary" data-toggle="collapse" href="#combined" aria-expanded="false" aria-controls="combined">Combined Table</a></p>
+  
+  <div class="col-sm-8 collapse" id="combined">
+    <table class="table table-sm table-striped">
+      <thead class="thead-default">
+        <tr>
+          <th>Complexity</th>
+          <th>Maximum Value</th>
+          <th>Operations (\(N = 100\)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>\(\mathcal O (1)\)</td>
+          <td>N/A</td>
+          <td>\(1\)</td>
+        </tr>
+        <tr>
+          <td>\(\mathcal O (\log N)\)</td>
+          <td>\(10^{3,000,000}\)</td>
+          <td>\(7\)</td>
+        </tr>
+        <tr>
+          <td>\(\mathcal O (\sqrt N)\)</td>
+          <td>\(10^{14}\)</td>
+          <td>\(10\)</td>
+        </tr>
+        <tr>
+          <td>\(\mathcal O (N)\)</td>
+          <td>\(10^7\)</td>
+          <td>\(100\)</td>
+        </tr>
+        <tr>
+          <td>\(\mathcal O (N \log N)\)</td>
+          <td>\(1,600,000\)</td>
+          <td>\(665\)</td>
+        </tr>
+        <tr>
+          <td>\(\mathcal O (N^2)\)</td>
+          <td>\(3,000\)</td>
+          <td>\(10,000\)</td>
+        </tr>
+        <tr>
+          <td>\(\mathcal O (N^2 \log N)\)</td>
+          <td>\(1,700\)</td>
+          <td>\(66,439\)</td>
+        </tr>
+        <tr>
+          <td>\(\mathcal O (N^3)\)</td>
+          <td>\(200\)</td>
+          <td>\(1,000,000\)</td>
+        </tr>
+        <tr>
+          <td>\(\mathcal O (N^4)\)</td>
+          <td>\(56\)</td>
+          <td>\(100,000,000\)</td>
+        </tr>
+        <tr>
+          <td>\(\mathcal O (2^N)\)</td>
+          <td>\(23\)</td>
+          <td>\(10^{30}\)</td>
+        </tr>
+        <tr>
+          <td>\(\mathcal O (N!)\)</td>
+          <td>\(10\)</td>
+          <td>\(10^{158}\)</td>
+        </tr>
+        <tr>
+          <td>\(\mathcal O (N^N)\)</td>
+          <td>\(8\)</td>
+          <td>\(10^{200}\)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <hr>
+  <h1 class="h1-responsive">Examples</h1>
+  
+  <h3 class="h3-responsive">\(\mathcal O(1)\)</h3>
+  
+  <p>Accessing memory, doing simple math, etc. </p>
+  
+  <h3 class="h3-responsive">\(\mathcal O(\log N)\)</h3>
+  
+  <p>Performing a binary search, using a <a href="/learn/ds/map">map</a> or <a href="/learn/ds/set">set</a> (both binary search trees). </p>
+  
+  <h3 class="h3-responsive">\(\mathcal O(\sqrt N)\)</h3>
+  
+  <p>Checking a prime number or prime factorization. </p>
+  
+  <h3 class="h3-responsive">\(\mathcal O(N)\)</h3>
+  
+  <p>An iterative search, a for loop, an iteration, etc. </p>
+  
+  <h3 class="h3-responsive">\(\mathcal O(N \log N)\)</h3>
+  
+  <p>Sorting. Using a <a href="/learn/ds/map">map</a> or <a href="/learn/ds/set">set</a> on \(N\) elements. </p>
+  
+  <h3 class="h3-responsive">\(\mathcal O(N^3)\)</h3>
+  
+  <p>Three nested for loops. 3D <a href="/learn/al/dynamic_programming">DP</a>. </p>
+  
+  <h3 class="h3-responsive">\(\mathcal O(N^4)\)</h3>
+  
+  <p>Four nested for loops. 4D <a href="/learn/al/dynamic_programming">DP</a>. </p>
+  
+  <h3 class="h3-responsive">\(\mathcal O(2^N)\)</h3>
+  
+  <p>Finding subsets. Bitmasking. </p>
+  
+  <h3 class="h3-responsive">\(\mathcal O(2^N)\)</h3>
+  
+  <p>Finding subsets. Bitmasking. </p>
+  
+  <h3 class="h3-responsive">\(\mathcal O(N!)\)</h3>
+  
+  <p>Combinatorics. </p>
+  
+  <h3 class="h3-responsive">\(\mathcal O(N^N)\)</h3>
+  
+  <p>Combinatorics. </p>
+  
+</div>
