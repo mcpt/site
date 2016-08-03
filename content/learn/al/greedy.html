@@ -1,0 +1,107 @@
++++
+title = "Greedy Algorithms – Learn Algorithms"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/learn">Learn</a></li>
+    <li><a href="/learn/al">Algorithms</a></li>
+    <li class="active">Greedy Algorithms</li>
+  </ol>
+</div>
+
+<div class="row">
+  <h1>Greedy Algorithms</h1>
+  <hr>
+</div>
+
+<div class="row">
+
+  <p>Greedy algorithms are a certain category of algorithms that are used to find an optimal solution to specific types of problems. Greedy algorithms are often efficient due to the fact that they make decisions based on the information that is known at the time of the decision, without worrying about any potential consequences that the decision might have in the future.</p>
+  
+  <p>In order for a greedy solution to solve a given problem, the problem must have the following characteristics:</p>
+  
+  <p>
+    <div class="list-group">
+      <a href="javascript:;" class="list-group-item">
+        <h6 class="list-group-item-heading">Greedy Choice Property</h6>
+        <p class="list-group-item-text">An optimal solution to the problem can always be found by making a greedy choice (i.e. whatever choice seems best at the moment) and continuing from there without backtracking.</p>
+      </a>
+      <a href="javascript:;" class="list-group-item">
+        <h6 class="list-group-item-heading">Optimal Substructure</h6>
+        <p class="list-group-item-text">An optimal solution to the problem always contains optimal solutions to sub problems (i.e. smaller problems which can be used to solve the problem at hand)</p>
+      </a>
+    </div>
+  </p>
+  
+  <p>To illustrate this, the following problem is given:</p>
+
+  <blockquote class="blockquote">Given an array with \(N\) elements, choose \(K\) elements such that the sum of the chosen elements is maximized.</blockquote>
+
+  <p>One solution would be to generate all combinations of \(K\) elements, and take the one with the largest sum. This method will have a complexity of \(\mathcal{O} \binom {N}{K}\), or \(\mathcal{O} (\frac {N!}{K!(N-K)!})\), which is extremely slow for large arrays.</p>
+
+  <p>It is possible to solve this problem using a greedy solution: sorting the array and choosing the \(K\) largest elements in the array. To show that this always works, we must prove that the problem has the Greedy Choice Property as well as Optimal Substructure.</p>
+  
+  <p>In order to maximize the sum of elements, the largest elements in the array must be chosen. Since only \(K\) elements can be chosen, it is always optimal to greedily take the \(K\) largest elements in order to maximize the sum (not a rigorous mathematical proof, but it works).</p>
+
+  <p>The problem also has optimal substructure. For example, the solution to the problem is equal to the sum of the largest element and the solution to the problem where \(K - 1\) elements must be chosen from the array (excluding the largest element). Like this, we can keep going downwards until \(K = 0\), or no more elements can be chosen.</p>
+
+  <p>Shown below is the implementation of the greedy solution to the problem given:</p>
+</div>
+
+<div class="row">
+  <h1 class="h1-responsive">Implementation</h1>
+  <hr>
+
+  <pre class="language-java"><code>
+    Arrays.sort (arr);//sorts array in ascending order
+    int sum = 0;
+    
+    for (int k = N - 1; k >= N - K; k--) {//iterates through and sums K largest elements
+      sum += arr [k];
+    }
+    
+    return sum;
+  </code></pre>
+
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <p>\(\mathcal{O}(NlogN)\), due to the sorting of the array.</p>
+</div>
+
+<div class="row">
+  <h1 class="h1-responsive">Pitfalls</h1>
+  <hr>
+
+  <p>There are many problems which cannot be solved for all cases with a greedy algorithm. One example is given here:</p>
+  
+  <blockquote class="blockquote">Given a weighted graph \(G(V,E)\), find the length of the shortest path between vertices \(u\) and \(v\).</blockquote>
+  
+  <p>A greedy algorithm would start at \(u\) and always take the path with the shortest length until it reached \(v\). Unfortunately this does not always work, as shown in the below diagram:</p>
+  
+  <img class="img-fluid" src="../img/greedy1.png">
+  
+  <p>When going from vertex <code>1</code> to <code>4</code>, the shortest path is to go through vertex <code>3</code> for a total length of <code>9</code>. However, the greedy algorithm would go through vertex <code>2</code> for a total length of <code>81</code>. This is because when it is at vertex <code>1</code>, the shortest path available is to go to vertex <code>2</code>.</p>
+  
+  <p>The problem with this greedy algorithm is that the decisions it makes at each stage may not always be the 'best' decision which produces the optimal answer. As the algorithm will not always produce the correct answer, a different algorithm is needed.</p>
+</div>
+
+<div class="row">
+  <h1 class="h1-responsive">Conclusion</h1>
+  <hr>
+
+  <p>Greedy algorithms are powerful tools that can be used to solve many problems quickly and efficiently. However, greedy algorithms commit to decisions early (which is often irreversible), and care must be taken to ensure that the greedy algorithm will never overlook the optimal solution in favour of short term gain.</p>
+</div>
+
+<div class="row">
+  <h1 class="h1-responsive">Practice</h1>
+  <hr>
+
+  <ul class="large-list">
+    <li><a href="https://dmoj.ca/problem/mwc15c1p1">MWC '15 Contest 1: Playlist Panic</a></li>
+    <li><a href="https://dmoj.ca/problem/ccc16s2">CCC '16 S2: Tandem Bicycle</a></li>
+    <li><a href="https://dmoj.ca/problem/dmopc14c2p3">DMOPC '14 Contest 2 P3: Sawmill</a></li>
+    <li><a href="https://dmoj.ca/problem/cco15p1">CCO '15 Day 1, Problem 1: Hungry Fox</a></li>
+  </ul>
+</div>
