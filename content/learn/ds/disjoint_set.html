@@ -24,20 +24,20 @@ title = "Disjoint Set – Learn Data Structures"
   <p>There are three sets in total, with each one containing various elements. Note that no element is present in more than one set, making the collection of sets &#39;disjoint&#39; from one another.</p>
 
   <p>A disjoint set supports the following operations:</p>
-  
-  <p>
-    <div class="list-group">
-      <a href="javascript:;" class="list-group-item">
-        <h6 class="list-group-item-heading"><code>find(elem)</code></h6>
-        <p class="list-group-item-text">Determine which set the given element <code>elem</code> is in.</p>
-      </a>
-      <a href="javascript:;" class="list-group-item">
-        <h6 class="list-group-item-heading"><code>union(elem1, elem2)</code></h6>
-        <p class="list-group-item-text">Merge the sets containing the elements <code>elem</code> and <code>elem2</code> into one set.</p>
-      </a>
-    </div>
-  </p>
+</div>
 
+<dl class="dl-horizontal">
+  <dt class="col-sm-3">Operations</dt>
+  <dd class="col-sm-9"><strong>Description</strong></dd>
+
+  <dt class="col-sm-3"><code>find(e)</code></dt>
+  <dd class="col-sm-9">Determine which set the given element <code>e</code> is in</dd>
+
+  <dt class="col-sm-3"><code>union(e1, e2)</code></dt>
+  <dd class="col-sm-9">Merge the sets containing the elements <code>e1</code> and <code>e2</code> into one set</dd>
+</dl>
+
+<div class="row">
   <p>Disjoint sets can be used to solve various problems quickly, an example given below:</p>
 
   <blockquote class="blockquote"><p>Given an undirected graph \(G\), perform \(Q\) operations, either of Type A or B.</p>
@@ -51,7 +51,7 @@ title = "Disjoint Set – Learn Data Structures"
   <hr>
 
   <p>To keep track of the various elements in each set, a disjoint set appoints an arbitrary element from each set to act as the &#39;representative&#39; of the entire set. Each set can now be represented as a rooted tree, with the representative of the set acting as the root.</p>
-  <p>In the tree, each element is connected to another element, with the exception of the root, which is connected to itself. Only elements belonging to the same set will be connected to each other. To keep track of the various connections, a <code>parent</code> array is used, where <code>parent[elem]</code> represents the parent element of <code>elem</code>.</p>
+  <p>In the tree, each element is connected to another element, with the exception of the root, which is connected to itself. Only elements belonging to the same set will be connected to each other. To keep track of the various connections, a <code>parent</code> array is used, where <code>parent[e]</code> represents the parent element of <code>e</code>.</p>
   <p>An example is shown below, representing the collection of sets <code>{1, 2, 4}, {5}, {7, 8}</code>:</p>
 
   <img class="img-fluid" src="../img/disjoint_set1.png"><br>
@@ -66,7 +66,7 @@ title = "Disjoint Set – Learn Data Structures"
   <pre class="language-java"><code>
   // there are N elements in the disjoint set, numbered 0 to N - 1
   int[] parent = new int [N];
-  int[] rank = new int [N];// root[elem] stores the relative depth/number of elements in the tree rooted at elem. this is used to implement the union() operation, and will be explained later
+  int[] rank = new int [N];// root[e] stores the relative depth/number of elements in the tree rooted at e. this is used to implement the union() operation, and will be explained later
 
   // each element is the root of its own tree and they all have the same rank at first (as each set contains one element)
   for(int n = 0; n &lt; N; n++) {
@@ -79,17 +79,17 @@ title = "Disjoint Set – Learn Data Structures"
   <p>Using this &#39;rooted tree&#39; structure, it is simple to find which set a given element belongs to, i.e. the <code>find()</code> operation. Using DFS, we can traverse up the tree of the given element until the root is found, and returned.</p>
 
   <pre class="language-java"><code>
-  // returns the root element of the set containing elem
-  public static int find(int elem) {
+  // returns the root element of the set containing e
+  public static int find(int e) {
 
       // if root has not been found, keep recursing
-      if(parent[elem] != elem) {
+      if(parent[e] != e) {
 
-          // parent[elem] links directly to root now, saving time for later operations
-          parent[elem] = find(parent[elem]);
+          // parent[e] links directly to root now, saving time for later operations
+          parent[e] = find(parent[e]);
       }
 
-      return parent [elem];
+      return parent[e];
   }
   </code></pre>
 
@@ -97,11 +97,11 @@ title = "Disjoint Set – Learn Data Structures"
 
   <img class="img-fluid" src="../img/disjoint_set2.png"><br>
 
-  <p>Implementing the <code>union()</code> operation is also relatively easy. To merge the sets containing <code>elem1</code> and <code>elem2</code>, the roots of the trees containing <code>elem1</code> and <code>elem2</code> must be found. If the roots are identical, <code>elem1</code> and <code>elem2</code> are already in the same set and no work needs to be done.</p>
+  <p>Implementing the <code>union()</code> operation is also relatively easy. To merge the sets containing <code>e1</code> and <code>e2</code>, the roots of the trees containing <code>e1</code> and <code>e2</code> must be found. If the roots are identical, <code>e1</code> and <code>e2</code> are already in the same set and no work needs to be done.</p>
   <p>Otherwise, the root of the larger tree will become the root of the smaller tree. This is done to improve the performance of the <code>find()</code> operation on elements of the smaller tree (as less <code>parent</code> values will have to be updated to account for the new root of the tree).</p>
 
-  <p>But how do we know which tree has more elements? In order to always assign the smaller tree to the root of the larger tree, a second array, <code>rank</code> will be used, where <code>rank[elem]</code> represents the &#39;depth&#39; of the tree rooted at <code>elem</code> (relative to the other trees).</p>
-  <p>If <code>rank[elem1] &gt; rank[elem2]</code>, this means that <code>elem1</code> is part of a larger tree than <code>elem2</code>, and that <code>parent[find(elem2)]</code> should be assigned to <code>find(elem1)</code>.</p>
+  <p>But how do we know which tree has more elements? In order to always assign the smaller tree to the root of the larger tree, a second array, <code>rank</code> will be used, where <code>rank[e]</code> represents the &#39;depth&#39; of the tree rooted at <code>e</code> (relative to the other trees).</p>
+  <p>If <code>rank[e1] &gt; rank[e2]</code>, this means that <code>e1</code> is part of a larger tree than <code>e2</code>, and that <code>parent[find(e2)]</code> should be assigned to <code>find(e1)</code>.</p>
 
   <p>The result of the operation <code>union(4, 7)</code> on the original example is shown below:</p>
 
@@ -111,11 +111,11 @@ title = "Disjoint Set – Learn Data Structures"
 
 
   <pre class="language-java"><code>
-  // merges the sets that contain elem1 and elem2
-  public static void union(int elem1, int elem2) {
-    int root1 = find(elem1), root2 = find(elem2);
+  // merges the sets that contain e1 and e2
+  public static void union(int e1, int e2) {
+    int root1 = find(e1), root2 = find(e2);
 
-    // elem1 and elem2 are already part of the same set, nothing should be done
+    // e1 and e2 are already part of the same set, nothing should be done
     if(root1 == root2) {
       return;
     }
