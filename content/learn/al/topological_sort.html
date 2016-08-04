@@ -1,0 +1,205 @@
++++
+title = "Topological Sort – Learn Algorithms"
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/learn">Learn</a></li>
+    <li><a href="/learn/al">Algorithms</a></li>
+    <li class="active">Topological Sort</li>
+  </ol>
+</div>
+
+<div class="row">
+  <h1>Topological Sort</h1>
+  <hr>
+</div>
+
+<div class="row">
+
+  <p>Topological sorting is an algorithm used to order a graph's vertices such that for each edge \((u,v)\) in the graph, \(u\) will always come before \(v\). Topological sort can <strong>only</strong> be performed on <mark>directed acyclic graphs (DAGs)</mark>. Shown below is an example of topological sort:</p>
+  
+  <img class="img-fluid" src="../img/topological_sort1.png"><br>
+  
+  <p>Note that it is possible for a graph to have multiple topological sorts. Listed below are the various topological sorts possible for the above graph:</p>
+  
+  <ul>
+    <li>\({1, 2, 3, 4, 5, 6}\)</li>
+    <li>\({1, 3, 2, 4, 5, 6}\)</li>
+    <li>\({1, 3, 4, 2, 5, 6}\)</li>
+  </ul>
+  
+  <p>Topological sort can be used to model various types of graph theory problems effectively. Below is a sample problem that can be solved with topological sorting:</p>
+  
+  <blockquote class="blockquote">\(N\) courses are being offered by a school. Some of those courses have pre-requisite courses (meaning other courses must be taken before taking the course). Find an order in which all of the courses can be taken.</blockquote>
+
+  <p>To solve this problem, we can model the situation as a graph, where the vertexes are the courses offered, and the edges represent which courses must be taken before others (a directed edge going from vertex \(u\) to \(v\) means that course \(u\) must be taken before course \(v\)).</p>
+  
+  <p>For example, consider we have this list of courses:</p>
+  
+  <ul>
+    <li><strong>Grade 9 Math</strong> (No pre-requisites)</li>
+    <li><strong>Grade 10 Math</strong> (Pre-requisites: Grade 9 Math)</li>
+    <li><strong>Grade 11 Math</strong> (Pre-requisites: Grade 10 Math)</li>
+    <li><strong>Grade 9 Science</strong> (No pre-requisites)</li>
+    <li><strong>Grade 10 Science</strong> (Pre-requisites: Grade 9 Science)</li>
+    <li><strong>Grade 11 Physics</strong> (Pre-requisites: Grade 10 Math, Grade 10 Science)</li>
+  </ul>
+  
+  <p>The above courses can be represented by a graph like below:</p>
+  <img class="img-fluid" src="../img/topological_sort2.png"><br>
+  
+  <p>Topologically sorting the above graph will yield one of the possible orders to take the courses. There are two algorithms which can be used to topologically sort a graph - one based on DFS and the other based on BFS. The code below represents the vertices as numbers between \(0\) and \(N - 1\) (inclusive).</p>
+</div>
+
+<div class="row">
+  <h1 class="h1-responsive">DFS</h1>
+  <hr>
+  
+  <p>The depth first algorithm finds the topological sort by visiting all vertices. Once all the neighbours of a vertex \(u\) are visited and added to a list keeping track of the topological sort, \(u\) is appended to the list. This algorithm is implemented as shown below:</p>
+  
+  <pre class="language-java"><code>
+    boolean[] visited = new boolean [N];// a boolean array keeping track of visited nodes
+    boolean[][] adj = new boolean [N][N];// an adjacency matrix representing the graph
+    Queue &ltInteger&gt order = new ArrayDeque &ltInteger&gt ();// a queue holding the topological sort order of the vertices
+    
+    public static void dfs(int u) {
+      visited[u] = true;// mark the vertex as visited (will not visit here again)
+      
+      for(int v = 0; v < N; v++) {// iterate through the neighbours of the vertex
+        if(adj[u][v] && !visited[v]) {// if there is a directed edge from u to v and v has not been visited yet
+          dfs(v);
+        }
+      }
+      
+      order.offerFirst(u);// add the current vertex to the front of the topological sorting order
+    }
+  </code></pre>
+  
+  <p>Since it is possible that it isn't possible to reach all the graph's vertices from a single vertex, it is neccessary to call this method for each vertex of the graph as shown below:</p>
+  
+  <pre class="language-java"><code>
+    for(int u = 0; u < N; u++) {
+      if(!visited[u]) {
+        dfs(u);
+      }
+    }
+  </code></pre>
+  
+  <p>To print the topological order, keep removing and printing the top element from the queue until it is empty. Code for this is given below:</p>
+  
+  <pre class="language-java"><code>
+    while(!order.isEmpty()) {
+      System.out.println(order.remove());
+    }
+  </code></pre>
+</div>
+
+<div class="row">
+  <h1 class="h1-responsive">BFS (Kahn's Algorithm)</h1>
+  <hr>
+
+  <p>An intuitive explanation of the BFS algorithm is as follows: in order to find a correct ordering (one of many), we must take courses which do not have any pre-requisites first. Then, after taking the courses, new courses are unlocked and available to take. This continues on until all courses are taken and a valid ordering is found.</p>
+  
+  <p>In computer science terms, we must add all vertices with an <mark>indegree</mark> (number of edges going into the node) of \(0\) to the ordering. Then, remove each edge \((u,v)\), where \(u\) is a vertex with an indegree of \(0\), effectively reducing the indegree of vertex \(v\). This goes on until all vertices have an indegree of \(0\).</p>
+  
+  <p>First, we must determine the indegree of each node. This is done as shown below:</p>
+  
+  <pre class="language-java"><code>
+      boolean[][] adj = new boolean [N][N];// adjacency matrix representing the graph
+      int[] indegree = new int [N];// holds indegree of each vertex
+      
+      for(int u = 0; u < N; u++) {
+        for(int v = 0; v < N; v++) {
+          if(matrix[u][v]) {// if a directed edge exists between vertices u and v, increase the indegree of v
+            indegree[v]++;
+          }
+        }
+      }
+  </code></pre>
+  
+  <p>Next, we have to find all the vertices with an indegree of \(0\) (i.e. no pre-requisites) and add them to a queue to process.</p>
+  
+  <pre class="language-java"><code>
+      Queue &ltInteger&gt queue = new ArrayDeque &ltInteger&gt();// stores nodes with an indegree of 0
+      
+      for(int n = 0; n < N; n++) {
+        if(indegree[n] == 0) {
+          queue.offer(n);
+        }
+      }
+  </code></pre>
+  
+  <p>Finally, we visit each node with no pre-requisite and remove the edges going out from it to other vertices (effectively removing the vertex from the graph). This continues until the graph is empty (all nodes have an indegree of \(0\)).</p>
+    
+  <pre class="language-java"><code>
+      while(!queue.isEmpty()) {// while there are still nodes to process
+        // remove a vertex with indegree of 0 from the queue, and add it to the end of the order
+        int u = queue.poll();
+        order.add(u);
+        
+        for(int v = 0; v < N; v++) {// iterate through the neighbours of the node (v), and remove the edges connecting them
+          if(matrix[u][v]) {
+            indegree[v]--;// the indegree of the neighbour decreases since the edge is being removed
+            
+            if(indegree[v] == 0) {// if the indegree is 0 (no more pre-requisites), add it to the queue to process later
+              queue.offer(v);
+            }
+          }
+        }
+      }
+  </code></pre>
+  
+  <p>To print out the topological sort order, we simply iterate through the <code>order</code> ArrayList.</p>
+  
+  <pre class="language-java"><code>
+      for(int u = 0; u < N; u++) {
+        System.out.println(order.get(u));
+      }
+  </code></pre>
+</div>
+
+<div class="row">
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <p>\(\mathcal{O}(N + M)\), is the complexity of both algorithms, where \(N\) is the number of vertices and \(M\) is the number of edges in the graph. This is because in both algorithms, each vertex is visited once, and all edges are traversed once (in order to visit the vertex's neighbours).</p>
+</div>
+
+<div class="row">
+  <h1 class="h1-responsive">Pitfalls</h1>
+  <hr>
+  
+  <p>It is possible for a graph to not have any topological sort, as there is no vertex that comes "before" the other. An example is shown below:</p>
+  <img class="img-fluid" src="../img/topological_sort3.png"><br>
+  
+  <p>In the above graph which is not a DAG, it is not clear which vertex comes first in the order as all of them have an incoming edge (meaning there is a cycle in the graph). Because of the fact that cyclic graphs do not have a topological sort, this makes the algorithms shown above a useful tool when trying to detect cycles in a graph.</p>
+  
+  <p>To check if the graph has a valid topological sort, simply perform the topological sort and check if the <code>order</code> list has all the vertices of the graph.</p>
+  
+  <pre class="language-java"><code>
+    if(order.size() == N) {// all vertices are in list, graph has valid topological sort
+      return true;
+    }
+    else {
+      return false;
+    }
+  </code></pre>
+</div>
+
+<div class="row">
+  <h1 class="h1-responsive">Conclusion</h1>
+  <hr>
+
+  <p>Topological sorting is an algorithm which can be used to solve many graph theory problems and has tremendous practical use.</p>
+</div>
+
+<div class="row">
+  <h1 class="h1-responsive">Practice</h1>
+  <hr>
+
+  <ul class="large-list">
+    <li><a href="https://dmoj.ca/problem/ccc06j4">CCC '06 J4: It's tough being a teen!</a></li>
+    <li><a href="https://dmoj.ca/problem/anoisyclass">DMOJ: A Noisy Class</a></li>
+    <li><a href="https://dmoj.ca/problem/dmpg16s4">DMPG '16 S4: MMORPG II</a></li>
+  </ul>
+</div>
