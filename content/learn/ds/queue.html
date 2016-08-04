@@ -1,0 +1,85 @@
++++
+title = "Queue – Learn Data Structures"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/learn">Learn</a></li>
+    <li><a href="/learn/ds">Data Structures</a></li>
+    <li class="active">Queue</li>
+  </ol>
+</div>
+
+<div class="row">
+  <h1>Queue</h1>
+  <hr>
+</div>
+
+<div class="row">
+  <p class="lead">The Queue is a FIFO (first in first out) data structure. It allows you to insert and remove elements in the order in which they were inserted. If an element was inserted before another element, then the first element would be removed before the second. </p>
+  
+  <p>The following is a diagram of a queue. It is depicted as a linear structure. The <em>first</em> element is called the front. It is the next element to be removed. Conversely, the <em>last</em> element is called the back. It is the most recently inserted element. </p>
+  
+  <img class="img-fluid" src="../img/queue1.png"><br>
+  
+  <p>Elements may only be inserted to the back and removed from the front. </p>
+  
+  <hr>
+</div>
+
+<div class="row">
+  <h1 class="h1-responsive">Features</h1>
+  
+  <p>Some of the following features have two methods that support it. It is recommended to use the one that prevents thrown exceptions, however, this scenario rarely occurs, so either method may be used. The <em>unsafe</em> may be preferable due to their easy-to-remember names. <code>E</code> is the element template class. </p>
+  
+  <h3 class="h3-responsive">Size</h3>
+  
+  <p><code>int size()</code> – returns the number of elements in the queue. </p>
+  
+  <p>Alternatively, <code>boolean isEmpty()</code> can be used if the number of elements isn't relevant and only if it's empty or not. </p>
+  
+  <h3 class="h3-responsive">Insert Back</h3>
+  
+  <p><code>boolean add(E e)</code> – the element in parameters is added to the queue. </p>
+  
+  <h3 class="h3-responsive">Access Front</h3>
+  
+  <p><code>E peek()</code> – returns the front element</p>
+  
+  <h3 class="h3-responsive">Remove Front</h3>
+  
+  <p><code>E remove()</code> – returns and removes the front element</p>
+  
+  <hr>
+</div>
+
+<div class="row">
+  <h1 class="h1-responsive">Usage</h1>
+  
+  <p>Notice in the code below that the <code>Queue</code> is an interface and that the class is <code>ArrayDeque</code>. <code>ArrayDeque</code> is a class that supports the queue operations. Alternatively, a <code>LinkedList</code> could be used. A linked list is a common implementation of a queue. However, <code>ArrayDeque</code> outperforms <code>LinkedList</code>. </p>
+  
+  <pre class="language-java"><code>
+    Queue&lt;Integer&gt; q = new ArrayDeque&lt;Integer&gt;();
+    
+    for(int n = 1; n &lt;= 5; n++) q.add(n);
+    // q now contains 1 2 3 4 5
+    
+    if(q.peek() == 1 && q.size() == 5) {
+        while(!q.isEmpty()) System.out.print(q.remove() + " ");
+    }
+  </code></pre>
+  
+  <p>Output:</p>
+  
+  <pre class="language-none"><code>1 2 3 4 5 </code></pre>
+  
+  <hr>
+</div>
+
+<div class="row">
+  <h1 class="h1-responsive">Applications</h1>
+  
+  <p>Queues aren't data structures that you may find applicable for most problems. However, they are fundamental in some other algorithms, especially in the field of graph theory. </p>
+</div>
