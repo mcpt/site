@@ -19,36 +19,21 @@ title = "Greedy Algorithms – Learn Algorithms"
 
 <div class="row">
 
-  <p>Greedy algorithms are a certain category of algorithms that are used to find an optimal solution to specific types of problems. Greedy algorithms are often efficient due to the fact that they make decisions based on the information that is known at the time of the decision, without worrying about any potential consequences that the decision might have in the future.</p>
+  <p>Greedy algorithms are a certain category of algorithms that are used to find an optimal solution to specific types of problems. Greedy algorithms make decisions based on the information that is known at the time of the decision, without worrying about any potential consequences that the decision might have in the future.</p>
   
-  <p>In order for a greedy solution to solve a given problem, the problem must have the following characteristics:</p>
-  
-  <p>
-    <div class="list-group">
-      <a href="javascript:;" class="list-group-item">
-        <h6 class="list-group-item-heading">Greedy Choice Property</h6>
-        <p class="list-group-item-text">An optimal solution to the problem can always be found by making a greedy choice (i.e. whatever choice seems best at the moment) and continuing from there without backtracking.</p>
-      </a>
-      <a href="javascript:;" class="list-group-item">
-        <h6 class="list-group-item-heading">Optimal Substructure</h6>
-        <p class="list-group-item-text">An optimal solution to the problem always contains optimal solutions to sub problems (i.e. smaller problems which can be used to solve the problem at hand)</p>
-      </a>
-    </div>
-  </p>
-  
-  <p>To illustrate this, the following problem is given:</p>
+  <p>Greedy algorithms only take what they believe is the best path to the optimal solution and do not explore any other options, making them very efficient and usually simple. However, some problems are unsolvable with greedy algorithms because they require all options to be explored in order to find the optimal answer, in which case other techniques (e.g. dynamic programming) may be needed.</p>
+    
+  <p>To illustrate the concept of a greedy algorithm, the following problem is given:</p>
 
   <blockquote class="blockquote">Given an array with \(N\) elements, choose \(K\) elements such that the sum of the chosen elements is maximized.</blockquote>
 
   <p>One solution would be to generate all combinations of \(K\) elements, and take the one with the largest sum. This method will have a complexity of \(\mathcal{O} \binom {N}{K}\), or \(\mathcal{O} (\frac {N!}{K!(N-K)!})\), which is extremely slow for large arrays.</p>
 
-  <p>It is possible to solve this problem using a greedy solution: sorting the array and choosing the \(K\) largest elements in the array. To show that this always works, we must prove that the problem has the Greedy Choice Property as well as Optimal Substructure.</p>
+  <p>However, instead of exploring all the possible combinations of array elements, it is possible to solve this problem using a greedy solution: sorting the array and choosing the \(K\) largest elements in the array.</p>
   
-  <p>In order to maximize the sum of elements, the largest elements in the array must be chosen. Since only \(K\) elements can be chosen, it is always optimal to greedily take the \(K\) largest elements in order to maximize the sum (not a rigorous mathematical proof, but it works).</p>
+  <p>This will always work because in order to maximize the sum of elements, the largest elements in the array must be chosen. Since only \(K\) elements can be chosen, it is always optimal to greedily take the \(K\) largest elements in order to maximize the sum (not a rigorous mathematical proof, but it works).</p>
 
-  <p>The problem also has optimal substructure. For example, the solution to the problem is equal to the sum of the largest element and the solution to the problem where \(K - 1\) elements must be chosen from the array (excluding the largest element). Like this, we can keep going downwards until \(K = 0\), or no more elements can be chosen.</p>
-
-  <p>Shown below is the implementation of the greedy solution to the problem given:</p>
+  <p>Shown below is a code snippet of the greedy solution to the problem given:</p>
 </div>
 
 <div class="row">
@@ -56,10 +41,10 @@ title = "Greedy Algorithms – Learn Algorithms"
   <hr>
 
   <pre class="language-java"><code>
-    Arrays.sort (arr);//sorts array in ascending order
+    Arrays.sort (arr);// sorts array in ascending order
     int sum = 0;
     
-    for (int k = N - 1; k >= N - K; k--) {//iterates through and sums K largest elements
+    for (int k = N - 1; k >= N - K; k--) {// iterates through and sums K largest elements
       sum += arr [k];
     }
     
@@ -76,22 +61,40 @@ title = "Greedy Algorithms – Learn Algorithms"
 
   <p>There are many problems which cannot be solved for all cases with a greedy algorithm. One example is given here:</p>
   
-  <blockquote class="blockquote">Given a weighted graph \(G(V,E)\), find the length of the shortest path between vertices \(u\) and \(v\).</blockquote>
+  <blockquote class="blockquote">Given \(N\) types of coins, each worth a unique amount, find the minimum number of coins needed to make exactly \(S\) dollars?</blockquote>
   
-  <p>A greedy algorithm would start at \(u\) and always take the path with the shortest length until it reached \(v\). Unfortunately this does not always work, as shown in the below diagram:</p>
+  <p>A greedy algorithm for this problem might go like this: Start with the coin that is worth the most, use as many as possible, and move on to the next lowest coin value and do the same. This keeps going until all \(S\) dollars are made.</p>
+  
+  <p>Shown below is the implementation of this greedy algorithm:</p>
+  
+  <pre class="language-java"><code>
+    Arrays.sort(coins);// sorts coin array in ascending order (by value)
+    int used = 0;
+
+    for (int n = N - 1; n >= 0; n--) {// iterates through coins in descending order (by value)
+        while(coins[n] <= S) {// keep using a certain coin to make change as long as it is possible to do so
+          S -= coins[n];
+          used++;
+        }
+    }
+
+    return used;
+  </code></pre>
+  
+  <p>If we are given the coin values of \({$1, $5, $10, $25, $50}\), what is the smallest number of coins that are needed to represent \($41\)?. When using the greedy algorithm, we can start with one \($25\) coin (ignoring \($50\)since it is larger than the amount we are making change for). Now we have to make change for \($16\). We can use a \($10\) coin, a \($5\) coin and finally a \($1\) coin - four coins in total.</p>
   
   <img class="img-fluid" src="../img/greedy1.png">
+    
+  <p>In the above case, the greedy algorithm worked perfectly. However, if we are given the coin values of \($1, $5, $10, $21, $25\) and are asked to make change for \($63\), the greedy algorithm would fail. It would suggest to use two \($25\) coins, one \($10\) coin and three \($1\) coins for a total of six coins. However, the optimal solution would be to use three \($21\) coins.</p>
   
-  <p>When going from vertex <code>1</code> to <code>4</code>, the shortest path is to go through vertex <code>3</code> for a total length of <code>9</code>. However, the greedy algorithm would go through vertex <code>2</code> for a total length of <code>81</code>. This is because when it is at vertex <code>1</code>, the shortest path available is to go to vertex <code>2</code>.</p>
-  
-  <p>The problem with this greedy algorithm is that the decisions it makes at each stage may not always be the 'best' decision which produces the optimal answer. As the algorithm will not always produce the correct answer, a different algorithm is needed.</p>
+  <img class="img-fluid" src="../img/greedy2.png">
 </div>
 
 <div class="row">
   <h1 class="h1-responsive">Conclusion</h1>
   <hr>
 
-  <p>Greedy algorithms are powerful tools that can be used to solve many problems quickly and efficiently. However, greedy algorithms commit to decisions early (which is often irreversible), and care must be taken to ensure that the greedy algorithm will never overlook the optimal solution in favour of short term gain.</p>
+  <p>Greedy algorithms are powerful tools that can be used to solve many problems quickly and efficiently. However, greedy algorithms commit to potentially suboptimal decisions early (which is often irreversible), and not all problems can be solved in a greedy manner as a result. Care must be taken to ensure that the greedy algorithm will never overlook the optimal solution in favour of short term gain.</p>
 </div>
 
 <div class="row">
@@ -99,7 +102,7 @@ title = "Greedy Algorithms – Learn Algorithms"
   <hr>
 
   <ul class="large-list">
-    <li><a href="https://dmoj.ca/problem/mwc15c1p1">MWC '15 Contest 1: Playlist Panic</a></li>
+    <li><a href="https://dmoj.ca/problem/mwc15c1p1">MWC '15 Contest 1 P1: Playlist Panic</a></li>
     <li><a href="https://dmoj.ca/problem/ccc16s2">CCC '16 S2: Tandem Bicycle</a></li>
     <li><a href="https://dmoj.ca/problem/dmopc14c2p3">DMOPC '14 Contest 2 P3: Sawmill</a></li>
     <li><a href="https://dmoj.ca/problem/cco15p1">CCO '15 Day 1, Problem 1: Hungry Fox</a></li>
