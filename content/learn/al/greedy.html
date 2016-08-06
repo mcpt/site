@@ -34,11 +34,6 @@ title = "Greedy Algorithms – Learn Algorithms"
   <p>This will always work because in order to maximize the sum of elements, the largest elements in the array must be chosen. Since only \(K\) elements can be chosen, it is always optimal to greedily take the \(K\) largest elements in order to maximize the sum (not a rigorous mathematical proof, but it works).</p>
 
   <p>Shown below is a code snippet of the greedy solution to the problem given:</p>
-</div>
-
-<div class="row">
-  <h1 class="h1-responsive">Implementation</h1>
-  <hr>
 
   <pre class="language-java"><code>
     Arrays.sort (arr);// sorts array in ascending order
@@ -51,12 +46,12 @@ title = "Greedy Algorithms – Learn Algorithms"
     return sum;
   </code></pre>
 
-  <h3 class="h3-responsive">Time Complexity</h3>
-  <p>\(\mathcal{O}(NlogN)\), due to the sorting of the array.</p>
+  <h4 class="h4-responsive">Time Complexity</h4>
+  <p>\(\mathcal{O}(N \log N)\), due to the sorting of the array.</p>
 </div>
 
 <div class="row">
-  <h1 class="h1-responsive">Pitfalls</h1>
+  <h1 class="h1-responsive">Limitations</h1>
   <hr>
 
   <p>There are many problems which cannot be solved for all cases with a greedy algorithm. One example is given here:</p>
@@ -81,7 +76,7 @@ title = "Greedy Algorithms – Learn Algorithms"
     return used;
   </code></pre>
   
-  <p>If we are given the coin values of \({$1, $5, $10, $25, $50}\), what is the smallest number of coins that are needed to represent \($41\)?. When using the greedy algorithm, we can start with one \($25\) coin (ignoring \($50\)since it is larger than the amount we are making change for). Now we have to make change for \($16\). We can use a \($10\) coin, a \($5\) coin and finally a \($1\) coin - four coins in total.</p>
+  <p>If we are given the coin values of \({$1, $5, $10, $25, $50}\), what is the smallest number of coins that are needed to represent \($41\)?. When using the greedy algorithm, we can start with one \($25\) coin (ignoring \($50\) since it is larger than the amount we are making change for). Now we have to make change for \($16\). We can use a \($10\) coin, a \($5\) coin and finally a \($1\) coin - four coins in total.</p>
   
   <img class="img-fluid" src="../img/greedy1.png">
     
