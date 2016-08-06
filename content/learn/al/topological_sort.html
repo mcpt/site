@@ -102,9 +102,9 @@ title = "Topological Sort – Learn Algorithms"
 
   <p>An intuitive explanation of the BFS algorithm is as follows: in order to find a correct ordering (one of many), we must take courses which do not have any pre-requisites first. Then, after taking the courses, new courses are unlocked and available to take. This continues on until all courses are taken and a valid ordering is found.</p>
   
-  <p>In computer science terms, we must add all vertices with an <mark>indegree</mark> (number of edges going into the node) of \(0\) to the ordering. Then, remove each edge \((u,v)\), where \(u\) is a vertex with an indegree of \(0\), effectively reducing the indegree of vertex \(v\). This goes on until all vertices have an indegree of \(0\).</p>
+  <p>In computer science terms, we must add all vertices with an <mark>indegree</mark> (number of edges going into the node) of \(0\) to the ordering. Then, delete nodes with an indegree of \(0\), along with any edges that go out of them, reducing the indegree of connected vertices. This goes on until all vertices have an indegree of \(0\).</p>
   
-  <p>First, we must determine the indegree of each node. This is done as shown below:</p>
+  <p>First, we must determine the initial indegree of each node. This is done as shown below:</p>
   
   <pre class="language-java"><code>
       boolean[][] adj = new boolean [N][N];// adjacency matrix representing the graph
@@ -131,7 +131,7 @@ title = "Topological Sort – Learn Algorithms"
       }
   </code></pre>
   
-  <p>Finally, we visit each node with no pre-requisite and remove the edges going out from it to other vertices (effectively removing the vertex from the graph). This continues until the graph is empty (all nodes have an indegree of \(0\)).</p>
+  <p>Finally, we visit each node with no pre-requisite and remove the edges going out from it to other vertices (effectively removing the vertex from the graph). If, after removing the edges, we find that another node has an indegree of \(0\) (no more pre-requisites), we can add it to the queue to process. This continues until the graph is empty (all nodes have an indegree of \(0\)).</p>
     
   <pre class="language-java"><code>
       while(!queue.isEmpty()) {// while there are still nodes to process
@@ -151,7 +151,7 @@ title = "Topological Sort – Learn Algorithms"
       }
   </code></pre>
   
-  <p>To print out the topological sort order, we simply iterate through the <code>order</code> ArrayList.</p>
+  <p>To print out the topological sort order, we simply iterate through the elements of <code>order</code>.</p>
   
   <pre class="language-java"><code>
       for(int u = 0; u < N; u++) {
@@ -166,7 +166,7 @@ title = "Topological Sort – Learn Algorithms"
 </div>
 
 <div class="row">
-  <h1 class="h1-responsive">Pitfalls</h1>
+  <h1 class="h1-responsive">Limitations</h1>
   <hr>
   
   <p>It is possible for a graph to not have any topological sort, as there is no vertex that comes "before" the other. An example is shown below:</p>
