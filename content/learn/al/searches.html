@@ -1,0 +1,82 @@
++++
+title = "Searches – Learn Algorithms"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/learn">Learn</a></li>
+    <li><a href="/learn/al">Algorithms</a></li>
+    <li class="active">Searches</li>
+  </ol>
+</div>
+
+<div class="row">
+  <h1>Searches</h1>
+  <hr>
+</div>
+
+<div class="row">
+  <p class="lead">A search is a general type of algorithm that tries many possibilities or states to solve a given problem. Searches range greatly in complexity. A search is similar to a brute-force, except that it often has optimizations. </p>
+  
+  <p>Typically search problems ask for the number of combinations or the maximum or minimum value of a parameter. A search problem is very similar to an implementation problem. </p>
+  
+  <blockquote class="blockquote">Given an array \(a\) of \(N\) integers, find the largest number. </blockquote>
+  
+  <p>This is likely one of the most primitive search problems. It requires you to <em>search</em> the whole array. Use a variable to hold the current maximum element and update as necessary. </p>
+  
+  <pre class="language-java"><code>
+    int max = 0;
+    for(int n = 0; n &lt; N; n++)
+        if(a[n] > max) max = a[n];
+    System.out.println(max);
+  </code></pre>
+  
+  <h4 class="h4-responsive">Time Complexity</h4>
+  
+  <p>\(\mathcal O (N)\)</p>
+  
+  <hr>
+  
+  <blockquote class="blockquote">Given a number \(N\), determine if the number is prime. </blockquote>
+  
+  <p>Another simple search problem. In this problem, you are <em>searching</em> for a prime factor of \(N\). Just one prime factor (other than \(N\)) is enough to disprove the number prime. So you can try all numbers below \(N\) and check divisibility, breaking when one is found. </p>
+  
+  <p>However, we can optimize the search. All prime factors of a number are less than or equal to \(\sqrt N\). This is because a composite number has at least two prime factors. As one factor grows, the other one shrinks. To maximize \(\min {a} {b}\) where \(a\) and \(b\) are factors of \(N\), they have to be closest to \(\sqrt N\) possible. Thus, you only have to check all numbers less than \(\sqrt N\). </p>
+  
+  <pre class="language-java"><code>
+    boolean isPrime(int N) {
+        if(N == 2) return true;
+        if(N &lt; 2 || N % 2 == 0) return false;
+        
+        for(int i = 3; i * i &lt;= N; i += 2)
+            if(N % i == 0) return false;
+        return true;
+    }
+  </code></pre>
+  
+  <h4 class="h4-responsive">Time Complexity</h4>
+  
+  <p>\(\mathcal O (\sqrt N)\)</p>
+  
+  <hr>
+  
+  <p>Most searches problems aren't as simple as the example problems above. Some may require complex handling of states, using techniques such as recursion. The ability to figure out optimizations is important. It helps to eliminate repeated states. With operations such as rotation and switches, it helps to know that rotating it back to the start or switching something twice is the same as doing it zero times. </p>
+  
+  <p>More complex types of searches include binary search, dynamic programming and graph theory. </p>
+</div>
+
+<div class="row">
+  <h1 class="h1-responsive">Practice</h1>
+  <hr>
+
+  <ul class="large-list">
+    <li><a href="https://dmoj.ca/problem/ccc12s3">CCC '12 S3 - Absolutely Acidic</a></li>
+    <li><a href="https://dmoj.ca/problem/ecoo16r1p2">ECOO '16 Board P2 - Spindie</a></li>
+    <li><a href="https://dmoj.ca/problem/ccc08s2">CCC '08 S2 - Pennies in the Ring</a></li>
+    <li><a href="https://dmoj.ca/problem/mwc15c5p2">MWC '15 #5 P2: WildCard</a></li>
+    <li><a href="https://dmoj.ca/problem/ccc09s2">CCC '09 S2 - Lights Going On and Off</a></li>
+    <li><a href="https://dmoj.ca/problem/ccc08s4">CCC '08 S4 - Twenty-four</a></li>
+  </ul>
+</div>
