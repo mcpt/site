@@ -18,17 +18,17 @@ title = "Adjacency Matrix – Learn Data Structures"
 </div>
 
 <div class="row">
-  <p class="lead">An adjacency matrix is used to store edges of a graph. It is often used for <em>dense</em> graphs. </p>
+  <p class="lead">An adjacency matrix is used to store edges of a graph. It is often used for <em>dense</em> graphs and/or graphs with no duplicate edges. </p>
   
-  <h3 class="h3-responsive">Declaration</h3>
+  <h2 class="h2-responsive">Declaration</h2>
   
-  <p>The underlying data structure is simply a 2D array initialized in both dimensions to the number of nodes. Increment the size if 1-indexed (which it usually is). The type of the array depends on the graph. Typically, the type is <code>int></code>, but you may use <code>boolean</code> for an unweighted graph. </p>
+  <p>The underlying data structure is simply a 2D array initialized in both dimensions to the number of nodes. Increment the size if 1-indexed (which it usually is). The type of the array depends on the graph. Typically, the type is <code>int</code>, but you may use <code>boolean</code> for an unweighted graph. </p>
   
   <pre class="language-java"><code>
     int[][] adj = new int[N + 1][N + 1];
   </code></pre>
   
-  <h3 class="h3-responsive">Initialization</h3>
+  <h2 class="h2-responsive">Initialization</h2>
   
   <p><code>adj[a][b]</code> describes the edge between node <code>a</code> and <code>b</code>. For weighted edges, a constant is required to identify that no edge exists directly connecting the two nodes. Depending on the situation, it may be more appropriate to use a very large number (such as <code>0x3f3f3f3f</code> or <code>2147483647</code>) or <code>-1</code> (do not use this if negative edge weights are allowed). Since an edge originally doesn't exist, initialize to this value. </p>
   
@@ -37,7 +37,7 @@ title = "Adjacency Matrix – Learn Data Structures"
         Arrays.fill(a, -1);
   </code></pre>
   
-  <h3 class="h3-responsive">Adding an Edge</h3>
+  <h2 class="h2-responsive">Adding an Edge</h2>
   
   <p>Of course, edges may be added differently depending on the graph. </p>
   
@@ -62,9 +62,9 @@ title = "Adjacency Matrix – Learn Data Structures"
   <p>Given <code>a b w</code>, a two way edge between <code>a</code> and <code>b</code>. </p>
   
   <pre class="language-java"><code>
-    adj[a][b] = true;
+    adj[a][b] = adj[b][a] = true;
     // Or if adj is an int type
-    adj[a][b] = 1; // You might find another number convenient to use
+    adj[a][b] = adj[b][a] = 1; // You might find another number convenient to use
   </code></pre>
   
   <h4 class="h4-responsive">Unweighted Directed</h4>
