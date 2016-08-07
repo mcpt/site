@@ -1,0 +1,101 @@
++++
+title = "Adjacency Matrix – Learn Data Structures"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/learn">Learn</a></li>
+    <li><a href="/learn/ds">Data Structures</a></li>
+    <li class="active">Adjacency Matrix</li>
+  </ol>
+</div>
+
+<div class="row">
+  <h1>Adjacency Matrix</h1>
+  <hr>
+</div>
+
+<div class="row">
+  <p class="lead">An adjacency matrix is used to store edges of a graph. It is often used for <em>dense</em> graphs. </p>
+  
+  <h3 class="h3-responsive">Declaration</h3>
+  
+  <p>The underlying data structure is simply a 2D array initialized in both dimensions to the number of nodes. Increment the size if 1-indexed (which it usually is). The type of the array depends on the graph. Typically, the type is <code>int></code>, but you may use <code>boolean</code> for an unweighted graph. </p>
+  
+  <pre class="language-java"><code>
+    int[][] adj = new int[N + 1][N + 1];
+  </code></pre>
+  
+  <h3 class="h3-responsive">Initialization</h3>
+  
+  <p><code>adj[a][b]</code> describes the edge between node <code>a</code> and <code>b</code>. For weighted edges, a constant is required to identify that no edge exists directly connecting the two nodes. Depending on the situation, it may be more appropriate to use a very large number (such as <code>0x3f3f3f3f</code> or <code>2147483647</code>) or <code>-1</code> (do not use this if negative edge weights are allowed). Since an edge originally doesn't exist, initialize to this value. </p>
+  
+  <pre class="language-java"><code>
+    for(int[] a : adj)
+        Arrays.fill(a, -1);
+  </code></pre>
+  
+  <h3 class="h3-responsive">Adding an Edge</h3>
+  
+  <p>Of course, edges may be added differently depending on the graph. </p>
+  
+  <h4 class="h4-responsive">Weighted Undirected</h4>
+  
+  <p>This is the most common type of graph. Given <code>a b w</code>, where <code>a</code> and <code>b</code> are the two nodes to connect and <code>w</code> is the edge weight. </p>
+  
+  <pre class="language-java"><code>
+    adj[a][b] = adj[b][a] = w;
+  </code></pre>
+  
+  <h4 class="h4-responsive">Weighted Directed</h4>
+  
+  <p>Given <code>a b w</code>, meaning a one way edge from <code>a</code> to <code>b</code> with a weight of <code>w</code>. </p>
+  
+  <pre class="language-java"><code>
+    adj[a][b] = w;
+  </code></pre>
+  
+  <h4 class="h4-responsive">Unweighted Undirected</h4>
+  
+  <p>Given <code>a b w</code>, a two way edge between <code>a</code> and <code>b</code>. </p>
+  
+  <pre class="language-java"><code>
+    adj[a][b] = true;
+    // Or if adj is an int type
+    adj[a][b] = 1; // You might find another number convenient to use
+  </code></pre>
+  
+  <h4 class="h4-responsive">Unweighted Directed</h4>
+  
+  <p>Given <code>a b w</code>, a two way edge between <code>a</code> and <code>b</code>. </p>
+  
+  <pre class="language-java"><code>
+    adj[a][b] = true;
+    // Or if adj is an int type
+    adj[a][b] = 1; // You might find another number convenient to use
+  </code></pre>
+  
+  <h3 class="h3-responsive">Space Complexity</h3>
+  <p>\(\mathcal O (V^2)\)</p>
+  
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <h4 class="h4-responsive">Adding edge</h4>
+  <p>\(\mathcal O (1)\)</p>
+  
+  <h4 class="h4-responsive">Checking If Edge Exists</h4>
+  <p>\(\mathcal O (1)\)</p>
+  
+  <h4 class="h4-responsive">Iterating Adjacent</h4>
+  <p>\(\mathcal O (V)\)</p>
+</div>
+
+<div class="row">
+  <h1 class="h1-responsive">Practice</h1>
+  <hr>
+
+  <ul class="large-list">
+    <li><a href="https://dmoj.ca/problem/tree1">DMOJ: Is it a Tree?</a></li>
+  </ul>
+</div>
