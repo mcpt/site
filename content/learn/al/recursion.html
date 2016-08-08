@@ -1,0 +1,118 @@
++++
+title = "Recursion – Learn Algorithms"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/learn">Learn</a></li>
+    <li><a href="/learn/al">Algorithms</a></li>
+    <li class="active">Recursion</li>
+  </ol>
+</div>
+
+<div class="row">
+  <h1>Recursion</h1>
+  <hr>
+</div>
+
+<div class="row">
+  <p class="lead">Recursion is more of a general technique than an algorithm. It is where a method calls itself. This is useful for many reasons. One is that it simulates a loop, but with more complex variables and increments. It also makes it very easy to code functions in terms of subproblems or divide and conquer. </p>
+  
+  <p>Here is a basic example of an infinite loop recursion method. </p>
+  
+  <pre class="language-java"><code>
+    static void inf() {
+        inf();
+    }
+  </code></pre>
+  
+  <p>Since the program never stops calling itself, it goes on forever. </p>
+  
+  <hr>
+  
+  <p>This method counts down, using recursion. </p>
+  
+  <pre class="language-java"><code>
+    static void count(int num) {
+        if(num == 1) {
+            System.out.println(1);
+            return;
+        }
+        System.out.print(num + " ");
+        count(num - 1);
+    }
+  </code></pre>
+  
+  <p>Calling <code>count(5);</code> will result in the following output: </p>
+  
+  <pre class="language-none"><code>5 4 3 2 1</code></pre>
+  
+  <p>The method can easily be changed to make the method count up instead. </p>
+  
+  <pre class="language-java"><code>
+    static void count(int num) {
+        if(num == 1) {
+            System.out.print(1);
+            return;
+        }
+        count(num - 1);
+        System.out.print(num + " ");
+    }
+  </code></pre>
+  
+  <pre class="language-none"><code>1 2 3 4 5 </code></pre>
+  
+  <hr>
+  
+  <p>Another classical recursive method is the fibonacci function. This function finds the \(n\)<sup>th</sup> fibonacci number, starting from \(1\). </p>
+  
+  $$
+  fib(n) =
+    \begin{cases}
+    1 & \quad \text{if } 1 \le n \le 2 \\
+    fib(n - 1) + fib(n - 2) & \quad \text{if } n \gt 2 \\
+    \end{cases}
+  $$
+  
+  <p>The recursive function is defined with it's <mark>base cases</mark> which are the terminating scenarios of a method which are required to end the recursion. In the two methods above, \(\text{num} = 1\) were the base cases. It is very easy to convert the recursive fibonacci recursion to code. </p>
+  
+  <pre class="language-java"><code>
+    static int fib(int n) {
+        if(n &lt;= 2) return 1;
+        return fib(n - 1) + fib(n - 2);
+    }
+  </code></pre>
+  
+  <p>Another fundamental rule of recursion is that the method does not call itself with the same parameter, thus causing infinite loops. Similarly, there are other ways to achieve an infinite loop. </p>
+  
+  <pre class="language-java"><code>
+    static void inf(int n) {
+        if(n == 0) return;
+        if(n % 2 == 0) inf(n - 1);
+        inf(n + 1);
+    }
+  </code></pre>
+  
+  <p>Calling any values of <code>n</code> other than <code>-1</code> and <code>0</code> will result in an infinite loop. Infinite loops in recursion should not occur when done properly. Note that recursion infinite loops don't last forever. A stack overflow occurs very quickly. A <code>StackOverflowError</code> occurs when there are too many concurrent recursion calls thus running out of memory for the stack (where the stack variables are stored). </p>
+  
+  <hr>
+  
+  <p>Recursive methods may use any instance variables in addition to the parameters. It may also create any new local variables within the method itself. You may pass anything into the method, including arrays, however, you should note what type of value passed (pass by reference/value). </p>
+</div>
+
+<div class="row">
+  <h1 class="h1-responsive">Practice</h1>
+  <hr>
+
+  <ul class="large-list">
+    <li><a href="https://dmoj.ca/problem/hailstone">DMOJ: Hailstone Numbers</a></li>
+    <li><a href="https://dmoj.ca/problem/ics4p1">DMOJ: Word Scrambler</a></li>
+    <li><a href="https://dmoj.ca/problem/tsoc16c1p5">TSOC '16 C1 P5 - Max and Cards</a></li>
+    <li><a href="https://dmoj.ca/problem/ccc11s3">CCC '11 S3 - Alice Through the Looking Glass</a></li>
+    <li><a href="https://dmoj.ca/problem/mwc15c3p3">MWC '15 #3 P3: Bad News</a></li>
+    <li><a href="https://dmoj.ca/problem/ccc04j5">CCC '04 J5 - Fractals</a></li>
+    <li><a href="https://dmoj.ca/problem/ccc13s3">CCC '13 J5/S3 - Chances of Winning</a></li>
+  </ul>
+</div>
