@@ -1,0 +1,28 @@
++++
+title = "Breadwinners (mwc15c6p2) Editorial"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/editorials">Editorials</a></li>
+    <li><a href="/editorials/mwc">MWC</a></li>
+    <li><a href="/editorials/mwc/15">2015</a></li>
+    <li><a href="/editorials/mwc/15/c6">Contest 6</a></li>
+    <li class="active">Breadwinners</li>
+  </ol>
+</div>
+
+<div class="row editorial-title">
+  <h1>Breadwinners Editorial <a href="https://dmoj.ca/problem/mwc15c6p2"><small class="text-muted">mwc15c6p2</small></a></h1>
+  <i class="fa fa-pencil"></i><user>atarw</user>
+  <hr>
+</div>
+
+<div class="row">
+  <p>Use the <a href="http://mcpt.ca/learn/al/sieve_of_eratosthenes/">Sieve of Eratosthenes</a> to generate a sorted list of primes up to the maximum \(C_{i}\) value. Then, for each competitor \(i\), use binary search to find the greatest prime number that is still lower than \(C_{i}\).</p>
+
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <p>\(\mathcal{O}(C_{max} \log \log C_{max} + N \log C_{max})\), the time complexity of generating the sieve as well as binary searching for each competitor.</p>
+</div>

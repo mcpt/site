@@ -1,0 +1,30 @@
++++
+title = "WildCard (mwc15c5p2) Editorial"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/editorials">Editorials</a></li>
+    <li><a href="/editorials/mwc">MWC</a></li>
+    <li><a href="/editorials/mwc/15">2015</a></li>
+    <li><a href="/editorials/mwc/15/c5">Contest 5</a></li>
+    <li class="active">WildCard</li>
+  </ol>
+</div>
+
+<div class="row editorial-title">
+  <h1>WildCard Editorial <a href="https://dmoj.ca/problem/mwc15c5p2"><small class="text-muted">mwc15c5p2</small></a></h1>
+  <i class="fa fa-pencil"></i><user>atarw</user>
+  <hr>
+</div>
+
+<div class="row">
+  <p>Notice that for a card with a wild factor of \(W\) to be removed from the game, a card with a wild factor of \(K - W\) must also exist. Therefore, we need a fast way to search for a given card. Use a map to store the cards, with the key value being the wild factor and the value being the frequency of that card on the board.</p>
+  
+  <p>After the map is set up, simply simulate the game, keeping track of the pairs made and removing cards from the game until a winner is found.</p>
+
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <p>\(\mathcal{O}(N)\), since simulating the game can be done by iterating through all the cards and map access is \(\mathcal{O}(1)\).</p>
+</div>

@@ -1,0 +1,36 @@
++++
+title = "Draw Down (mwc15c8p3) Editorial"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/editorials">Editorials</a></li>
+    <li><a href="/editorials/mwc">MWC</a></li>
+    <li><a href="/editorials/mwc/15">2015</a></li>
+    <li><a href="/editorials/mwc/15/c8">Contest 8</a></li>
+    <li class="active">Draw Down</li>
+  </ol>
+</div>
+
+<div class="row editorial-title">
+  <h1>Draw Down Editorial <a href="https://dmoj.ca/problem/mwc15c8p3"><small class="text-muted">mwc15c8p3</small></a></h1>
+  <i class="fa fa-pencil"></i><user>atarw</user>
+  <hr>
+</div>
+
+<div class="row">
+  <p>For this problem, all combinations of cards given out will have to be simulated in an efficient manner. We can keep three global boolean variables, the \(i^{th}\) representing whether or not it is possible for Hypnova to receive a card of color \(i\).</p>
+  
+  <p>A DFS or BFS can be used to simulate the giving out of the cards and all the possibilities. This will give \(20 \%\) of the points.</p>
+  
+  <p>For a full score, dynamic programming must be used to avoid repeating possibilities. The state would be \(3\) integers representing the number of people with colors \(1\), \(2\) and \(3\).</p>
+  
+  <p>We simply mark each state as visited as we go, and if we encounter a state that is already visited, we do not retraverse that possibility.</p>
+  
+  <p>As the total number of people can go up to \(10^5\), we cannot use a 3D array to store the states, as that approach would exceed the memory limit. Instead, we must use a set to store the visited states (which can be stored as an object).</p>
+
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <p>\(\mathcal{O}(???)\)</p>
+</div>

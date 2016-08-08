@@ -1,0 +1,28 @@
++++
+title = "Thief in the Night (mwc15c7p2) Editorial"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/editorials">Editorials</a></li>
+    <li><a href="/editorials/mwc">MWC</a></li>
+    <li><a href="/editorials/mwc/15">2015</a></li>
+    <li><a href="/editorials/mwc/15/c7">Contest 7</a></li>
+    <li class="active">Thief in the Night</li>
+  </ol>
+</div>
+
+<div class="row editorial-title">
+  <h1>Thief in the Night Editorial <a href="https://dmoj.ca/problem/mwc15c7p2"><small class="text-muted">mwc15c7p2</small></a></h1>
+  <i class="fa fa-pencil"></i><user>atarw</user>
+  <hr>
+</div>
+
+<div class="row">
+  <p>Use a <a href="http://mcpt.ca/learn/ds/prefix_sum_array/">Prefix Sum Array</a> to store the number of CDs for each floor. Then, simply query for the sum of CDs on the given floor and between the given range.</p>
+
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <p>\(\mathcal{O}(FR + Q)\), the time complexity of generating the prefix sum array for each floor \(F\) as well as performing each query in \(\mathcal{O}(1)\) time.</p>
+</div>
