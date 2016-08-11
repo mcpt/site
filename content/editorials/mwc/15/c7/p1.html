@@ -1,0 +1,45 @@
++++
+title = "Sequences (mwc15c7p1) Editorial"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/editorials">Editorials</a></li>
+    <li><a href="/editorials/mwc">MWC</a></li>
+    <li><a href="/editorials/mwc/15">2015</a></li>
+    <li><a href="/editorials/mwc/15/c7">Contest 7</a></li>
+    <li class="active">Sequences</li>
+  </ol>
+</div>
+
+<div class="row editorial-title">
+  <h1>Sequences Editorial <a href="https://dmoj.ca/problem/mwc15c7p1"><small class="text-muted">mwc15c7p1</small></a></h1>
+  <i class="fa fa-pencil"></i><user>aurpine</user>
+  <hr>
+</div>
+
+<div class="row">
+  <p>Just check if this is satisfies the conditions of an arithmetic or geometric sequence (or neither or both). Many encountered problems with division by 0 or floating point errors. By never dividing to derive the factor, these division errors can be avoided. </p>
+  
+  <p>For the following explanation, let \(A\), \(B\) and \(C\) be consecutive terms in the sequence. </p>
+  
+  <h2 class="h2-responsive">Arithmetic</h2>
+  
+  <p>\(B = A + d\), where \(d\) is the constant difference. \(C = B + d = A + 2d\) and thus \(2B = A + C\). </p>
+  
+  <h2 class="h2-responsive">Geometric</h2>
+  
+  <p>\(B = A * f\) where \(f\) is the constant factor. Note that \(f\) can be a decimal and less than \(1\). </p>
+  
+  $$ C = B * f = A * f^2 $$
+  $$ B ^2 = A * C $$
+  
+  <hr>
+  
+  <p>Go through the sequence and check if the current three terms still satisfy the derived equations. Use two boolean variables of whether or not the sequence is an arithmetic and geometric sequence initialized to true. Falsify these variables when the equation is not satisfied. Print the correct output based on these two booleans. </p>
+
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <p>\(\mathcal{O}(N)\)</p>
+</div>

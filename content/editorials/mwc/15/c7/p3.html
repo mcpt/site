@@ -1,0 +1,48 @@
++++
+title = "Blue and Green (mwc15c7p3) Editorial"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/editorials">Editorials</a></li>
+    <li><a href="/editorials/mwc">MWC</a></li>
+    <li><a href="/editorials/mwc/15">2015</a></li>
+    <li><a href="/editorials/mwc/15/c7">Contest 7</a></li>
+    <li class="active">Blue and Green</li>
+  </ol>
+</div>
+
+<div class="row editorial-title">
+  <h1>Blue and Green Editorial <a href="https://dmoj.ca/problem/mwc15c7p3"><small class="text-muted">mwc15c7p3</small></a></h1>
+  <i class="fa fa-pencil"></i><user>aurpine</user>
+  <hr>
+</div>
+
+<div class="row">
+  <p>This is a <a href="/learn/al/bitmask_dp">bitmask dp</a> problem. </p>
+  
+  <p>All the operations are implemented as follows. </p>
+  
+  <h2 class="h2-responsive">Set</h2>
+  
+  <p>Since the marble colour would never be set to itself (that's a waste of currency), just change the colour of a certain marble. Use the xor operation for the desired bit. </p>
+  
+  <h2 class="h2-responsive">Rotate</h2>
+  
+  <p>Rotate left and right are very similar. Bitshifts are used to move all the bits, but the end bits require special concern. </p>
+  
+  <p>For a right rotate, the rightmost marble will get truncated in a bitshift. So there's no need to worry about disposing of that bit. It will have to be moved to the left. </p>
+  
+  <p>For a right rotate, the rightmost marble will get truncated in a bitshift. Then move that bit to the far left. </p>
+  
+  <p>The left rotate is more complex. The leftmost bit still exists after shifting. A mask has to be applied to get rid of that bit. Modding by \(2^N\) also works. The leftmost bit has to be moved to the right in the same manner as for the rightmost bit of the right rotate. </p>
+  
+  <h2 class="h2-responsive">Invert All</h2>
+  
+  <p>Inverting all the marbles requires the use of xor. xor by \(2^N - 1\). </p>
+
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <p>\(\mathcal O(2^N \times M)\), however, this worst case barely occurs because not all the possible combinations will be reached and with all the \(M\) currencies remaining. </p>
+</div>

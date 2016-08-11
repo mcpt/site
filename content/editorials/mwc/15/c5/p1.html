@@ -1,0 +1,32 @@
++++
+title = "Stats (mwc15c5p1) Editorial"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/editorials">Editorials</a></li>
+    <li><a href="/editorials/mwc">MWC</a></li>
+    <li><a href="/editorials/mwc/15">2015</a></li>
+    <li><a href="/editorials/mwc/15/c5">Contest 5</a></li>
+    <li class="active">Stats</li>
+  </ol>
+</div>
+
+<div class="row editorial-title">
+  <h1>Stats Editorial <a href="https://dmoj.ca/problem/mwc15c5p1"><small class="text-muted">mwc15c5p1</small></a></h1>
+  <i class="fa fa-pencil"></i><user>aurpine</user>
+  <hr>
+</div>
+
+<div class="row">
+  <p>To calculate the mean, sum all the test scores and divide by \(N\). </p>
+  
+  <p>To find the median, you have to sort the test scores and take the middle one (or average the middle two). </p>
+  
+  <p>There are many ways to find the mode. A <a href="/learn/ds/hashmaps">hashmap</a> may be used to hold the occurances. Or you could count the number of times the number occurs in succession in the sorted list. Either way, \(\mathcal (N)\). </p>
+
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <p>\(\mathcal{O}(N \log N)\) because of sorting the scores. </p>
+</div>

@@ -1,0 +1,52 @@
++++
+title = "Love Guru 2 (mwc15c4p1) Editorial"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/editorials">Editorials</a></li>
+    <li><a href="/editorials/mwc">MWC</a></li>
+    <li><a href="/editorials/mwc/15">2015</a></li>
+    <li><a href="/editorials/mwc/15/c4">Contest 4</a></li>
+    <li class="active">Love Guru 2</li>
+  </ol>
+</div>
+
+<div class="row editorial-title">
+  <h1>Love Guru 2 Editorial <a href="https://dmoj.ca/problem/mwc15c4p1"><small class="text-muted">mwc15c4p1</small></a></h1>
+  <i class="fa fa-pencil"></i><user>aurpine</user>
+  <hr>
+</div>
+
+<div class="row">
+  <p>We are given a system of equations. Say the given variables were \(X\), \(Y\) and \(Z\). Then: </p>
+  
+  $$ X = A + B $$
+  $$ Y = B + C $$
+  $$ Z = A + C $$
+  
+  <p>We need to find the values of \(A\), \(B\) and \(C\). </p>
+  
+  $$ X + Y = A + 2B + C $$
+  $$ Z = A + C $$
+  $$ X + Y = Z + 2B $$
+  $$ X + Y - Z = 2B $$
+  $$ B = \frac {X + Y - Z}{2} $$
+  
+  <p>Now that the value of \(B\) is known, the other variables can be found. </p>
+  
+  $$ X = A + B $$
+  $$ A = X - B $$
+  
+  <p>And the last one...</p>
+  
+  $$ Y = B + C $$
+  $$ C = Y - B $$
+  
+  <p>There are other ways to solve this equation. </p>
+
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <p>\(\mathcal{O}(1)\)</p>
+</div>

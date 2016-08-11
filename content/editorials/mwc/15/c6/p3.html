@@ -1,0 +1,30 @@
++++
+title = "Magical Sets (mwc15c6p3) Editorial"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/editorials">Editorials</a></li>
+    <li><a href="/editorials/mwc">MWC</a></li>
+    <li><a href="/editorials/mwc/15">2015</a></li>
+    <li><a href="/editorials/mwc/15/c6">Contest 6</a></li>
+    <li class="active">Magical Sets</li>
+  </ol>
+</div>
+
+<div class="row editorial-title">
+  <h1>Magical Sets Editorial <a href="https://dmoj.ca/problem/mwc15c6p3"><small class="text-muted">mwc15c6p3</small></a></h1>
+  <i class="fa fa-pencil"></i><user>aurpine</user>
+  <hr>
+</div>
+
+<div class="row">
+  <p>This is a very simple <a href="/learn/al/bit_manipulation">bit manipulation</a> problem. Map the existance of each number to a bit in a 64 bit integer (long), using an array of \(N\) longs to store all the sets. </p>
+  
+  <p>Then, for each query, iteratively merge (xor) the sets (integers). Then scan through the integer and print the existing elements. </p>
+  
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <p>\(\mathcal{O} (61QM)\)</p>
+</div>

@@ -1,0 +1,32 @@
++++
+title = "Salt (mwc15c4p3) Editorial"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/editorials">Editorials</a></li>
+    <li><a href="/editorials/mwc">MWC</a></li>
+    <li><a href="/editorials/mwc/15">2015</a></li>
+    <li><a href="/editorials/mwc/15/c4">Contest 4</a></li>
+    <li class="active">Salt</li>
+  </ol>
+</div>
+
+<div class="row editorial-title">
+  <h1>Salt Editorial <a href="https://dmoj.ca/problem/mwc15c4p3"><small class="text-muted">mwc15c4p3</small></a></h1>
+  <i class="fa fa-pencil"></i><user>aurpine</user>
+  <hr>
+</div>
+
+<div class="row">
+  <p>This problem requires <a href="/learn/al/coordinate_compression">coordinate compression</a> as the coordinates can go up to \(10^9\): <a href="/learn/ds/hashmaps">hashmaps</a> and <a href="/learn/ds/hashsets">hashsets</a> Use two hashmaps of hashsets, one for each axis. </p>
+  
+  <p>For example, <code>yaxis[y]</code> contains the x values of all the pieces of salt with the y-coordinate <code>y</code>. </p>
+  
+  <p>Two hashmaps are used to answer both type 2 queries by finding the size of the respective hashset. Either hashmap may be used to answer the first query. </p>
+
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <p>\(\mathcal{O}(Q)\), amortized \(\mathcal O (1)\) for type 1 and both type 2 queries. </p>
+</div>
