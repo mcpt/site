@@ -21,8 +21,12 @@ title = "Towering Towers (mwc15c2p2) Editorial"
 </div>
 
 <div class="row">
-  <p>Very similar to the classic stock span problem, and is solved the same way. To find the number of towers seen from tower \(i\), find the number of elements in the stack for which the </p>
-
+  <p>Very similar to the classic stock span problem, and is solved the same way. The naive solution would, for each tower \(i\), iterate through all previous towers before it until reaching one that has a greater height than tower \(i\). This solution has a complexity of \(\mathcal{O}(N^2)\) and will get a score of \(80 \%\).</p>
+  
+  <p>For full marks, we must realize that all we need is a fast way to find, for a given tower, the closest tower to its left which has a greater height than it. This is very similar to the stock span problem and is solved in an almost identical way: by using a stack which stores the positions of each tower (in decreasing order of height).</p>
+  
+  <p>To check the number of towers seen from tower \(i\), keep removing towers from the stack with a height less than or equal to tower \(i\). Once a tower with a greater height than tower \(i\) is found, find the difference between the positions of tower \(i\) and the tower found. The difference between the positions of the two towers is the number of towers seen from tower \(i\). Repeat this process for each tower to solve the problem completely.</p>
+  
   <h3 class="h3-responsive">Time Complexity</h3>
   <p>\(\mathcal{O}(N)\), as each tower height is added to the stack at most once and removed from the stack at most once.</p>
 </div>

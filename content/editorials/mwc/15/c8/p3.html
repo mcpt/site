@@ -27,9 +27,9 @@ title = "Draw Down (mwc15c8p3) Editorial"
   
   <p>For a full score, dynamic programming must be used to avoid repeating possibilities. The state would be \(3\) integers representing the number of people with colors \(1\), \(2\) and \(3\).</p>
   
-  <p>We simply mark each state as visited as we go, and if we encounter a state that is already visited, we do not retraverse that possibility.</p>
+  <p>A DFS or BFS can be run, but this time, we mark each state as 'visited' as we go, and if a visited state is encountered, the DFS/BFS should ignore it, as we have already explored that possibility.</p>
   
-  <p>As the total number of people can go up to \(10^5\), we cannot use a 3D array to store the states, as that approach would exceed the memory limit. Instead, we must use a set to store the visited states (which can be stored as an object).</p>
+  <p>Since the number of people with each color can go up to a maximum of \(10^5\), we cannot use a 3D array to store the states, as that approach would exceed the memory limit. Instead, we must use a set to store the visited states (which can be stored as an object).</p>
 
   <h3 class="h3-responsive">Time Complexity</h3>
   <p>\(\mathcal{O}(???)\)</p>
