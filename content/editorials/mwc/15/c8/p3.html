@@ -23,14 +23,14 @@ title = "Draw Down (mwc15c8p3) Editorial"
 <div class="row">
   <p>For this problem, all combinations of cards given out will have to be simulated in an efficient manner. We can keep three global boolean variables, the \(i^{th}\) representing whether or not it is possible for Hypnova to receive a card of color \(i\).</p>
   
-  <p>A DFS or BFS can be used to simulate the giving out of the cards and all the possibilities. This will give \(20 \%\) of the points.</p>
+  <p>By simulating all possibilities, this question is asking us to traverse all paths of a given decision tree. To do this, a simple DFS or BFS can be used to simulate the giving out of the cards and all the possibilities. This will give \(20 \%\) of the points.</p>
   
-  <p>For a full score, dynamic programming must be used to avoid repeating possibilities. The state would be \(3\) integers representing the number of people with colors \(1\), \(2\) and \(3\).</p>
+  <p>For a full score, we must realize that if there is a point which has the same number of people with colors \(1\), \(2\) and \(3\) as another point in the decision tree, the result of both will be the same. Therefore, we only need to find the result of one path and avoid exploring the other path to save time. In other words, dynamic programming!</p>
   
-  <p>A DFS or BFS can be run, but this time, we mark each state as 'visited' as we go, and if a visited state is encountered, the DFS/BFS should ignore it, as we have already explored that possibility.</p>
+  <p>The state would be \(3\) integers representing the number of people with colors \(1\), \(2\) and \(3\). We must traverse the decision tree using DFS or BFS, but this time, we mark each state as 'visited' as we go, and if a visited state is encountered, the DFS/BFS should ignore it, as we have already explored that possibility.</p>
   
   <p>Since the number of people with each color can go up to a maximum of \(10^5\), we cannot use a 3D array to store the states, as that approach would exceed the memory limit. Instead, we must use a set to store the visited states (which can be stored as an object).</p>
 
   <h3 class="h3-responsive">Time Complexity</h3>
-  <p>\(\mathcal{O}(???)\)</p>
+  <p>\(\mathcal{O}(V)\), where \(V\) is the number of vertices in the decision tree.</p>
 </div>
