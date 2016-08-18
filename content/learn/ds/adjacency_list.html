@@ -1,0 +1,116 @@
++++
+title = "Adjacency List – Learn Data Structures"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/learn">Learn</a></li>
+    <li><a href="/learn/ds">Data Structures</a></li>
+    <li class="active">Adjacency List</li>
+  </ol>
+</div>
+
+<div class="row">
+  <h1>Adjacency List</h1>
+  <hr>
+</div>
+
+<div class="row">
+
+  <p class="lead">An adjacency list is used to store edges of a graph. It is often used for <em>sparse</em> graphs and/or graphs with multiple edges going between the same pair of nodes.</p>
+  
+  <h2 class="h2-responsive">Declaration</h2>
+  
+  <p>Adjacency lists are used to represent edges between nodes in a graph. For each node in the graph, the adjacency list has a 'list' containing the edges that connect the node to other nodes in the graph.</p>
+  
+  <p>If the graph is unweighted, the declaration of the adjacency list might look like this:</p>
+  
+  <pre class="language-java"><code>
+    // initialize an array of ArrayLists, one for each of the N nodes in the graph.
+    List &ltInteger&gt [] adj = new ArrayList [N];
+  </code></pre>
+  
+  <p>The values contained in the ArrayList <code>adj [v]</code> represent the other nodes that vertex \(v\) is connected to. For example, if <code>adj [2]</code> contains the values \(\{1, 3, 5, 3\}\), this means that edges currently exist between vertex \(2\) and vertices \(\{1,3,5\}\). Note that because vertex \(3\) appears twice in the list, there are two different edges going between vertex \(2\) and \(3\).</p>
+  
+  <p>For weighted graphs, it is neccessary to make the adjacency list store the vertices as well as the weights of the edges. To do this, an <code>Edge</code> class can be created, storing the two vertices connected to each other as well as the edge weight. The adjacency list will now consist of ArrayLists which store the edges. This is illustrated as below.</p>
+  
+  <pre class="language-java"><code>
+    // initialize an array of ArrayLists, one for each of the N nodes in the graph.
+    List &ltEdge&gt [] adj = new ArrayList [N];
+    
+    // an Edge class, where each edge stores the two vertices connected to each other as well as the weight of the edge connecting them.
+    class Edge {
+      int start, end, weight;
+      
+      public Edge (int start, int end, int weight) {
+        this.start = start; this.end = end; this.weight = weight;
+      }
+    }
+  </code></pre>
+  
+  <h2 class="h2-responsive">Adding an Edge</h2>
+  
+  <p>Adding edges is done differently based on the graph.</p>
+  
+    <h4 class="h4-responsive">Weighted Undirected</h4>
+  
+  <p>This is the most common type of graph. Given <code>a b w</code>, where <code>a</code> and <code>b</code> are the two nodes to connect and <code>w</code> is the edge weight.</p>
+  
+  <pre class="language-java"><code>
+    adj [a].add (new Edge (a, b, w));
+    adj [b].add (new Edge (b, a, w));
+  </code></pre>
+  
+  <h4 class="h4-responsive">Weighted Directed</h4>
+  
+  <p>Given <code>a b w</code>, meaning a one way edge from <code>a</code> to <code>b</code> with a weight of <code>w</code>.</p>
+  
+  <pre class="language-java"><code>
+    adj [a].add (new Edge (a, b, w));
+  </code></pre>
+  
+  <h4 class="h4-responsive">Unweighted Undirected</h4>
+  
+  <p>Given <code>a b</code>, a two way edge between <code>a</code> and <code>b</code>.</p>
+  
+  <pre class="language-java"><code>
+    adj [a].add (b);
+    adj [b].add (a);
+  </code></pre>
+  
+  <h4 class="h4-responsive">Unweighted Directed</h4>
+  
+  <p>Given <code>a b</code>, a one way edge between <code>a</code> and <code>b</code>.</p>
+  
+  <pre class="language-java"><code>
+    adj [a].add (b);
+  </code></pre>
+</div>
+
+<div class="row">
+  <h1 class="h1-responsive">Implementation</h1>
+  <hr>
+
+  <pre class="language-java"><code>
+    You can put code here and it will
+        automatically fix the padded spaces of html.
+  </code></pre>
+
+  <h3 class="h3-responsive">Space Complexity</h3>
+  <p>\(\mathcal O (V + E)\), where \(V\) and \(E\) represent the number of vertices and edges in the graph.</p>
+  
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <h4 class="h4-responsive">Adding edge</h4>
+  <p>\(\mathcal O (1)\) amortized, as the adding of an edge could trigger the resizing of the ArrayList which takes \(\mathcal O (N)\). Happens rarely though.</p>
+  
+  <h4 class="h4-responsive">Checking If Edge Exists</h4>
+  <p>\(\mathcal O (E)\), where \(E\) is the number of edges connecting the vertex.</p>
+  
+  <h4 class="h4-responsive">Iterating Adjacent</h4>
+  <p>\(\mathcal O (E)\), where \(E\) is the number of edges connecting the vertex.</p>
+  
+  <h4 class="h4-responsive">Get all Connected Vertices</h4>
+  <p>\(\mathcal O (1)\)</p>
+</div>
