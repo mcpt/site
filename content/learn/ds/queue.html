@@ -18,7 +18,7 @@ title = "Queue – Learn Data Structures"
 </div>
 
 <div class="row">
-  <p class="lead">The stack is a FIFO (first in first out) data structure. It allows you to insert and remove elements in the order in which they were inserted. If an element was inserted before another element, then the first element would be removed before the second. </p>
+  <p class="lead">The queue is a FIFO (first in first out) data structure. It allows you to insert and remove elements in the order in which they were inserted. If an element was inserted before another element, then the first element would be removed before the second. </p>
   
   <p>The following is a diagram of a queue. It is depicted as a linear structure. The <em>first</em> element is called the front. It is the next element to be removed. Conversely, the <em>last</em> element is called the back. It is the most recently inserted element. </p>
   
@@ -30,42 +30,52 @@ title = "Queue – Learn Data Structures"
 <div class="row">
   <h1 class="h1-responsive">Features</h1>
   <hr>
+  <p>An implementation of a queue is provided in most programming languages. In Java, this data structure is defined by both the <code>Queue</code> and <code>Deque</code> (stands for double ended queue) interface. However, the <code>Deque</code> class supports more operations (such as insertion and deletion from both the front and back), making it more useful in programming contests.</p>
   
-  <p>Some of the following features have two methods that support it. It is recommended to use the one that prevents thrown exceptions, however, this scenario rarely occurs, so either method may be used. The <em>unsafe</em> may be preferable due to their easy-to-remember names. <code>E</code> is the element template class. </p>
+  <p>Note that although <code>Deque</code> supports more operations, only the standard queue operations are covered in this lesson. The other methods are covered in the Deque lesson.</p>
+  
+  <p>Some operations are supported by multiple methods in the <code>Deque</code> interface. To reduce confusion, only one method is listed for each feature.</p>
+  
+  <p>It is important to note that all operations below are performed in amortized \(\mathcal{O}(1)\) and that <code>E</code> is the type of object that is stored in the queue.</p>
   
   <h3 class="h3-responsive">Size</h3>
   
   <p><code>int size()</code> – returns the number of elements in the queue. </p>
   
-  <p>Alternatively, <code>boolean isEmpty()</code> can be used if the number of elements isn't relevant and only if it's empty or not. </p>
+  <p><code>boolean isEmpty()</code> returns <code>true</code> if there are \(0\) elements in the deque, and <code>false</code> otherwise.</p>
   
-  <h3 class="h3-responsive">Insert Back</h3>
+  <h3 class="h3-responsive">Insert</h3>
   
-  <p><code>boolean add(E e)</code> – the element in parameters is added to the queue. </p>
+  <p><code>boolean offer(E e)</code> – element <code>e</code> is added to the back of the queue. This method will throw an exception if <code>e</code> is <code>null</code>. Will always return <code>true</code>.</p>
+    
+  <h3 class="h3-responsive">Access</h3>
   
-  <h3 class="h3-responsive">Access Front</h3>
-  
-  <p><code>E peek()</code> – returns the front element</p>
-  
-  <h3 class="h3-responsive">Remove Front</h3>
-  
-  <p><code>E remove()</code> – returns and removes the front element</p>
+  <p><code>E peek()</code> – returns the element at the front of the queue. Returns <code>null</code> if the queue is empty.</p>
+    
+  <h3 class="h3-responsive">Remove</h3>
+    
+  <p><code>E poll()</code> - returns and removes the element at the front of the queue. Returns <code>null</code> if the queue is empty.</p>
 </div>
 
 <div class="row">
   <h1 class="h1-responsive">Usage</h1>
   <hr>
   
-  <p>Notice in the code below that the <code>Queue</code> is an interface and that the class is <code>ArrayDeque</code>. <code>ArrayDeque</code> is a class that supports the queue operations. Alternatively, a <code>LinkedList</code> could be used. A linked list is a common implementation of a queue. However, as a queue, <code>ArrayDeque</code> outperforms <code>LinkedList</code>. </p>
+  <p><code>ArrayDeque</code> is a class which implements the methods in the <code>Deque</code> class that were shown above. Although the <code>LinkedList</code> class also implements the above methods, it is almost always slower than an <code>ArrayDeque</code> and is not recommended.</p>
   
   <pre class="language-java"><code>
-    Queue&lt;Integer&gt; q = new ArrayDeque&lt;Integer&gt;();
+    // create a queue which stores objects of type Integer
+    Deque&lt;Integer&gt; queue = new ArrayDeque&lt;Integer&gt;();
     
-    for(int n = 1; n &lt;= 5; n++) q.add(n);
-    // q now contains 1 2 3 4 5
+    // queue now contains the elements 1 2 3 4 5 (in that order)
+    for(int n = 1; n &lt;= 5; n++) {
+      queue.offer(n);
+    }
     
-    if(q.peek() == 1 && q.size() == 5) {
-        while(!q.isEmpty()) System.out.print(q.remove() + " ");
+    if(queue.peek() == 1 && queue.size() == 5) {
+        while(!queue.isEmpty()) {
+          System.out.print(queue.poll() + " ");
+        }
     }
   </code></pre>
   
@@ -75,8 +85,8 @@ title = "Queue – Learn Data Structures"
 </div>
 
 <div class="row">
-  <h1 class="h1-responsive">Applications</h1>
+  <h1 class="h1-responsive">Conclusion</h1>
   <hr>
   
-  <p>Queues aren't data structures that you may find applicable for most problems. However, they are fundamental in some other algorithms, especially in the field of graph theory. </p>
+  <p>Queues are extremely important data structures that are used in many programming problems, especially in the field of graph theory, where they are most commonly associated with BFS algorithms. While they are rarely the only part of a solution to a problem, they are used as utility data structures in many solutions.</p>
 </div>
