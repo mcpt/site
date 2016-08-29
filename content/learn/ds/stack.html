@@ -31,52 +31,74 @@ title = "Stack – Learn Data Structures"
   <h1 class="h1-responsive">Features</h1>
   <hr>
   
-  <p>Some of the following features have two methods that support it. It is recommended to use the one that prevents thrown exceptions, however, this scenario rarely occurs, so either method may be used. The <em>unsafe</em> may be preferable due to their easy-to-remember names. <code>E</code> is the element template class. </p>
+  <p>An implementation of a stack is provided in most programming languages. In Java, this data structure is defined by both the <code>Deque</code> (stands for double ended queue) interface. While there is a <code>Stack</code> class in Java, it is slow and not used very often. In addition, the <code>Deque</code> class supports more operations (such as insertion and deletion from both the front and back), making it more useful in programming contests.</p>
+  
+  <p>Note that although <code>Deque</code> supports more operations, only the standard stack operations are covered in this lesson. The other methods are covered in the Deque lesson.</p>
+  
+  <p>Some operations are supported by multiple methods in the <code>Deque</code> interface. To reduce confusion, only one method is listed for each feature.</p>
+  
+  <p>It is important to note that all operations below are performed in amortized \(\mathcal{O}(1)\) and that <code>E</code> is the type of object that is stored in the stack.</p>
   
   <h3 class="h3-responsive">Size</h3>
   
-  <p><code>int size()</code> – returns the number of elements in the queue. </p>
+  <p><code>int size()</code> – returns the number of elements in the stack. </p>
   
   <p>Alternatively, <code>boolean isEmpty()</code> can be used if the number of elements isn't relevant and only if it's empty or not. </p>
   
-  <h3 class="h3-responsive">Insert Back</h3>
+  <h3 class="h3-responsive">Insert Front</h3>
   
-  <p><code>boolean add(E e)</code> – the element in parameters is added to the queue. </p>
+  <p><code>void push(E e)</code> – element <code>e</code> is added to the front of the stack. This method will throw an exception if <code>e</code> is <code>null</code>.</p>
   
   <h3 class="h3-responsive">Access Front</h3>
   
-  <p><code>E peek()</code> – returns the front element</p>
+  <p><code>E peek()</code> – returns the element at the front of the stack. Returns <code>null</code> if the stack is empty.</p>
   
   <h3 class="h3-responsive">Remove Front</h3>
   
-  <p><code>E remove()</code> – returns and removes the front element</p>
+  <p><code>E pop()</code> - returns and removes the element at the front of the stack. Throws an exception if the stack is empty.</p>
 </div>
 
 <div class="row">
   <h1 class="h1-responsive">Usage</h1>
   <hr>
   
-  <p>Notice in the code below that the <code>Queue</code> is an interface and that the class is <code>ArrayDeque</code>. <code>ArrayDeque</code> is a class that supports the queue operations. Alternatively, a <code>LinkedList</code> could be used. A linked list is a common implementation of a queue. However, as a queue, <code>ArrayDeque</code> outperforms <code>LinkedList</code>. </p>
+  <p><code>ArrayDeque</code> is a class which implements the methods in the <code>Deque</code> class that were shown above. Although the <code>LinkedList</code> class also implements the above methods, it is almost always slower than an <code>ArrayDeque</code> and is not recommended.</p>
   
   <pre class="language-java"><code>
-    Queue&lt;Integer&gt; q = new ArrayDeque&lt;Integer&gt;();
+    // create a stack which stores objects of type Integer
+    Deque&lt;Integer&gt; stack = new ArrayDeque&lt;Integer&gt;();
     
-    for(int n = 1; n &lt;= 5; n++) q.add(n);
-    // q now contains 1 2 3 4 5
+    // stack now contains the elements 5 4 3 2 1 (in that order)
+    for(int n = 1; n &lt;= 5; n++) {
+      stack.push(n);
+    }
     
-    if(q.peek() == 1 && q.size() == 5) {
-        while(!q.isEmpty()) System.out.print(q.remove() + " ");
+    if(stack.peek() == 1 && stack.size() == 5) {
+        while(!stack.isEmpty()) {
+          System.out.print(stack.pop() + " ");
+        }
     }
   </code></pre>
   
   <p>Output:</p>
   
-  <pre class="language-none"><code>1 2 3 4 5 </code></pre>
+  <pre class="language-none"><code>5 4 3 2 1 </code></pre>
 </div>
 
 <div class="row">
   <h1 class="h1-responsive">Applications</h1>
   <hr>
   
-  <p>Queues aren't data structures that you may find applicable for most problems. However, they are fundamental in some other algorithms, especially in the field of graph theory. </p>
+    <p>Stacks are extremely important data structures that are used in many programming problems, especially in the field of graph theory, where they are most commonly associated with DFS algorithms. While they are rarely the only part of a solution to a problem, they are used as utility data structures in many solutions.</p>
+</div>
+
+<div class="row">
+  <h1 class="h1-responsive">Practice</h1>
+  <hr>
+
+  <ul class="large-list">
+    <li><a href="https://dmoj.ca/problem/mwc15c2p2">MWC '15 #2 P2: Towering Towers</a></li>
+    <li><a href="https://dmoj.ca/problem/ccc14s3">CCC '14 S3 - The Geneva Confection</a></li>
+    <li><a href="https://dmoj.ca/problem/ccc15s1">CCC '15 S1 - Zero That Out</a></li>
+  </ul>
 </div>
