@@ -1,0 +1,125 @@
++++
+title = "Deque – Learn Data Structures"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/learn">Learn</a></li>
+    <li><a href="/learn/ds">Data Structures</a></li>
+    <li class="active">Deque</li>
+  </ol>
+</div>
+
+<div class="row">
+  <h1>Deque</h1>
+  <hr>
+</div>
+
+<div class="row">
+  
+  <p class="lead">A deque (double ended queue) is a data structure which essentially combines the functions of a stack and a queue into one data structure.</p>
+  
+  <p class="lead">A deque provides fast insertion, deletion and access to elements at the front and back of the data structure.</p>
+  
+  <p>The following is a diagram of a deque. It is depicted as a linear structure.</p>
+  
+  <img class="img-fluid" src="../img/deque1.png"><br>
+  
+  <p>Elements can be inserted and removed from the top and bottom as shown above.</p>
+</div>
+
+<div class="row">
+  <h1 class="h1-responsive">Operations</h1>
+  <hr>
+  <p>Because a deque supports the same operations as stacks and queues, the deque can always be used in any situation where a stack and queue are applicable.</p>
+  
+  <p>An implementation of a deque is provided in most programming languages. In Java, this data structure is defined by the <code>Deque</code> interface. Some operations are supported by multiple methods in the <code>Deque</code> interface. To reduce confusion, only one method is listed for each feature.</p>
+  
+  <p>It is important to note that all operations below are performed in amortized \(\mathcal{O}(1)\) and that <code>E</code> is the type of object that is stored in the deque.</p>
+  
+  <h3 class="h3-responsive">Size</h3>
+  
+  <p><code>int size()</code> returns the number of elements in the deque. </p>
+  
+  <p><code>boolean isEmpty()</code> returns <code>true</code> if there are \(0\) elements in the deque, and <code>false</code> otherwise.</p>
+  
+  <h3 class="h3-responsive">Insert Front</h3>
+  
+  <p><code>boolean addFirst(E e)</code> – element <code>e</code> is added to the front of the deque. This method will throw an exception if <code>e</code> is <code>null</code>.
+  
+  <h3 class="h3-responsive">Insert Back</h3>
+  
+  <p><code>boolean addLast(E e)</code> – element <code>e</code> is added to the back of the deque. This method will throw an exception if <code>e</code> is <code>null</code>.
+  
+  <h3 class="h3-responsive">Access Front</h3>
+  
+  <p><code>E getFirst()</code> – returns the element at the front of the deque. This method will throw an exception if the deque is empty.</p>
+  
+  <h3 class="h3-responsive">Access Back</h3>
+  
+  <p><code>E getLast()</code> – returns the element at the back of the deque. This method will throw an exception if the deque is empty.</p>
+  
+  <h3 class="h3-responsive">Remove Front</h3>
+  
+  <p><code>E removeFirst()</code> - returns and removes the element at the front of the deque. This method will throw an exception if the deque is empty.</p>
+  
+  <h3 class="h3-responsive">Remove Back</h3>
+  
+  <p><code>E removeLast()</code> - returns and removes the element at the back of the deque. This method will throw an exception if the deque is empty.</p>
+</div>
+
+<div class="row">
+  <h1 class="h1-responsive">Usage</h1>
+  <hr>
+  
+  <p><code>ArrayDeque</code> is a class which implements the methods in the <code>Deque</code> class that were shown above. Although the <code>LinkedList</code> class also implements the above methods, it is almost always slower than an <code>ArrayDeque</code> and is not recommended for use.</p>
+  
+  <pre class="language-java"><code>
+    import java.util.*;
+  
+    // create a deque which stores objects of type Integer
+    Deque&lt;Integer&gt; dq = new ArrayDeque&lt;Integer&gt;();
+    
+    // dq now contains the elements [1, 2, 3, 4, 5], where 1 is at the front and 5 is at the back
+    for(int n = 1; n &lt;= 5; n++) {
+      dq.addLast(n);
+    }
+    
+    // dq now contains the elements [3, 2, 1, 1, 2, 3, 4, 5], where 3 is at the front and 5 is at the back
+    for(int n = 1; n &lt;= 3; n++) {
+      dq.addFirst(n);
+    }
+    
+    while(dq.size() > 5) {
+      System.out.print(dq.removeFirst() + " ");
+    }
+    
+    while (!dq.isEmpty()) {
+      System.out.print(dq.removeLast() + " ");
+    }
+  </code></pre>
+  
+  <p>Output:</p>
+  
+  <pre class="language-none"><code>3 2 1 5 4 3 2 1 </code></pre>
+</div>
+
+<div class="row">
+  <h1 class="h1-responsive">Applications</h1>
+  <hr>
+  
+  <p>Deques are extremely important data structures that are used in many programming problems in place of stacks and queues. While they are rarely the only part of a solution to a problem, they are used as utility data structures in many solutions.</p>
+  
+  <p>Read the <a href="http://mcpt.ca/learn/ds/stack">stack</a> and <a href="http://mcpt.ca/learn/ds/queue">queue</a> lessons to learn how to use the deque as a functioning stack or queue.</p>
+</div>
+
+<div class="row">
+  <h1 class="h1-responsive">Practice</h1>
+  <hr>
+
+  <ul class="large-list">
+    <li><a href="https://dmoj.ca/problem/sandwich">DMOJ: Sandwich</a></li>
+  </ul>
+</div>
