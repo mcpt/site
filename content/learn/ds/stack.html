@@ -18,78 +18,69 @@ title = "Stack – Learn Data Structures"
 </div>
 
 <div class="row">
-  <p class="lead">The stack is a LIFO (last in first out) data structure. It allows you to insert and remove elements in the reverse order of which they were inserted. The last element inserted is the next element to be removed. The recursion stack is similar to the stack in that they are both LIFO. </p>
+  <p>It is highly recommended to read the <a href="http://mcpt.ca/learn/ds/deque">deque</a> lesson first, as it covers the main operations of a stack. This lesson covers the usage of stacks in programming problems.</p>
   
-  <p>The following is a diagram of a stack. It is depicted as a linear structure. The last element inserted is called the <em>top</em>. </p>
+  <p class="lead">The stack is a LIFO (last in first out) data structure. It allows you to insert and remove elements in the reverse order of which they were inserted. The last element inserted is the next element to be removed.</p>
+  
+  <p>The following is a diagram of a stack. It is depicted as a linear structure. The last element inserted is called the <em>top</em>.</p>
   
   <img class="img-fluid" src="../img/stack1.png"><br>
   
-  <p>Elements may only be inserted into and removed from the top. </p>
-</div>
-
-<div class="row">
-  <h1 class="h1-responsive">Features</h1>
-  <hr>
-  
-  <p>An implementation of a stack is provided in most programming languages. In Java, this data structure is defined by both the <code>Deque</code> (stands for double ended queue) interface. While there is a <code>Stack</code> class in Java, it is slow and not used very often. In addition, the <code>Deque</code> class supports more operations (such as insertion and deletion from both the front and back), making it more useful in programming contests.</p>
-  
-  <p>Note that although <code>Deque</code> supports more operations, only the standard stack operations are covered in this lesson. The other methods are covered in the Deque lesson.</p>
-  
-  <p>Some operations are supported by multiple methods in the <code>Deque</code> interface. To reduce confusion, only one method is listed for each feature.</p>
-  
-  <p>It is important to note that all operations below are performed in amortized \(\mathcal{O}(1)\) and that <code>E</code> is the type of object that is stored in the stack.</p>
-  
-  <h3 class="h3-responsive">Size</h3>
-  
-  <p><code>int size()</code> – returns the number of elements in the stack. </p>
-  
-  <p>Alternatively, <code>boolean isEmpty()</code> can be used if the number of elements isn't relevant and only if it's empty or not. </p>
-  
-  <h3 class="h3-responsive">Insert Front</h3>
-  
-  <p><code>void push(E e)</code> – element <code>e</code> is added to the front of the stack. This method will throw an exception if <code>e</code> is <code>null</code>.</p>
-  
-  <h3 class="h3-responsive">Access Front</h3>
-  
-  <p><code>E peek()</code> – returns the element at the front of the stack. Returns <code>null</code> if the stack is empty.</p>
-  
-  <h3 class="h3-responsive">Remove Front</h3>
-  
-  <p><code>E pop()</code> - returns and removes the element at the front of the stack. Throws an exception if the stack is empty.</p>
+  <p>Elements may only be inserted into and removed from the top.</p>
 </div>
 
 <div class="row">
   <h1 class="h1-responsive">Usage</h1>
   <hr>
+  To understand how a stack might be used to solve programming problems, let's solve a simple problem:
   
-  <p><code>ArrayDeque</code> is a class which implements the methods in the <code>Deque</code> class that were shown above. Although the <code>LinkedList</code> class also implements the above methods, it is almost always slower than an <code>ArrayDeque</code> and is not recommended.</p>
+  <blockquote class="blockquote">
+    <p>Given a string consisting of only <code>(</code> and <code>)</code> characters, check if all parentheses are nested properly.</p>
+    <p>Examples of correctly nested parentheses include: <code>(())</code>, <code>()(()())</code></p>
+    <p>Examples of incorrectly nested parentheses include: <code>())</code>, <code>)(()())</code></p>
+  </blockquote>
+  
+  <p>To solve this problem, realize that as you read the expression left-to-right, the most 'recent' open bracket always matches the first close bracket, as shown in the diagram below:</p>
+  
+  <img class="img-fluid" src="../img/stack2.png"><br>
+  
+  <p>Using this information, we can form an algorithm. We will iterate through the expression left-to-right. If a <code>(</code> character is encountered, it will be added to the stack. If a <code>)</code> character is encountered, we will remove a <code>(</code> character from the stack, as it has been matched. If there is no <code>(</code> to remove from the stack, it means that the expression is unbalanced. The expression is also unbalanced if the stack still has elements after the iteration is complete.</p>
+  
+  <p>The following idea is expressed in the code snippet below. The snippet returns <code>true</code> if the expression is balanced and <code>false</code> if it is unbalanced.</p>
   
   <pre class="language-java"><code>
-    // create a stack which stores objects of type Integer
-    Deque&lt;Integer&gt; stack = new ArrayDeque&lt;Integer&gt;();
+    import java.util.*;
+  
+    // create a stack which stores objects of type Character
+    Deque&lt;Character&gt; stack = new ArrayDeque&lt;Character&gt;();
     
-    // stack now contains the elements 5 4 3 2 1 (in that order)
-    for(int n = 1; n &lt;= 5; n++) {
-      stack.push(n);
+    for(int n = 0; n < expression.length (); n++) {
+      // if the character is an opening bracket, add it to the stack
+      if(expression.charAt(n) == '(') {
+        stack.addFirst('(');
+      }
+      // if the character is a closing bracket and there is an opening bracket that came before it
+      else if(!stack.isEmpty()) {
+        stack.removeFirst();
+      }
+      // if the character is a closing bracket and there are no opening brackets that came before it, the expression is unbalanced
+      else {
+        return false;
+      }
     }
     
-    if(stack.peek() == 1 && stack.size() == 5) {
-        while(!stack.isEmpty()) {
-          System.out.print(stack.pop() + " ");
-        }
-    }
+    // expression is only balanced if there are no more opening brackets to be matched
+    return stack.isEmpty();
   </code></pre>
   
-  <p>Output:</p>
-  
-  <pre class="language-none"><code>5 4 3 2 1 </code></pre>
+  <p>The above code is a simpler version of algorithms that solve BEDMAS equations. Those algorithms also use a stack to handle order of operations and ensure that the correct answer is found.</p>
 </div>
 
 <div class="row">
   <h1 class="h1-responsive">Applications</h1>
   <hr>
   
-    <p>Stacks are extremely important data structures that are used in many programming problems, especially in the field of graph theory, where they are most commonly associated with DFS algorithms. While they are rarely the only part of a solution to a problem, they are used as utility data structures in many solutions.</p>
+    <p>Stacks are extremely important data structures that are used in many programming problems, especially in the field of graph theory, where they are most commonly associated with DFS based algorithms. While they are rarely the only part of a solution to a problem, they are used as utility data structures in many solutions.</p>
 </div>
 
 <div class="row">
@@ -97,8 +88,8 @@ title = "Stack – Learn Data Structures"
   <hr>
 
   <ul class="large-list">
-    <li><a href="https://dmoj.ca/problem/mwc15c2p2">MWC '15 #2 P2: Towering Towers</a></li>
-    <li><a href="https://dmoj.ca/problem/ccc14s3">CCC '14 S3 - The Geneva Confection</a></li>
     <li><a href="https://dmoj.ca/problem/ccc15s1">CCC '15 S1 - Zero That Out</a></li>
+    <li><a href="https://dmoj.ca/problem/ccc14s3">CCC '14 S3 - The Geneva Confection</a></li>
+    <li><a href="https://dmoj.ca/problem/mwc15c2p2">MWC '15 #2 P2: Towering Towers</a></li>
   </ul>
 </div>
