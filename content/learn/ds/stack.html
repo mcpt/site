@@ -75,9 +75,60 @@ title = "Stack – Learn Data Structures"
   
   <p>The above code is a simpler version of algorithms that solve BEDMAS equations. Those algorithms also use a stack to handle order of operations and ensure that the correct answer is found.</p>
 </div>
+  
+<div class="row">
+  <h1 class="h1-responsive">Recursion</h1>
+  <hr>
+  
+  <p>The behaviour of recursion closely models how stacks add and remove elements. For example, shown below is a method which recursively calculates the factorial of a given number:</p>
+  
+  <pre class="language-java"><code>
+    public static int factorial(int n) {
+      if(n &lt;= 1) {
+        return 1;
+      }
+      
+      return n * factorial(n - 1);
+    }
+  </code></pre>
+  
+  <p>Imagine a stack which holds a list of methods to execute, where the methods at the top of the stack are to be executed first. If <code>factorial(3)</code> is called, it will be added to the stack.</p>
+  
+  <p>Inside <code>factorial(3)</code>, the method <code>factorial(2)</code> is called. Since the result of <code>factorial(3)</code> depends on <code>factorial(2)</code>, <code>factorial(2)</code> must be executed first, thus it will be placed on top of the stack.</p>
+  
+  <p><code>factorial(2)</code> will then call the method <code>factorial(1)</code>, which is placed on top of the stack. Since <code>factorial(1)</code> doesn't make any recursive calls, it will return a result of <code>1</code>, and is removed from the top of the stack.</p>
+  
+  <p><code>factorial(2)</code> is now on top of the stack and since it doesn't make anymore recursive calls, it returns a value of <code>2</code> and is removed from the stack.</p>
+  
+  <p>Now, just <code>factorial(3)</code> is left on the stack. Finally, <code>factorial(3)</code> is removed from the stack, and a final answer of <code>6</code> is returned.</p>
+  
+  <p>Because recursive calls can be easily modelled with stacks, any recursive method can be rewritten to avoid recursion, and use a stack instead. Shown below the above <code>factorial()</code> method rewritten to use a stack:</p>
+  
+  <pre class="language-java"><code>
+    public static int factorial(int n) {
+      Deque&lt;Integer&gt; stack = new ArrayDeque&lt;Integer&gt;();
+      stack.addFirst(n);
+      
+      int result = 1, curr = 0;
+      
+      while(!stack.isEmpty()) {
+        curr = stack.removeFirst();
+        result *= curr;
+        
+        if(curr &gt; 1) {
+          stack.addFirst(curr - 1);
+        }
+      }
+      
+      return result;
+    }
+  </code></pre>
+  
+  <p>Rewriting a recursive method to use a stack can sometimes avoid stack overflow errors, which can occur for methods which make a large amount of recursive calls.</p>
+</div>
 
 <div class="row">
-  <h1 class="h1-responsive">Applications</h1>
+  <h1 class="h1-responsive">Conclusion</h1>
   <hr>
   
     <p>Stacks are extremely important data structures that are used in many programming problems, especially in the field of graph theory, where they are most commonly associated with DFS based algorithms. While they are rarely the only part of a solution to a problem, they are used as utility data structures in many solutions.</p>
