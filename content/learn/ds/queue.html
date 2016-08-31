@@ -18,70 +18,64 @@ title = "Queue – Learn Data Structures"
 </div>
 
 <div class="row">
-  <p class="lead">The queue is a FIFO (first in first out) data structure. It allows you to insert and remove elements in the order in which they were inserted. If an element was inserted before another element, then the first element would be removed before the second. </p>
+  <p>It is highly recommended to read the <a href="http://mcpt.ca/learn/ds/deque">deque</a> lesson first, as it covers the main operations of a queue. This lesson covers the usage of queue in programming problems.</p>
   
-  <p>The following is a diagram of a queue. It is depicted as a linear structure. The <em>first</em> element is called the front. It is the next element to be removed. Conversely, the <em>last</em> element is called the back. It is the most recently inserted element. </p>
+  <p class="lead">The queue is a FIFO (first in first out) data structure. It allows you to insert and remove elements in the order in which they were inserted. If an element was inserted before another element, then the first element would be removed before the second.</p>
+  
+  <p>The following is a diagram of a queue. It is depicted as a linear structure. The <em>first</em> element is called the front. It is the next element to be removed. Conversely, the <em>last</em> element is called the back. It is the most recently inserted element.</p>
   
   <img class="img-fluid" src="../img/queue1.png"><br>
   
-  <p>Elements may only be inserted to the back and removed from the front. </p>
-</div>
-
-<div class="row">
-  <h1 class="h1-responsive">Features</h1>
-  <hr>
-  <p>An implementation of a queue is provided in most programming languages. In Java, this data structure is defined by both the <code>Queue</code> and <code>Deque</code> (stands for double ended queue) interface. However, the <code>Deque</code> class supports more operations (such as insertion and deletion from both the front and back), making it more useful in programming contests.</p>
-  
-  <p>Note that although <code>Deque</code> supports more operations, only the standard queue operations are covered in this lesson. The other methods are covered in the Deque lesson.</p>
-  
-  <p>Some operations are supported by multiple methods in the <code>Deque</code> interface. To reduce confusion, only one method is listed for each feature.</p>
-  
-  <p>It is important to note that all operations below are performed in amortized \(\mathcal{O}(1)\) and that <code>E</code> is the type of object that is stored in the queue.</p>
-  
-  <h3 class="h3-responsive">Size</h3>
-  
-  <p><code>int size()</code> – returns the number of elements in the queue. </p>
-  
-  <p><code>boolean isEmpty()</code> returns <code>true</code> if there are \(0\) elements in the deque, and <code>false</code> otherwise.</p>
-  
-  <h3 class="h3-responsive">Insert Back</h3>
-  
-  <p><code>boolean offer(E e)</code> – element <code>e</code> is added to the back of the queue. This method will throw an exception if <code>e</code> is <code>null</code>. Will always return <code>true</code>.</p>
-    
-  <h3 class="h3-responsive">Access Front</h3>
-  
-  <p><code>E peek()</code> – returns the element at the front of the queue. Returns <code>null</code> if the queue is empty.</p>
-    
-  <h3 class="h3-responsive">Remove Front</h3>
-    
-  <p><code>E poll()</code> - returns and removes the element at the front of the queue. Returns <code>null</code> if the queue is empty.</p>
+  <p>Elements may only be inserted to the back and removed from the front.</p>
 </div>
 
 <div class="row">
   <h1 class="h1-responsive">Usage</h1>
   <hr>
   
-  <p><code>ArrayDeque</code> is a class which implements the methods in the <code>Deque</code> class that were shown above. Although the <code>LinkedList</code> class also implements the above methods, it is almost always slower than an <code>ArrayDeque</code> and is not recommended.</p>
+  <p>To understand how a queue might be used to solve programming problems, let's solve a simple problem:</p>
+  
+  <blockquote class="blockquote">
+    <p>There are \(N\) customers waiting in line, each wanting to buy a certain amount of bread slices. \(Q\) events occur, where each one is one of two types:</p>
+    <p>Type 1: A customer goes to the back of the line, with a certain amount of bread slices.</p>
+    <p>Type 2: The customer at the front of the line leaves the line, without purchasing any bread.</p>
+    
+    <p>Your task is to count how many bread slices are sold.</p>
+  </blockquote>
+  
+  <p>To solve this problem, use a queue to represent the customers waiting in line, as shown below:</p>
   
   <pre class="language-java"><code>
-    // create a queue which stores objects of type Integer
+    import java.util.*;
+  
+    // create a queue which stores integers, representing the amount of bread slices each customer wants to buy
     Deque&lt;Integer&gt; queue = new ArrayDeque&lt;Integer&gt;();
-    
-    // queue now contains the elements 1 2 3 4 5 (in that order)
-    for(int n = 1; n &lt;= 5; n++) {
-      queue.offer(n);
-    }
-    
-    if(queue.peek() == 1 && queue.size() == 5) {
-        while(!queue.isEmpty()) {
-          System.out.print(queue.poll() + " ");
-        }
-    }
   </code></pre>
   
-  <p>Output:</p>
+  <p>When an event of type 1 occurs, we add the customer to the back of the line. This is shown below in code:</p>
   
-  <pre class="language-none"><code>1 2 3 4 5 </code></pre>
+  <pre class="language-java"><code>
+      // add a customer who wants s slices of bread to the back of the line
+      queue.addLast(s);
+  </code></pre>
+    
+  <p>When a type 2 event happens, we remove the customer at the front of the line, as shown below:</p>
+  
+  <pre class="language-java"><code>
+    queue.removeFirst();
+  </code></pre>
+  
+  <p>Finally, after all \(Q\) events are over, we can simply sum up all the bread slices held by customers remaining in the line. This idea is represented in the code snippet below:</p>
+  
+  <pre class="language-java"><code>
+    int total = 0;
+    
+    while(!queue.isEmpty()) {
+      total += queue.removeFirst();
+    }
+    
+    return total;
+  </code></pre>
 </div>
 
 <div class="row">
