@@ -60,9 +60,11 @@ title = "Topological Sort – Learn Algorithms"
   <p>The depth first algorithm finds the topological sort by visiting all vertices. Once all the neighbours of a vertex \(u\) are visited and added to a list keeping track of the topological sort, \(u\) is appended to the list. This algorithm is implemented as shown below:</p>
   
   <pre class="language-java"><code>
+    import java.util.*; // to use Deque and ArrayDeque
+  
     boolean[] visited = new boolean [N];// a boolean array keeping track of visited nodes
     boolean[][] adj = new boolean [N][N];// an adjacency matrix representing the graph
-    Queue &ltInteger&gt order = new ArrayDeque &ltInteger&gt ();// a queue holding the topological sort order of the vertices
+    Deque&ltInteger&gt order = new ArrayDeque&ltInteger&gt ();// a queue holding the topological sort order of the vertices
     
     public static void dfs(int u) {
       visited[u] = true;// mark the vertex as visited (will not visit here again)
@@ -73,7 +75,7 @@ title = "Topological Sort – Learn Algorithms"
         }
       }
       
-      order.offerFirst(u);// add the current vertex to the front of the topological sorting order
+      order.addFirst(u);// add the current vertex to the front of the topological sorting order
     }
   </code></pre>
   
@@ -91,7 +93,7 @@ title = "Topological Sort – Learn Algorithms"
   
   <pre class="language-java"><code>
     while(!order.isEmpty()) {
-      System.out.println(order.remove());
+      System.out.println(order.removeFirst());
     }
   </code></pre>
 </div>
@@ -122,11 +124,14 @@ title = "Topological Sort – Learn Algorithms"
   <p>Next, we have to find all the vertices with an indegree of \(0\) (i.e. no pre-requisites) and add them to a queue to process.</p>
   
   <pre class="language-java"><code>
-      Queue &ltInteger&gt queue = new ArrayDeque &ltInteger&gt();// stores nodes with an indegree of 0
+      import java.util.*; // must be imported for Deque, ArrayDeque, List and ArrayList
+  
+      Deque&ltInteger&gt queue = new ArrayDeque&ltInteger&gt();// stores nodes with an indegree of 0
+      List&ltInteger&gt order = new ArrayList&ltInteger&gt();// stores the final topological order of nodes
       
       for(int n = 0; n < N; n++) {
         if(indegree[n] == 0) {
-          queue.offer(n);
+          queue.addFirst(n);
         }
       }
   </code></pre>
@@ -135,8 +140,8 @@ title = "Topological Sort – Learn Algorithms"
     
   <pre class="language-java"><code>
       while(!queue.isEmpty()) {// while there are still nodes to process
-        // remove a vertex with indegree of 0 from the queue, and add it to the end of the order
-        int u = queue.poll();
+        // remove a vertex with indegree of 0 from the queue, and add it to the end of the ordering
+        int u = queue.removeFirst();
         order.add(u);
         
         for(int v = 0; v < N; v++) {// iterate through the neighbours of the node (v), and remove the edges connecting them
@@ -144,7 +149,7 @@ title = "Topological Sort – Learn Algorithms"
             indegree[v]--;// the indegree of the neighbour decreases since the edge is being removed
             
             if(indegree[v] == 0) {// if the indegree is 0 (no more pre-requisites), add it to the queue to process later
-              queue.offer(v);
+              queue.addFirst(v);
             }
           }
         }
