@@ -1,0 +1,70 @@
++++
+title = "Binary Search – Learn Algorithms"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/learn">Learn</a></li>
+    <li><a href="/learn/al">Algorithms</a></li>
+    <li class="active">Binary Search</li>
+  </ol>
+</div>
+
+<div class="row">
+  <h1>Binary Search</h1>
+  <hr>
+</div>
+
+<div class="row">
+  <p class="lead">Binary search is a very powerful, yet simple search algorithm. It operates on a sorted set of elements. </p>
+
+  <hr>
+  
+  <p>In the sorted array: <code>[1, 2, 2, 4, 5, 8, 12]</code>, the number <code>3</code> is to be found. </p>
+  
+  <p>At each step, the middle element in the possible range is checked. <code>4</code> is checked. Since <code>4</code> is greater than <code>3</code>, all the numbers past <code>4</code> are also greater than 3 because the array is in ascending order. Thus, the range can be reduced to: <code>[1, 2, 2]</code>.</p>
+  
+  <p>Once again, the middle element is checked, <code>2</code>. <code>2</code> is less than <code>3</code>, so the range is reduced to <code>[2]</code>. </p>
+  
+  <p>There is only one element in the range, and it's not <code>3</code>. It can be concluded that <code>3</code> does not exist in the array. </p>
+</div>
+
+<div class="row">
+  <h1 class="h1-responsive">Implementation</h1>
+  
+  <p>The following is an implementation of using binary search to find the first occurance of an element <code>key</code> in array <code>a</code>. </p>
+  
+  <pre class="language-java"><code>
+    int hi = a.length - 1, lo = 0, mid, ind = a.length;
+    while(hi &gt;= lo) {
+        mid = (hi + lo) / 2;
+        if(a[mid] == key) // Found element
+            ind = Math.min(ind, mid); // Take minimum
+
+        if(a[mid] &lt; key)
+            lo = mid + 1;
+        else // a[mid] &gt;= key
+            hi = mid - 1;
+    }
+    // If ind = a.length, then element doesn't exist
+  </code></pre>
+  
+  <h2 class="h2-responsive">Time Complexity</h2>
+  
+  <p>\(\mathcal O (\log N)\)</p>
+  
+  <p>The algorithm halves the size of the range with each iteration until the range only contains 1 element. Looking at this backwards, with each additional check, the maximum size of the array that can be fully checked is doubled. Thus, the time complexity is the inverse of \(2^N\): \(\log _2 N\). </p>
+</div>
+
+<div class="row">
+  <h1 class="h1-responsive">Practice</h1>
+  <hr>
+
+  <ul class="large-list">
+    <li><a href="https://dmoj.ca/problem/seed2">DMOJ: Uneven Sand</a></li>
+    <li><a href="https://dmoj.ca/problem/mwc15c4p5">MWC '15 #4 P5: Arts and Crafts</a></li>
+    <li><a href="http://localhost:1313/problems/jdcc15octe">JDCC '15 October E: Estuary</a></li>
+  </ul>
+</div>
