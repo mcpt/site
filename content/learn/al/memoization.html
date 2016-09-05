@@ -1,0 +1,54 @@
++++
+title = "Memoization – Learn Algorithms"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/learn">Learn</a></li>
+    <li><a href="/learn/al">Algorithms</a></li>
+    <li class="active">Memoization</li>
+  </ol>
+</div>
+
+<div class="row">
+  <h1>Memoization</h1>
+  <hr>
+</div>
+
+<div class="row">
+  <p class="lead">Memoization is a technique that saves processing power by caching function call results to avoid reprocessing. Memoization is often used to speed up recursion. </p>
+  
+  <p>In the fibonacci recursive function example, the the function is called with the same parameter many times. Thus, the results will be stored in an array <code>cache</code>. </p>
+  
+  <p>The following is the unoptimized fibonacci function. </p>
+  
+  <pre class="language-java"><code>
+    static int fib(int n) {
+        if(n &lt;= 2) return 1;
+        return fib(n - 1) + fib(n - 2);
+    }
+  </code></pre>
+  
+  <p>To optimize the function, a global array <code>cache</code>, initialized to the maximum size of \(n\) of <code>-1</code> is created. The function will then be as follows: </p>
+  
+  <pre class="language-java"><code>
+    static int fib(int n) {
+        if(n &lt;= 2) return 1;
+        if(cache[n] != -1) return cache[n];
+        return cache[n] = fib(n - 1) + fib(n - 2);
+    }
+  </code></pre>
+  
+  <p>Base cases can be hardcoded into the cache array or in the function. </p>
+</div>
+
+<div class="row">
+  <h1 class="h1-responsive">Practice</h1>
+  <hr>
+
+  <ul class="large-list">
+    <li><a href="LINK">PROBLEM NAME</a></li>
+  </ul>
+</div>
