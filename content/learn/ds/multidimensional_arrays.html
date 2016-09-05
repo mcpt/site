@@ -1,0 +1,54 @@
++++
+title = "Multidimensional Arrays – Learn Data Structures"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/learn">Learn</a></li>
+    <li><a href="/learn/ds">Data Structures</a></li>
+    <li class="active">Multidimensional Arrays</li>
+    
+  </ol>
+</div>
+
+<div class="row">
+  <h1>Multidimensional Arrays</h1>
+  <hr>
+</div>
+
+<div class="row">
+  <p class="lead">Multidimensional arrays may be required in some situations with multiple states or grids. </p>
+  
+  <p>The declaration and use of a multidimensional array is very similar to that of a single dimension array. </p>
+  
+  <pre class="language-java"><code>
+    int[][] grid = new int[N][M];
+    int[][][] cube = new int[X][Y][Z];
+    
+    grid[0][1] = cube[0][0][0];
+    grid[0].length; // M
+    cube[0].length; // Y
+  </code></pre>
+  
+  <p>As more dimensions are added, the memory required grows exponentially. </p>
+</div>
+
+<div class="row">
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <p><strong>Access:</strong> \(\mathcal O (1)\)</p>
+  
+  <h3 class="h3-responsive">Space Complexity</h3>
+  
+  <p>\(\mathcal O (S_0 \times S_1 \times S_2 \times \ldots \times S_k)\), where \(S_i\) is the size of the \(i\)<sup>th</sup> dimension. </p>
+</div>
+
+<div class="row">
+  <h1 class="h1-responsive">Practice</h1>
+  <hr>
+
+  <ul class="large-list">
+    <li><a href="LINK">PROBLEM NAME</a></li>
+  </ul>
+</div>
