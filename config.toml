@@ -2,3 +2,4 @@ baseurl = "http://mcpt.ca/"
 languageCode = "en-ca"
 title = "MCPT"
 theme = "mcpt-hugo-theme"
+paginate = 10
