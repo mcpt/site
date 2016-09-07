@@ -66,7 +66,7 @@ title = "Difference Array – Learn Data Structures"
   <p>You should know how to perform the <a href="/learn/ds/prefix_sum_array">prefix sum array</a> construction operation already. Most difference array questions ask for an answer at the end, such as the largest element or the number of elements that exceed a given constant. Usually, these can be done simultaneous to the prefix sum array construction. A largest element search is shown below. </p>
 
   <pre class="language-java"><code>
-    int max = Integer.minValue(), cur = 0;
+    int max = Integer.MIN_VALUE, cur = 0;
 
     for(int n = 0; n &lt; N; n++) {
         cur += d[n];
