@@ -28,7 +28,7 @@ title = "Style"
 
   <pre class="language-java"><code>int[] array = new int[N];
 for(int n = 0; n &lt; N; n++) {
-array[n] = in.nextInt(); // Example usage
+  array[n] = in.nextInt(); // Example usage
 }</code></pre>
 
   <p>When given a constant lowercase variable (for example some old CCC problems), if possible, use a capitalized version in your code instead. This is so that your code is consistent across problems. </p>
@@ -38,9 +38,9 @@ array[n] = in.nextInt(); // Example usage
   <p>Grid problems are pretty common. Typically, variable pairs are \(M, N\) and \(R, C\). Loop variables should be named accordingly. Note that typically, \(R\) will be given first. Rows translates to \(y\) in a coordinate. The following is an example of input with a grid problem. </p>
 
   <pre class="language-cpp"><code>for(int r = 0; r &lt; R; r++) { // Rows first
-for(int c = 0; c &lt; C; c++) { // Then columns
-// Read char or whatever is given
-}
+  for(int c = 0; c &lt; C; c++) { // Then columns
+  // Read char or whatever is given
+  }
 }</code></pre>
 
   <hr>
@@ -79,18 +79,18 @@ for(int c = 0; c &lt; C; c++) { // Then columns
 int a[] = {1, 2, 3 * (1 + 1)};
 
 for(int i = 0; i &lt; 3; i++) {
-if(i == 1) {
-  a[i + 1] = 0;
-  // Do something else
-} else { // Same line
-  a[0] = i;
-  i = 0;
+  if(i == 1) {
+    a[i + 1] = 0;
+    // Do something else
+  } else { // Same line
+    a[0] = i;
+    i = 0;
+  }
 }
-}
+
 for(int i = 0; i &lt; 3; i++)
-a[i] = i;
+  a[i] = i;
 
-if(a[0] == 1) return 1;
+  if(a[0] == 1) return 1;
 }</code></pre>
-
 </div>
