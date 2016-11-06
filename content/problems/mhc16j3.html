@@ -1,0 +1,58 @@
++++
+title = "Trick or Treat (MHC16J3)"
++++
+
+<div class="row">
+  <span class="editorial-title">
+    <h1>Trick or Treat <small class="text-muted">mhc16j3</small></h1>
+    <i class="fa fa-pencil"></i><user>Sarah Goldfarb</user>
+    <hr>
+  </span>
+  
+  <p>You and your friends are trick-or-treating. You visit a certain number of houses and each house gives you a certain number of pieces of candy. You must determine which house has given you the most candy. You begin at house number \(H\).</p>
+
+  <hr>
+
+  <h2 class="h2-responsive">Input</h2>
+
+  <p>The first line contains one integer, \(H\), your starting position and the number of moves you make. </p>
+  
+  <p>The next lines contain two numbers, \(a\) and \(b\). \(a\) is the number of candy you received from that house, and \(b\) is how many houses you move. Input ends with \(b = 0\). </p>
+  
+  <h3 class="h3-responsive">Constraints</h3>
+  
+  <p>\(1 \le H \le 1000\)<br>
+    \(1 \le a \le 20\)<br>
+    \(-15 \le b \le 15\)</p>
+  
+  <h2 class="h2-responsive">Output</h2>
+
+  <p>Output the number of the house that gave you the most amount of candy. There will never be a tie between two houses. </p>
+  
+  <hr>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input</h2>
+
+    <pre class="language-none"><code>125
+3 4
+8 -8
+1 -2
+5 3
+6 0</code></pre>
+    
+  </div>
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output</h2>
+
+    <pre class="language-none"><code>129</code></pre>
+  </div>
+</div>
+
+<div class="row">
+  <h2 class="h2-responsive">Explanation for Sample Output</h2>
+  
+  <p>You begin at house \(125\). You receive \(3\) candies there and move \(4\) houses up. You are now at house number \(129\) where you receive \(8\) candies. This is the answer outputted since it is the house that gives the most candy. The following houses, \(121\), \(119\), and \(122\) give you \(1\), \(5\), and \(6\) candies respectively. These are irrelevant to output since they are less than house \(129\).</p>
+</div>

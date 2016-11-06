@@ -1,0 +1,89 @@
++++
+title = "Candyman (MHC16S5)"
++++
+
+<div class="row">
+  <span class="editorial-title">
+    <h1>Candyman <small class="text-muted">mhc16s5</small></h1>
+    <i class="fa fa-pencil"></i><user>Atharva Washimkar</user>
+    <hr>
+  </span>
+
+  <p>It&#39;s the night before Halloween, and you need to decide what you&#39;re going to give out to the children who visit your house! After a bit of digging around, you manage to find \(N\) candy boxes, each made by a different company. Each of the candy boxes has  \(b_{i}\) candy bars in them.</p>
+  
+  <p>You decide to make candy care packages, each containing exactly \(C\) candy bars, where each bar is made by a different company. Since you don&#39;t want to dissapoint any trick-or-treaters, you want to know the maximum number of candy care packages you can make!</p>
+
+  <hr>
+
+  <h2 class="h2-responsive">Input</h2>
+
+  <p>The first line contains two space separated integers \(C\) \((1 \le C \le 20)\) and \(N\) \((C \le N \le 50)\), representing the number of candy bars that go into each care package, and the number of candy boxes you have respectively.</p>
+  
+  <p>The next line contains \(N\) space separated integers \(b_{i}\) \((1 \le b_{i} \le 10^9)\), specifying the number of candy bars in each box.</p>
+
+  <h2 class="h2-responsive">Output</h2>
+
+  <p>Output the maximum number of candy care packages you can make. Note: the number may not fit into an int, use <code>long</code> in Java or <code>long long int</code> in C++.</p>
+  <hr>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input 1</h2>
+
+    <pre class="language-none"><code>
+    4 5
+    4 4 4 4 4
+    </code></pre>
+    
+  </div>
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output 1</h2>
+
+    <pre class="language-none"><code>5</code></pre>
+  </div>
+</div>
+
+<div class="row">
+  <hr>
+  
+  <h2 class="h2-responsive">Explanation for Sample Output 1</h2>
+  
+  <p>Assuming the 5 different boxes are <code>A</code>, <code>B</code>, <code>C</code>, <code>D</code> and <code>E</code>, shown below are the 5 candy care packages you can make using candy from those boxes.</p>
+  
+  <pre class="language-none"><code>A B C D
+A B C E
+A B D E
+A C D E
+B C D E
+  </code></pre>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input 2</h2>
+
+    <pre class="language-none"><code>5 6
+1 2 3 4 5 6
+    </code></pre>
+    
+  </div>
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output 2</h2>
+
+    <pre class="language-none"><code>3</code></pre>
+  </div>
+</div>
+
+<div class="row">
+  <hr>
+  
+  <h2 class="h2-responsive">Explanation for Sample Output 2</h2>
+  
+  <p>Assuming the boxes are labelled <code>A</code> to <code>F</code> (as ordered in input), shown below are the 3 candy care packages you can make using candy from those boxes.</p>
+  
+  <pre class="language-none"><code>B C D E F
+B C D E F
+A C D E F
+  </code></pre>
+</div>

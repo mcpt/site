@@ -1,0 +1,60 @@
++++
+title = "Ghost Stories (MHC16J5)"
++++
+
+<div class="row">
+  <span class="editorial-title">
+    <h1>Ghost Stories <small class="text-muted">mhc16j5</small></h1>
+    <i class="fa fa-pencil"></i><user>Atharva Washimkar</user>
+    <hr>
+  </span>
+
+  <p>This year&#39;s weather is extremely cold, and rather than going trick-or-treating, you decide to throw a Halloween party with \(N\) \((1 \le  N\le 10^5)\) of your closest friends! As is tradition, all your friends begin listening to and sharing spooky stories.</p>
+  
+  <p>Each person will only listen to <strong>at most one</strong> story from someone else, and can tell a story to multiple people (or none at all).</p>
+  
+  <p>However, not everyone came to the party with a story to tell, and some people simply retold stories that they heard earlier from someone else at the party.</p>
+  
+  <p>You are interested to know whether, given two people \(A\) and \(B\) at the party, whether it is possible that they could both be retelling the same story that they heard from someone else. You are also interested in finding who the original storyteller could be.</p>
+
+  <hr>
+
+  <h2 class="h2-responsive">Input</h2>
+
+  <p>On the first line, one integer \(N\), representing the number of people attending the party.</p>
+  
+  <p>The next line contains \(N\)  space separated integers \(p_{i}\) \((1 \le p_{i} \le N)\), representing the person that the \(i^{th}\) person listened to. If the \(i^{th}\) person told an original story, \(p_{i}\) will be equivalent to \(i\).</p>
+  
+  <p>The last line contains two space separated integers \(A\) and \(B\), \((1 \le A, B \le N, A \neq B)\), representing the two people you want to check.</p>
+
+  <h2 class="h2-responsive">Output</h2>
+
+  <p>Output space separated integers on one line in increasing order, representing the possible storytellers that may have been the source of the story \(A\) and \(B\) are retelling. Note that it is possible for \(A\) or \(B\) to be an original storyteller.</p>
+  
+  <p>If there is no such storyteller, output <code>-1</code>.</p>
+  <hr>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input</h2>
+
+    <pre class="language-none"><code>5
+1 1 2 2 4
+3 5</code></pre>
+    
+  </div>
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output</h2>
+
+    <pre class="language-none"><code>1 2</code></pre>
+  </div>
+</div>
+
+<div class="row">
+  <hr>
+  
+  <h2 class="h2-responsive">Explanation for Sample Output</h2>
+  
+  <p>Person 1 told a story to Person 2, who then told a story to Person 3 and 4. Person 4 then told a story to Person 5. The only two people who could be original storytellers are Person 1 and 2.</p>
+</div>

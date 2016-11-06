@@ -1,0 +1,67 @@
++++
+title = "Pumpkin Carving (MHC16J2)"
++++
+
+<div class="row">
+  <span class="editorial-title">
+    <h1>Pumpkin Carving <small class="text-muted">mhc16j2</small></h1>
+    <i class="fa fa-pencil"></i><user>Vincent Macri</user>
+    <hr>
+  </span>
+  
+  <p>Vincent wants to have the best pumpkin carving design on his street. To do this, he has planned every important coordinate of his design, as he was taught by Mrs. Krasteva and Ms. Dyke. </p>
+  
+  <p>Given \(N\) points, output the general direction to travel in to get to the next point. Start at the first point. </p>
+
+  <hr>
+
+  <h2 class="h2-responsive">Input</h2>
+
+  <p>The first line will contain the integer \(N\), the number of points. </p>
+  
+  <p>The next \(N\) lines will each contain two integers: the \(x\) value of the point followed by the \(y\) value of the point. </p>
+
+  <p>\(1 \le N \le 1000\)</p>
+  <p>\(-10000 \le x, y \le 10000\)</p>
+  
+  <h2 class="h2-responsive">Output</h2>
+
+  <p>Output the general direction to cut in. Each cut should have its own line of output. </p>
+  
+  <p>The possible directions are: <code>UP</code>, <code>DOWN</code>, <code>LEFT</code>, <code>RIGHT</code>, <code>UPLEFT</code>, <code>UPRIGHT</code>, <code>DOWNLEFT</code>, and <code>DOWNRIGHT</code>. </p>
+  
+  <p>Occasionally, Vincent will wants a part of the pumpkin to be emphasized. On his plan, he lists the same point multiple times if he wants to stab the pumpkin in that spot. When this happens, output <code>STAB</code> as many times as the plan says to. </p>
+  
+  <p>Vincent also starts by stabbing the pumpkin, therefore you should have \(N\) lines of output. </p>
+  
+  <hr>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input</h2>
+
+    <pre class="language-none"><code>8
+0 0
+0 1
+0 0
+1 0
+2 1
+-4 -7
+5 5
+5 5</code></pre>
+    
+  </div>
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output</h2>
+
+    <pre class="language-none"><code>STAB
+UP
+DOWN
+RIGHT
+UPRIGHT
+DOWNLEFT
+UPRIGHT
+STAB</code></pre>
+  </div>
+</div>

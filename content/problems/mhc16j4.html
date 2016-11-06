@@ -1,0 +1,54 @@
++++
+title = "Haunted Messages (MHC16J4)"
++++
+
+<div class="row">
+  <span class="editorial-title">
+    <h1>Haunted Messages <small class="text-muted">mhc16j4</small></h1>
+    <i class="fa fa-pencil"></i><user>Sarah Goldfarb</user>
+    <hr>
+  </span>
+  
+  <p>Christine finds a secret message on the wall of a haunted house. She gives us clues to figure out the message. First she gives 5 letter words to find the message. To find the message, we need to mix the words evenly. For example, hello, light, shoes. This would mix the word like this: hlseihlgolheots. Then she gives numbers to indicate the places in this mixed word where the final message shares a value. </p>
+
+  <hr>
+
+  <h2 class="h2-responsive">Input</h2>
+
+  <p>The first line includes the number of 5 letter words that she gave as clues, \(C\) \((2 \le C \le 20)\). </p>
+  
+  <p>Then the next line contains \(C\) five letter words, each separated by a space. </p>
+  
+  <p>The following line contains \(L\) \((1 \le L \le 15)\), the length of the final message. </p>
+  
+  <p>The final line contains \(L\) numbers, the indices that Christine uses to create the final message. </p>
+  
+  <h2 class="h2-responsive">Output</h2>
+
+  <p>A string, the final message. </p>
+  
+  <hr>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input</h2>
+
+    <pre class="language-none"><code>3
+asdfh lncob qwery
+9
+12 0 1 1 10 5 8 8 4</code></pre>
+    
+  </div>
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output</h2>
+
+    <pre class="language-none"><code>halloween</code></pre>
+  </div>
+</div>
+
+<div class="row">
+  <h2 class="h2-responsive">Explanation for Sample Output</h2>
+  
+  <p>The mixed message is: <code>alqsnwdceforhby</code>. This message is used for indices where a starts at 0. </p>
+</div>

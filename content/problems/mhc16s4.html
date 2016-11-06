@@ -1,0 +1,72 @@
++++
+title = "Chants (MHC16S4)"
++++
+
+<div class="row">
+  <span class="editorial-title">
+    <h1>Chants <small class="text-muted">mhc16s4</small></h1>
+    <i class="fa fa-pencil"></i><user>Justin Pu</user>
+    <hr>
+  </span>
+
+  <p>It's Halloween and the ghosts are chanting. In fact, they are counting. The spookiness of a given moment is the sum of the numbers all the ghosts are chanting at that moment. There are two types of ghosts, ones that count up and ones that count down. Additionally some ghosts like to show off their math skills by counting in multiples of a certain number. Find the maximum spookiness of the night. </p>
+
+  <hr>
+
+  <h2 class="h2-responsive">Input</h2>
+
+  <p>The first line of input contains two space separated integers, \(T\) \((1 \le T \le 1\ 000\ 000)\), the length of time of the chanting period and \(N\) \((1 \le N \le 1\ 000\ 000)\), the number of ghosts involved in the chant. </p>
+
+  <p>The next \(N\) lines are in the form <code>S L C M</code>. \(S\) \((S \ge 0)\) is the start time. \(L\) is the length that this ghost chants for \((0 \le S + L - 1 \lt T)\). \(C\) is either <code>U</code> or <code>D</code> indicating that this ghost counts up or down respectively. Finally, \(M\) \((1 \le M \le 10\ 000)\) is multiple that this ghost counts by. </p>
+  
+  <p>If the ghost counts up, then it chants \(M\) at the \(S^{\text{th}}\) second and \(2M\) at the \(S+1^{\text{th}}\) second and stops at \(LM\) at the \(S + L - 1^{\text{th}}\) second. </p>
+  
+  <p>If the ghost counts down, then it chants \(LM\) at the \(S^{\text{th}}\) second and \((L - 1)M\) at the \(S+1^{\text{th}}\) second and stops at \(M\) at the \(S + L - 1^{\text{th}}\) second. </p>
+  
+  <h3 class="h3-responsive">Constraints</h3>
+  
+  <p>For \(20\%\) of the points, \(N \le 1000\). </p>
+
+  <h2 class="h2-responsive">Output</h2>
+
+  <p>The first line of output contains maximum spookiness value during the chant.</p>
+  
+  <p>The second line of output contains the moment(s) of maximum spookiness in ascending order. </p>
+  <hr>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input</h2>
+
+    <pre class="language-none"><code>7 4
+0 7 U 1
+0 7 D 1
+0 3 D 4
+3 4 U 3</code></pre>
+    
+  </div>
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output</h2>
+
+    <pre class="language-none"><code>20
+0 6</code></pre>
+  </div>
+</div>
+
+<div class="row">
+  <hr>
+  
+  <h2 class="h2-responsive">Explanation for Sample Output</h2>
+  
+  <p>The following are the numbers that each ghost chants. The time is shown on the top and the sum of the numbers is shown on the bottom. </p>
+  
+  <pre class="language-none"><code>0  1  2  3  4  5  6  
+--------------------
+1  2  3  4  5  6  7 
+7  6  5  4  3  2  1 
+12 8  4             
+         3  6  9  12
+--------------------
+20 16 12 11 14 17 20</code></pre>
+</div>

@@ -1,0 +1,112 @@
++++
+title = "Zombie Macvasion (MHC16S2)"
++++
+
+<div class="row">
+  <span class="editorial-title">
+    <h1>Zombie Macvasion <small class="text-muted">mhc16s2</small></h1>
+    <i class="fa fa-pencil"></i><user>Lev Raizman</user>
+    <hr>
+  </span>
+
+  <p>William Lyon Mackenzie prides itself for its amazing haunted hall that they create every year. This year was supposed to be better than any previous year, and the students put real zombies into the haunted house. The result was disastrous. Here is how the story goes: </p>
+  
+  <p>There are N rooms in a line. Every room has an entrance and an exit, as well as a door connecting it to the room to the right of it. Some of these rooms contained one zombie, and others didn’t. Every student who arrived was assigned a random room to enter. No two students were assigned the same room. </p>
+  
+  <p>Then, the door to the leftmost room was unlocked, and certain events took place. If the room was empty and no one entered nothing happened, and the door to the right is unlocked. If a student enters an empty room, he walks out of the regular exit safely. If no student enters a room with a zombie, the zombie runs out through the exit, looking for someone to bite. </p>
+  
+  <p>However, if a student walks into a room with a zombie in it, the zombie bites the student, who now becomes a zombie. The newly created zombie goes through the door connecting the room to the next room, looking for an empty room to wait for prey. While searching for his empty room, any zombies he meets will bite him, and will be sated. Additionally, any students passing through a room which contains two zombies will exit safely. </p>
+  
+  <p>The next room is only unlocked if the previous room no longer has any motion in it. </p>
+  
+  <p>After the organizers realized the terrible mistake they made, they also found out that even the students who left safely are contaminated. You were hired, as an investigator, to find out which doors had zombies exit, and which didn’t. Can you help them? </p>
+
+  <hr>
+
+  <h2 class="h2-responsive">Input</h2>
+
+  <p>The first line will contain \(N\) \((1 \le N \le 1000)\), the number of rooms. </p>
+  
+  <p>The next \(N\) lines will contain either the <code>z</code> or <code>n</code>, followed by <code>s</code> or <code>n</code>, where line 1 represents the first room, line 2 represents the second room, and line \(N\) represents room \(N\). <code>z</code> means that the given room contains a zombie, and <code>s</code> means that the given room will have a student enter. <code>n</code> means no zombie/student. </p>
+
+  <h2 class="h2-responsive">Output</h2>
+
+  <p>\(N + 1\) lines each containing either <code>e</code> or <code>n</code> depending on whether someone exited the room or not. Line \(1\) would be the exit from room one, line \(N\) will be the exit from room \(N\), and \(N + 1\) is the connection to the room to the right, which leads into the open for the last room. </p>
+  <hr>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input 1</h2>
+
+    <pre class="language-none"><code>3
+n n
+n n
+n n</code></pre>
+    
+  </div>
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output 1</h2>
+
+    <pre class="language-none"><code>n
+n
+n
+n</code></pre>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input 2</h2>
+
+    <pre class="language-none"><code>3
+z n
+n s
+z s</code></pre>
+    
+  </div>
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output 2</h2>
+
+    <pre class="language-none"><code>e
+e
+n
+e</code></pre>
+  </div>
+</div>
+
+<div class="row">
+    <hr>
+
+    <h2 class="h2-responsive">Explanation for Sample Output 2</h2>
+  
+    <p>In the first room, the zombie does not sate his hunger, and runs out. In the second room, the student runs out safely. In the third room, the student is bitten by the zombie, and does not exit through the regular exit, but rather attempts to go to the room to the right. However, because there is no room there, he instead walks out of the extra exit. </p>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input 3</h2>
+
+    <pre class="language-none"><code>3
+z s
+z s
+n s</code></pre>
+    
+  </div>
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output 3</h2>
+
+    <pre class="language-none"><code>n
+e
+n
+e</code></pre>
+  </div>
+</div>
+
+<div class="row">
+    <hr>
+
+    <h2 class="h2-responsive">Explanation for Sample Output 3</h2>
+  
+    <p>In the first room, a new zombie is created, leaves to the room to the right, and no one exits. In the next room, the student safely passes due to the fact that one zombie masks the student’s scent from the other zombie. The zombie from room 1 terminates his journey in room 3, because it is empty. A student then enters, and is exists based on the same principle as explained in example 2. </p>
+</div>

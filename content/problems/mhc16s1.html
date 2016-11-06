@@ -1,0 +1,70 @@
++++
+title = "Candy Mania (MHC16S1)"
++++
+
+<div class="row">
+    <span class="editorial-title">
+    <h1>Candy Mania <small class="text-muted">mhc16s1</small></h1>
+    <i class="fa fa-pencil"></i><user>Kushan Zaveri</user>
+    <hr>
+  </span>
+
+  <p>Tomas plans on going trick or treating this Halloween with the intention of visiting \(N\) \((0 \le N \le 100)\) houses (in the order that they are listed) each of which are offering \(C_i\) \((0 \lt C_i \lt K)\) candies. He will start trick or treating at \(H\) \((6 \le H \lt 11)\) o’clock in the evening. However there is one problem, he only has one small bag, which can only hold \(K\) \((0 \lt K \lt 30)\) candies, with him. </p>
+
+  <p>He needs you to plan his evening perfectly, so that he knows exactly when to empty his bag, to make sure he will have enough space for all the candies he’s being offered. It takes Tomas exactly 1 minute to travel from one house to the next. It also takes Tomas 1 minute to empty his bag. Assume that Tomas starts at the first house and that it takes him virtually no time to collect any candy. He will empty his bag after moving to the next house. </p>
+  
+  <p>You will provide him with a list of times when to empty the bag, and exactly how many candies are being emptied. This will help him collect all candies while minimizing the time spent trick or treating. </p>
+  
+  <p>Your last line should state the time that his Halloween trip ends and the number of candies in his bag at this time. Use a 12 hour clock system. You don’t need to specify AM/PM. </p>
+
+  <hr>
+
+  <h2 class="h2-responsive">Input</h2>
+
+  <p>The first line will contain three space-separated integers \(N\) and \(K\) and \(H\).</p>
+  <p>The next \(N\) lines will contain one integer \(C_i\), the candies being offered by the \(i^{\text{th}}\) house.</p>
+
+  <h2 class="h2-responsive">Output</h2>
+
+  <p>The time at which Tomas starts emptying his bag <code>H:MM</code> and the number of candies he empties from his bag, separated by a space.</p>
+
+  <p>Your last line should state the time that his Halloween trip ends <code>H:MM</code> and the number of candies in his bag at this time. </p>
+  <hr>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input 1</h2>
+
+    <pre class="language-none"><code>7 12 6
+8
+5
+3
+2
+2
+9
+4</code></pre>
+    
+  </div>
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output</h2>
+
+    <pre class="language-none"><code>6:01 8
+6:06 12
+6:08 9
+6:09 4</code></pre>
+  </div>
+</div>
+
+<div class="row">
+    <hr>
+
+    <h2 class="h2-responsive">Explanation for Sample Output</h2>
+
+    <p>Tomas is to visit 7 houses. His bag has a capacity of 12. He starts at 6:00. </p>
+  
+    <p>He will first collect 8 candies from the first house. He will then travel to the second house and will react at 6:01. At this time he will start emptying his bag. Once he is done emptying his bag, at 6:02, he will then collect candy from house 2. He will have space to collect candies until he reaches house 6 (at 6:06). Once again he will empty his bag and then collect the candy. Then he will travel to house 7, where he will have to empty his bag one final time. He will finish collecting the candy after emptying his bag at 6:09. He will only have the candy from house 7 (4 candies)
+    </p>
+
+
+</div>
