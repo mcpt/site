@@ -1,0 +1,57 @@
++++
+title = "Image Blur (MHC16G5)"
++++
+
+<div class="row">
+  <span class="editorial-title">
+    <h1>Image Blur <small class="text-muted">mhc16g5</small></h1>
+    <i class="fa fa-pencil"></i><user>Justin Pu</user>
+    <hr>
+  </span>
+  
+  <p>You have a very nice looking picture. However, as a background for text, the details don’t matter too much. As a result, you want to blur the picture. The blurring process is as follows: </p>
+  
+  <p>For each pixel, take the surrounding square in a \(K\) radius. This means that the square is \(2K - 1\) pixels in width and height centered at the original pixel. Using this rectangle, average all the pixels and this is the new value of the pixel. If the square cannot fit and be centered at the pixel, then reduce the width/height of the rectangle so that it fits (it will no longer be centered). </p>
+  
+  <p>To average pixels, average each individual RGB value, and round down as necessary. All input is given in hex. </p>
+
+  <h2 class="h2-responsive">Input</h2>
+  
+  <p>The first line will contain 3 space separated integers, \(C R K\), columns, rows and blur radius respectively. </p>
+  
+  <p>The next \(R\) lines will contain \(C\) 6-digit hex numbers. </p>
+  
+  <p>Hex numbers consist of 6 digits. Each digit is one of 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F. The letter digits correspond to the extended numbers, (A = 10, B = 11 … F = 15). Two hex digits are allocated to each colour. Thus, each colour has a minimum value of 0 and a maximum value of 255. For simplicity, to convert a two digit hex number into decimal, multiply the first number by 16 and add it to the second number. </p>
+  
+  <h3 class="h3-responsive">Constraints</h3>
+  
+  <p>\(1 \le C, R, K \le 50\) for \(50\%\) of the points</p>
+  <p>\(1 \le C, R, K \le 600\) for the remaining \(50\%\). </p>
+
+  <hr>
+
+  <h2 class="h2-responsive">Output</h2>
+  
+  <p>Output \(R\) lines of \(C\) 6-digit space-separated hex numbers representing the blurred image. To convert a decimal number to hex, print the number divided by 16 (truncated and mapped to the 16 digits), and print the remainder after that. </p>
+
+  <hr>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input</h2>
+
+    <pre class="language-none"><code>3 3 1
+111111 000000 000000
+000000 FFFFFF 000000
+000000 000000 000000</code></pre>
+    
+  </div>
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output</h2>
+
+    <pre class="language-none"><code>444444 2D2D2D 3F3F3F
+2D2D2D 1E1E1E 2A2A2A
+3F3F3F 2A2A2A 3F3F3F</code></pre>
+  </div>
+</div>

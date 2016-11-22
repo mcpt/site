@@ -1,0 +1,61 @@
++++
+title = "Genetic Engineering (MHC16G3)"
++++
+
+<div class="row">
+  <span class="editorial-title">
+    <h1>Genetic Engineering <small class="text-muted">mhc16g3</small></h1>
+    <i class="fa fa-pencil"></i><user>Samantha Unger</user>, <user>Sarah Goldfarb</user>
+    <hr>
+  </span>
+  
+  <p>Alice is a mad scientist who is interested in genetically modified humans.  She knows this is unethical, but they decide to attempt it anyways (Mwahahaha).  She imagines creating humans who are toeless, single-eared, are constantly smiling with no eyes, along with many other configurations.  A scientist named Tony had found a way to edit chunks of the genetic code of a human, so that these changes can take place. </p>
+  
+  <p>They take the genetic code of a preexisting human (it’s very sloppy and has both upper and case letters!), and swap out certain sections to make the alterations that they’d like. They make the alterations and inject the genetic code back into the human!</p>
+
+  <h2 class="h2-responsive">Input</h2>
+  
+  <p>The first line will contain the alien genome sequence (its length is \(L\) in characters, such that \(0\le L \le 2000\)). This may be in uppercase, lowercase, or a mix. We do not care if they are upper or lower; we only care about the letters. The next line contains the first sequence of letter(s) that must be replaced, a space, and then the sequence of letter(s) that will replace it. The next line contains the second sequence of letter(s) that must be replaced, a space, and then the sequence of letter(s) that will replace it. The final line contains the first sequence of letter(s) that must be replaced, a space, and then the sequence of letter(s) that will replace it. Keep in mind that once you make the changes from the first line, you use that new genome to create the changes for the second line. The changes made from the second line will be used for the third line’s changes.</p>
+  
+  <p>The swap string we give you may not occur in the genome, so be careful about going out of bounds. </p>
+  
+  <p>Also, there is no guarantee that this/these letter(s) even exist in the genome sequence. So it may not even be found. </p>
+
+  <hr>
+
+  <h2 class="h2-responsive">Output</h2>
+  
+  <p>You must output the new genome, in only uppercase letters.</p>
+
+  <hr>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input</h2>
+
+    <pre class="language-none"><code>AgCtTAACGctggcaATaGCAt
+ag gt
+aA GtatA
+ta CC</code></pre>
+    
+  </div>
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output</h2>
+
+    <pre class="language-none"><code>GTCTTGCCCCCGCTGGCGCCCCTGTCAT</code></pre>
+  </div>
+</div>
+
+<div class="row">
+  <h2 class="h2-responsive">Explanation for Sample Output</h2>
+  
+  <p>We start with this: <br>
+    <code>AGCTTAACGCTGGCAATAGCAT</code> <br>
+    Then we sub out all the AG. <br>
+    <code>GTCTTAACGCTGGCAATGTCAT</code> <br>
+    We then sub out all the <code>AA</code>. <br>
+    <code>GTCTTGTATACGCTGGCGTATATGTCAT</code> <br>
+    We then sub out all the <code>TA</code>.
+    <code>GTCTTGCCCCCGCTGGCGCCCCTGTCAT</code></p>
+</div>
