@@ -17,9 +17,26 @@ Each competition will take place in a 3 hour time period. There are 5 problems. 
 
 ## Registration
 
-Register your team <a href="/jdcc">here</a>. Registration closes on Sunday November 13, 2016 at 11:59 pm. 
+Registration is now closed.
 
 ## ECOO Qualification
 
 ECOO qualification will be based on your combined score over the contests. At least half your team must be present for 4 of the 5 competitions to even be considered for ECOO. 
 
+## Rules
+
+1. A team may only have 2 computers, only one of which may be used for coding. 
+2. No online resources are permitted (stackoverflow, google, quora, mathstackexchange)
+3. An exception is access your language's api (docs.oracle.com, cplusplus.com, docs.python.org/2/)
+4. Print resources are permitted
+5. No prewritten code is permitted with the exception of templates
+6. You are responsible for bringing your own IDEs if you are using a language that is not supported by the school computers (no Ideone)
+
+## Using the Online Judge
+
+1. Use Standard IO
+2. For Java, you may find that BufferedReader is faster than Scanner
+3. Output must match exactly
+4. For Java, name your classes (and files) accordingly (e.g. A.java)
+5. The only languages supported are: C, C++, Java, Python and Pascal.
+6. You must download the PDF from the respective problem pages. 
