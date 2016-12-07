@@ -1,0 +1,30 @@
++++
+title = "Reddit at Work (jdcc16c1b) Editorial"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/editorials">Editorials</a></li>
+    <li><a href="/editorials/jdcc">JDCC</a></li>
+    <li><a href="/editorials/jdcc/16">2016</a></li>
+    <li><a href="/editorials/jdcc/16/c1">November</a></li>
+    <li class="active">Reddit at Work</li>
+  </ol>
+</div>
+
+<div class="row editorial-title">
+  <h1>Reddit at Work Editorial <a href="/problems/jdcc16c1a"><small class="text-muted">jdcc15c1b</small></a></h1>
+  <i class="fa fa-pencil"></i><user>aurpine</user>
+  <hr>
+</div>
+
+<div class="row">
+  <p>One part of the problem is the input. By reading in hours and minutes, make a function that converts hours and minutes to minutes past 9:00. To output, hours is seconds divided by 60, and seconds is second mod 60. This makes the rest of the problem easier. </p>
+  
+  <p>Store the latest ending time of a meeting so far (initialize to 9:00) and override as necessary. Keep a variable for the amount of wasted time (in seconds). If the current meeting's start time is after the latest ending time, then add the difference to the wasted time. </p>
+
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <p>\(\mathcalO(N)\)</p>
+</div>
