@@ -1,0 +1,73 @@
++++
+title = "Painting Cost (jdcc16c1c)"
++++
+
+<div class="row">
+  <span class="editorial-title">
+    <h1>Painting Cost <small class="text-muted">jdcc16c1c</small></h1>
+    <i class="fa fa-pencil"></i><user>Mehwar Raza</user>
+    <hr>
+  </span>
+  
+  <p>Melissa's family has just moved to a new house and she is excited to start painting her bedroom walls. After coming up with a great design, she realizes that she will need to ask her parents to fund the project. Wanting to seem independent, she would prefer to ask her parents for as little money as possible. Can you help her figure out how much money she will need to pay the painters? </p>
+  
+  <p>Melissa's paint design is given as a grid of colours arranged in R rows and C columns. The painters will paint the wall in 2x2 blocks and will charge Melissa $1 for every unique colour in a 2x2 block. </p>
+  
+  
+  <h2 class="h2-responsive">Input</h2>
+  
+  <p>A test case begins with two integers \(R\), \(C\) (\(1 \le R, C \le 100\), \(R\) and \(C\) are even). The next \(R\) lines contain \(C\) characters, each representing a unique colour. </p>
+
+  <hr>
+
+  <h2 class="h2-responsive">Output</h2>
+  
+  <p>Output one integer, the cost of the paint job. </p>
+
+  <hr>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input 1</h2>
+
+    <pre class="language-none"><code>2 2
+RG
+BR</code></pre>
+    
+  </div>
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output 1</h2>
+
+    <pre class="language-none"><code>3</code></pre>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input 2</h2>
+
+    <pre class="language-none"><code>4 4
+WWRB
+WWRR
+WWRR
+WBBB</code></pre>
+    
+  </div>
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output 2</h2>
+
+    <pre class="language-none"><code>7</code></pre>
+  </div>
+</div>
+
+<div class="row">
+  <hr>
+  <h2 class="h2-responsive">Explanation for Sample Output 2</h2>
+  
+  <p>In the second case, the painters will paint the wall in four blocks:</p>
+  <pre class="language-none"><code>WW  RB  WW  RR
+WW  RR  WB  BB</code></pre>
+  
+  <p>Making the total cost \(1 + 2 + 2 + 2 = 7\). </p>
+</div>

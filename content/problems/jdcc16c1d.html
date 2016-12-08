@@ -1,0 +1,98 @@
++++
+title = "Guess My Age (jdcc16c1d)"
++++
+
+<div class="row">
+  <span class="editorial-title">
+    <h1>Guess My Age <small class="text-muted">jdcc16c1d</small></h1>
+    <i class="fa fa-pencil"></i><user>Reyno Tilikaynen</user>
+    <hr>
+  </span>
+  
+  <p>Mathemagical Lily, the greatest mathemagician of them all, has invented a new act. With a few yes or no questions,  she is able to guess the age of any person! </p>
+  
+  <p>However,  she has noticed that some people are bothered when she guesses their age to be too high. Hence, using as few guesses as she can is not always the best option for him. Can you help her integrate this new discovery of people not enjoying being called old into her routine? </p>
+  
+  <p>A volunteer for Lily's act has an age between \(1\) and \(N\) years old. Lily repeatedly asks questions of the form "Are you over \(X\) years old?" to help her determine the person's age. Once Lily is sure of the person's age,  she proclaims "Your age is ____!", bewildering her volunteer. </p>
+  
+  <p>However, her volunteers aren't always amazed. We can measure each volunteer's disillusion with a disillusion score. For every question Lily asks, the volunteer's score increases by \(100\). Additionally, every time Lily asks if the volunteer is older than he/she really is, the score increases by \(K\).</p>
+  
+  <p>Lily would like to minimize the disillusion that her volunteers experience. Can you help her figure out, in the worst case, how disillusioned a volunteer will be? </p>
+  
+  <h2 class="h2-responsive">Input</h2>
+  
+  <p>A test case contains two integers N \((1 \le N \le 5,000)\) and \(K\) \((0 \le K \le 5,000)\). </p>
+
+  <hr>
+
+  <h2 class="h2-responsive">Output</h2>
+  
+  <p>Output the minimum disillusion score that Lily can achieve in the worst case. </p>
+
+  <hr>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input 1</h2>
+
+    <pre class="language-none"><code>10 0</code></pre>
+    
+  </div>
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output 1</h2>
+
+    <pre class="language-none"><code>400</code></pre>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input 2</h2>
+
+    <pre class="language-none"><code>10 100</code></pre>
+    
+  </div>
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output 2</h2>
+
+    <pre class="language-none"><code>600</code></pre>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input 3</h2>
+
+    <pre class="language-none"><code>10 5000</code></pre>
+    
+  </div>
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output 3</h2>
+
+    <pre class="language-none"><code>5900</code></pre>
+  </div>
+</div>
+
+<div class="row">
+  <hr>
+  <h2 class="h2-responsive">Explanation of Sample Output</h2>
+  
+  <p>In the first case, the volunteer does not care if Lily guesses too high, so Lily can guess however she wants. If the volunteer's age is 9, then she could ask the questions: </p>
+  
+  <p>Are you over 5 years old? <em>Yes</em><br>
+  Are you over 7 years old? <em>Yes</em><br>
+  Are you over 8 years old? <em>Yes</em><br>
+  Are you over 9 years old? <em>No</em></p>
+  
+  <p>In fact, Lily only needs 4 questions in any case, so the volunteer will have a disillusion score of \(400\) at worst. </p>
+  
+  <p>In the third case, the person really doesn't like being called old, so Lily needs to be careful. Her best strategy is to try every age in increasing order, asking: </p>
+  
+  <p>Are you over 1 years old? <em>Yes</em><br>
+  Are you over 2 years old? <em>Yes</em><br>
+  ...<br>
+  Are you over 9 years old? <em>No, how dare you?!?</em></p>
+  
+  <p>In the worst case, Lily needs 9 questions and must guess too high at some point, so the worst case score is \(5\,900\). </p>
+</div>
