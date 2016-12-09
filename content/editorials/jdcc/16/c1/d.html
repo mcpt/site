@@ -1,0 +1,32 @@
++++
+title = "Guess My Age (jdcc16c1d) Editorial"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/editorials">Editorials</a></li>
+    <li><a href="/editorials/jdcc">JDCC</a></li>
+    <li><a href="/editorials/jdcc/16">2016</a></li>
+    <li><a href="/editorials/jdcc/16/c1">November</a></li>
+    <li class="active">Guess My Age</li>
+  </ol>
+</div>
+
+<div class="row editorial-title">
+  <h1>Guess My Age Editorial <a href="/problems/jdcc16c1d"><small class="text-muted">jdcc15c1d</small></a></h1>
+  <i class="fa fa-pencil"></i><user>aurpine</user> <i class="fa fa-lightbulb-o"></i><user>Reyno Tilikaynen</user>
+  <hr>
+</div>
+
+<div class="row">
+  <p>When you ask a question, you reduce the amount of possible ages. For example, if you have \(A\) possible ages, and you ask "Are you older than \(B\)?". If the answer is <em>yes</em> then you now have \(A - B\) ages, otherwise you have \(B\) ages. The problem asks, by asking optimal questions, what is the worst case? However, we do not know how to ask optimally, therefore, we must brute force all the possible ways to ask. </p>
+  
+  <p>When asking, the answer is unknown. Therefore, you figure it out as you go. Try both answers to every question asked and try asking every question on the range. Take the worst cost of the two questions asked and take the best result of all the questions asked on a given range to get the answer for that range. It is important to note that the range of possible ages is not important, but the possible number of ages is (\(1-6\) is the same as \(7-12\) because the age is unknown and any could be the answer). </p>
+  
+  <p>Brute force alone is insufficient. DP (more specifically 1D DP on the length of the range) is required to speed up the solution. </p>
+
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <p>\(\mathcal O(N^2)\) because \(\mathcal O(N)\) for each length on \(N\) lengths. </p>
+</div>
