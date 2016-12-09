@@ -21,7 +21,7 @@ title = "Guess My Age (jdcc16c1d) Editorial"
 </div>
 
 <div class="row">
-  <p>When you ask a question, you reduce the amount of possible ages. For example, if you have \(A\) possible ages, and you ask "Are you older than \(B\)?". If the answer is <em>yes</em> then you now have \(A - B\) ages, otherwise you have \(B\) ages. The problem asks, by asking optimal questions, what is the worst case? However, we do not know how to ask optimally, therefore, we must brute force all the possible ways to ask. </p>
+  <p>When you ask a question, you reduce the amount of possible ages. For example, if you have \(A\) possible ages, and you ask "Are you older than \(B\)?". If the answer is <em>yes</em> then you now have \(A - B\) ages, otherwise you have \(B\) ages. The problem asks, by asking optimal questions, what is the worst case? However, we do not know the optimal strategy, therefore, we must brute force all the possible ways to ask. </p>
   
   <p>When asking, the answer is unknown. Therefore, you figure it out as you go. Try both answers to every question asked and try asking every question on the range. Take the worst cost of the two questions asked and take the best result of all the questions asked on a given range to get the answer for that range. It is important to note that the range of possible ages is not important, but the possible number of ages is (\(1-6\) is the same as \(7-12\) because the age is unknown and any could be the answer). </p>
   
