@@ -21,21 +21,27 @@ title = "HashMaps – Learn Data Structures"
 
   <p> A HashMap is a class that utilizes pairs. Similar to a relation in mathematics, a key is associated with a corresponding value.</p>
   <p> HashMaps are unordered collections, meaning when iterating through them, insertion order is not necessarily maintained. </p>
-  <h2 class="h2-responsive"> Declaration </h2>
-  <blockquote class="blockquote">Put a sample problem statement here</blockquote>
-
-  <p>Stuff here. </p>
+  <h2 class="h2-responsive"> Declaration and Implementation </h2>
+  <p> HashMaps generally have two identifiers, a class type for the key, as well as a class type for the value. A simple declaration of a HashMap involving the 
+    association of an integer with a string would look like: </p>
+  <pre class="language-java"><code>
+    // initialize an array of ArrayLists, one for each of the N nodes in the graph.
+    HashMap &ltInteger&gt&ltString&gt map = new HashMap&ltInteger&gt&ltString&gt();
+  </code></pre>
+  <p> After initializing the HashMap, we can begin to store &LtKey,Value&qt pairs inside of it: </p>
+    <pre class="language-java"><code>
+      map.put(1, "How's it going");
+  </code></pre>
+  <p> This pair has (1) as it's key. The value associated with this key is "How's it going" </p>
+ <p> When we use the <i> get </i> method, which accepts the key as its parameter, the associated value returned is "How's it going" </p>
+  <pre class="language-java"><code>
+      map.get(1);
+  </code></pre>  
+  <p> Just a little warning, when using keys, they must reference the same object. Hence, when using two objects that may be have the identical
+    data, yet are declared differently, it will be unable to recall the value associated with the original object. </p>
 </div>
 
 <div class="row">
-  <h1 class="h1-responsive">Implementation</h1>
-  <hr>
-
-  <pre class="language-java"><code>
-    You can put code here and it will
-        automatically fix the padded spaces of html.
-  </code></pre>
-
   <h3 class="h3-responsive">Time Complexity</h3>
   <p>\(\mathcal{O}(N)\)</p>
 
@@ -44,17 +50,11 @@ title = "HashMaps – Learn Data Structures"
 </div>
 
 <div class="row">
-  <h1 class="h1-responsive">Conclusion</h1>
-  <hr>
-
-  <p>Concluding statements</p>
-</div>
-
-<div class="row">
   <h1 class="h1-responsive">Practice</h1>
   <hr>
 
   <ul class="large-list">
-    <li><a href="LINK">PROBLEM NAME</a></li>
+    <li><a href="https://dmoj.ca/problem/mnycp6"> Mackenzie New Year's Challenge P6 - Rocks
+ </a></li>
   </ul>
 </div>
