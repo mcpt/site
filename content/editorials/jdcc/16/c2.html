@@ -1,5 +1,5 @@
 +++
-title = "JDCC 2016 November Editorials"
+title = "JDCC 2016 December Editorials"
 
 +++
 
@@ -9,29 +9,29 @@ title = "JDCC 2016 November Editorials"
     <li><a href="/editorials">Editorials</a></li>
     <li><a href="/editorials/jdcc">JDCC</a></li>
     <li><a href="/editorials/jdcc/16">2016</a></li>
-    <li class="active">November</li>
+    <li class="active">December</li>
   </ol>
 </div>
 
 <div class="row">
-  <h1>JDCC 2016 November Editorials</h1>
+  <h1>JDCC 2016 December Editorials</h1>
   <hr>
   
   <h2 class="h2-responsive">Problems</h2>
   
   <ol type="A" class="large-list">
-    <li><a href="#a">Euler</a></li>
-    <li><a href="#b">Reddit at Work</a></li>
-    <li><a href="#c">Painting Cost</a></li>
-    <li><a href="#d">Guess My Age</a></li>
-    <li><a href="#e">Catchy Music</a></li>
+    <li><a href="#a">Simplify</a></li>
+    <li><a href="#b">Broken Telephone</a></li>
+    <li><a href="#c">Shoe Rental</a></li>
+    <li><a href="#d">Pokemon Woes</a></li>
+    <li><a href="#e">Supermoon Viewing</a></li>
   </ol>
   
   <hr>
 </div>
 
 <div class="row editorial-title" id="a">
-  <h1 class="h1-responsive">Euler <a href="/problems/jdcc16c1a"><small class="text-muted">jdcc16c1a</small></a></h1>
+  <h1 class="h1-responsive">Simplify <a href="/problems/jdcc16c2a"><small class="text-muted">jdcc16c2a</small></a></h1>
   <i class="fa fa-pencil"></i><user>aurpine</user>
   <hr>
 </div>
@@ -44,7 +44,7 @@ title = "JDCC 2016 November Editorials"
 </div>
 
 <div class="row editorial-title" id="b">
-  <h1 class="h1-responsive">Reddit at Work <a href="/problems/jdcc16c1a"><small class="text-muted">jdcc16c1b</small></a></h1>
+  <h1 class="h1-responsive">Broken Telephone <a href="/problems/jdcc16c2a"><small class="text-muted">jdcc16c2b</small></a></h1>
   <i class="fa fa-pencil"></i><user>aurpine</user>
   <hr>
 </div>
@@ -59,7 +59,7 @@ title = "JDCC 2016 November Editorials"
 </div>
 
 <div class="row editorial-title" id="c">
-  <h1 class="h1-responsive">Painting Cost <a href="/problems/jdcc16c1c"><small class="text-muted">jdcc16c1c</small></a></h1>
+  <h1 class="h1-responsive">Shoe Rental <a href="/problems/jdcc16c2c"><small class="text-muted">jdcc16c2c</small></a></h1>
   <i class="fa fa-pencil"></i><user>aurpine</user>
   <hr>
 </div>
@@ -72,24 +72,24 @@ title = "JDCC 2016 November Editorials"
 </div>
 
 <div class="row editorial-title" id="d">
-  <h1 class="h1-responsive">Guess My Age <a href="/problems/jdcc16c1d"><small class="text-muted">jdcc16c1d</small></a></h1>
-  <i class="fa fa-pencil"></i><user>aurpine</user> <i class="fa fa-lightbulb-o"></i><user>Reyno Tilikaynen</user>
+  <h1 class="h1-responsive">Pokemon Woes <a href="/problems/jdcc16c2d"><small class="text-muted">jdcc16c2d</small></a></h1>
+  <i class="fa fa-pencil"></i><user>atarw</user>
   <hr>
 </div>
 
 <div class="row">
-  <p>When you ask a question, you reduce the amount of possible ages. For example, if you have \(A\) possible ages, and you ask "Are you older than \(B\)?". If the answer is <em>yes</em> then you now have \(A - B\) ages, otherwise you have \(B\) ages. The problem asks, by asking optimal questions, what is the worst case? However, we do not know the optimal strategy, therefore, we must brute force all the possible ways to ask. </p>
-  
-  <p>When asking, the answer is unknown. Therefore, you figure it out as you go. Try both answers to every question asked and try asking every question on the range. Take the worst cost of the two questions asked and take the best result of all the questions asked on a given range to get the answer for that range. It is important to note that the range of possible ages is not important, but the possible number of ages is (\(1-6\) is the same as \(7-12\) because the age is unknown and any could be the answer). </p>
-  
-  <p>Brute force alone is insufficient. DP (more specifically 1D DP on the length of the range) is required to speed up the solution. </p>
+  <p>First, calculate the distance between each pair of Pokemon present on the map, as well as Ash's home to each Pokemon, and store this in an array. Distances can be calculated using this formula: \(|x_{1} - x_{2}| + |y_{1} - y_{2}|\), where \((x_{1}, y_{1})\) and \((x_{2}, y_{2})\) are two coordinate locations.</p>
+    
+  <p>Next, we must try out various orders in which Ash can visit all the points, and choose the one which gives the minimum total distance. This is done using DFS, where the parameters passed in are the current location of Ash, and the Pokemon locations that have already been visited.</p>
+    
+  <p>To speed this up, use dynamic programming to store results calculated by the DFS. To do so, the Pokemon locations that have already been visited can be represented in binary, with the \(i^{th}\) bit being a \(0\) or \(1\) to represent whether or not the \(i^{th}\) Pokemon has already been visited.</p>
 
   <h3 class="h3-responsive">Time Complexity</h3>
-  <p>\(\mathcal O(N^2)\) because \(\mathcal O(N)\) for each length on \(N\) lengths. </p>
+  <p>\(\mathcal O(N^2 + M2^M)\), where \(M\) is the number of Pokemon on the map.</p>
 </div>
 
 <div class="row editorial-title" id="e">
-  <h1 class="h1-responsive">Catchy Music <a href="/problems/jdcc16c1e"><small class="text-muted">jdcc16c1e</small></a></h1>
+  <h1 class="h1-responsive">Supermoon Viewing <a href="/problems/jdcc16c2e"><small class="text-muted">jdcc16c2e</small></a></h1>
   <i class="fa fa-pencil"></i><user>atarw</user>
   <hr>
 </div>
