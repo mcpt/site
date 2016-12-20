@@ -1,0 +1,54 @@
++++
+title = "Broken Telephone (jdcc16c2b)"
++++
+
+<div class="row">
+  <span class="editorial-title">
+    <h1>Broken Telephone <small class="text-muted">jdcc16c2b</small></h1>
+    <i class="fa fa-pencil"></i><user>Reyno Tilikaynen</user>
+    <hr>
+  </span>
+  
+  <p>A kindergarten class is playing a game of broken telephone. Sitting in a circle, the first child whisper a word to a child sitting beside him or her. That child slightly mishears the word, and passes the misheard word on. After a series of mishearings, the last person in the circle ends up with a completely different word.</p>
+    
+  <p>However, the kids don’t always play fair. Some kids purposely pass on something different from what they heard in order to get a ridiculous result in the end. Normally, at most one letter of the word is misheard, but these hooligans will change at least two letters of the word or change the length of the word.</p>
+
+  <p>Given the sequence of words passed on in the game, can you figure out if any child tampered with the game?</p>
+  
+  <h2 class="h2-responsive">Input</h2>
+    
+  <p>The first line of input contains \(T\) \((1 \le T \le 10)\). \(T\) test cases follow. Each test case begins with an integer \(N\) \((1 \le N \le 100)\), the number of words passed around the circle. The next \(N\) lines each contain a word. The words appear in the order that the kids pass them on.</p>
+    
+  <hr>
+
+  <h2 class="h2-responsive">Output</h2>
+  
+  <p>For each test case, output <code>Fair Game</code> if all the children played fair, or <code>Hooligans!</code> if there was tampering involved.</p>
+
+  <hr>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input 1</h2>
+
+    <pre class="language-none"><code>2
+3
+DOG
+DOT
+LOL
+4
+ADD
+AID
+LID
+LIT
+</code></pre>
+    
+  </div>
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output 1</h2>
+
+    <pre class="language-none"><code>Hooligans!
+Fair Game</code></pre>
+  </div>
+</div>

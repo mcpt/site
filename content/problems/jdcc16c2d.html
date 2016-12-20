@@ -1,0 +1,69 @@
++++
+title = "Pokemon Woes (jdcc16c2d)"
++++
+
+<div class="row">
+  <span class="editorial-title">
+    <h1>Pokemon Woes <small class="text-muted">jdcc16c2d</small></h1>
+    <i class="fa fa-pencil"></i><user>Reyno Tilikaynen</user>
+    <hr>
+  </span>
+  
+  <p>Over the summer, Ash fell in love with a new Pokemon game where the objective is to catch pokemon in your area. He loved the catching aspect of the game, however he disliked the amount of walking involved to find pokemon. As a result, whenever he would go out on Pokehunts, he would aim to minimize the amount of walking needed to be done.</p>
+    
+  <p>Given a map of Ash’s surroundings and where the Pokemon are located, can you figure out what is the shortest path to visit all the Pokemon locations and return back to his home?</p>
+  
+  <h2 class="h2-responsive">Input</h2>
+    
+  <p>The input begins with an integer \(N\) \((1 \le N \le 20)\). \(N\) lines follow, each containing \(N\) characters, which provide a map of Ash’s surroundings.</p>
+  <p><code>.</code> will mark empty space.</p>
+  <p><code>P</code> will mark a Pokemon Ash wants to catch.</p>
+  <p><code>H</code> will mark Ash’s home.</p>
+
+  <p>For \(50\ \% \) of the cases, the number of Pokemon will be at most \(10\). For the remaining cases, the number of Pokemon will be at most \(15\).</p>
+  <hr>
+
+  <h2 class="h2-responsive">Output</h2>
+  
+  <p>Output one integer, the smallest distance that Ash needs to travel to catch all the Pokemon and return home.</p>
+
+  <hr>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input 1</h2>
+
+    <pre class="language-none"><code>3
+P.P
+.H.
+P.P
+</code></pre>
+    
+  </div>
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output 1</h2>
+
+    <pre class="language-none"><code>10</code></pre>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input 2</h2>
+
+    <pre class="language-none"><code>5
+P..P.
+...H.
+.....
+PP...
+.P...
+</code></pre>
+    
+  </div>
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output 2</h2>
+
+    <pre class="language-none"><code>14</code></pre>
+  </div>
+</div>
