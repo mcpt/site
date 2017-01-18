@@ -1,0 +1,79 @@
++++
+title = "Robot Dodgeball (jdcc16c3d)"
++++
+
+<div class="row">
+  <span class="editorial-title">
+    <h1>Robot Dodgeball <small class="text-muted">jdcc16c3d</small></h1>
+    <i class="fa fa-pencil"></i><user>Reyno Tilikaynen</user>
+    <hr>
+  </span>
+  
+  <p>For their latest robot competition, the robotics class has decided to build robots capable of playing dodgeball. The students split their creations into two teams, gave them all dodgeballs, and turned them on simultaneously.</p>
+  
+  <p>The robots all instantly locked onto the enemy team and fired simultaneously. Each robot's throw hits it's mark (no one thought to actually make their robot dodge). The judge now has to remove all the robots that were hit and announce how many robots on each team are still standing. </p>
+  
+  <p>However, the judge isn't sure which robot is on which team. He only knows that his robot is on the first team, and that no friendly fire occurred. Can he figure out which how many robots on each team are still standing?</p>
+  
+  <h2 class="h2-responsive">Input</h2>
+    
+  <p>Each test case begins with two integers \(N, R\) \((1 \le R \le N \le 10,000)\), the number of robots in the competition and which robot is known to be on Team 1, respectively. </p>
+  <p>The next \(N\) lines each describe the actions of one of the robots. The \(K^\text{th}\) line begins with an integer \(M\) followed by \(M\) integers, the targets of robot \(K\). Robots are numbered from \(1\) to \(N\).</p>
+  <p>The total number of dodgeballs thrown will not exceed \(100,000\). </p>
+
+  <hr>
+
+  <h2 class="h2-responsive">Output</h2>
+  
+  <p>Output two integers, the number of robots that weren't hit on Team 1 followed by Team 2. It is guaranteed that knowing that robot \(J\) is on team 1 is enough to uniquely determine the two teams. </p>
+
+  <hr>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input 1</h2>
+
+    <pre class="language-none"><code>4 3
+1 2
+1 3
+1 4
+0</code></pre>
+    
+  </div>
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output 1</h2>
+
+    <pre class="language-none"><code>1 0</code></pre>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input 2</h2>
+
+    <pre class="language-none"><code>7 3
+2 2 3
+1 4
+2 1 4
+1 6
+1 3
+1 4
+1 4</code></pre>
+    
+  </div>
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output 2</h2>
+
+    <pre class="language-none"><code>1 1</code></pre>
+  </div>
+</div>
+
+<div class="row">
+  <hr>
+  <h2 class="h2-responsive">Explanation of Sample Output</h2>
+  
+  <p>In the first case, robots 1 and 3 are on team 1 and robots 2 and 4 are on team 2. All but robot 1 get eliminated.</p>
+  
+  <p>In the second case, robots 1, 4, 5 are on team 1 and robots 2, 3, 6, 7 are on team 2. All but robots 5 and 7 are eliminated.</p>
+</div>

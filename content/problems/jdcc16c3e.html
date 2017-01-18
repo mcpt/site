@@ -1,0 +1,80 @@
++++
+title = "CPT Elections (jdcc16c3e)"
++++
+
+<div class="row">
+  <span class="editorial-title">
+    <h1>CPT Elections <small class="text-muted">jdcc16c3e</small></h1>
+    <i class="fa fa-pencil"></i><user>Reyno Tilikaynen</user>
+    <hr>
+  </span>
+  
+  <p>André and Bertrand are campaigning to become the new CPT president. After a long campaign André was able to quench victory, receiving \(N\) votes to Bertrand's \(M\) votes.</p>
+  
+  <p>Reyno noticed that as the votes were tallied, an interesting pattern emerged. André received the first \(K\) votes and at every point of the tally, he was at least \(K\) votes ahead of Bertrand.</p>
+  
+  <p>Reyno, always a fan of enumeration, wondered to himself: in how many ways could the tally have played out such that the above condition holds? Rather than solving it himself, he has enlisted your help. Don't let him down! </p>
+  
+  <h2 class="h2-responsive">Input</h2>
+    
+  <p>Each test case contains three integers \(N, M, K\) \((1 \le M \lt N \le 10^6, 0 \le K \le N - M)\). </p>
+  
+  <p>For 70% of the cases, \(N \le 1,000\). </p>
+
+  <hr>
+
+  <h2 class="h2-responsive">Output</h2>
+  
+  <p>For each test case, output the number of ways the voting could have played out, modulo \(1,000,000,007\). </p>
+
+  <hr>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input 1</h2>
+
+    <pre class="language-none"><code>2 1 0</code></pre>
+    
+  </div>
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output 1</h2>
+
+    <pre class="language-none"><code>2</code></pre>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input 2</h2>
+
+    <pre class="language-none"><code>6 5 0</code></pre>
+    
+  </div>
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output 2</h2>
+
+    <pre class="language-none"><code>132</code></pre>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input 3</h2>
+
+    <pre class="language-none"><code>11 8 1</code></pre>
+    
+  </div>
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output 3</h2>
+
+    <pre class="language-none"><code>11934</code></pre>
+  </div>
+</div>
+
+<div class="row">
+  <hr>
+  <h2 class="h2-responsive">Explanation of Sample Output 1</h2>
+  
+  <p>In the first case, the two ways the vote could have went is ABA and AAB, where A is a vote for André and B is a vote for Bertrand. BAA is not a valid since after the first vote, Bertrand has more votes than André. </p>
+</div>
