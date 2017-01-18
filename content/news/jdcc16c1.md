@@ -19,114 +19,114 @@ The results from the JDCC are in. The table below shows the rankings and score. 
   </thead>
   <tbody>
     <tr>
-      <th>1</th>
-      <th>Skunk</th>
-      <th>526</th>
+      <td>1</td>
+      <td>Skunk</td>
+      <td>526</td>
     </tr>
     <tr>
-      <th>2</th>
-      <th>sur++</th>
-      <th>518</th>
+      <td>2</td>
+      <td>sur++</td>
+      <td>518</td>
     </tr>
     <tr>
-      <th>3</th>
-      <th>Kevin</th>
-      <th>517</th>
+      <td>3</td>
+      <td>Kevin</td>
+      <td>517</td>
     </tr>
     <tr>
-      <th>5</th>
-      <th>2b || !2b</th>
-      <th>494</th>
+      <td>5</td>
+      <td>2b || !2b</td>
+      <td>494</td>
     </tr>
     <tr>
-      <th>5</th>
-      <th>r3n3g4D35</th>
-      <th>494</th>
+      <td>5</td>
+      <td>r3n3g4D35</td>
+      <td>494</td>
     </tr>
     <tr>
-      <th>6</th>
-      <th>Hoop Dreams</th>
-      <th>493</th>
+      <td>6</td>
+      <td>Hoop Dreams</td>
+      <td>493</td>
     </tr>
     <tr>
-      <th>7</th>
-      <th>The Tech Republic</th>
-      <th>458</th>
+      <td>7</td>
+      <td>The Tech Republic</td>
+      <td>458</td>
     </tr>
     <tr>
-      <th>8</th>
-      <th>String Quartet</th>
-      <th>424</th>
+      <td>8</td>
+      <td>String Quartet</td>
+      <td>424</td>
     </tr>
     <tr>
-      <th>9</th>
-      <th>DDoS</th>
-      <th>383</th>
+      <td>9</td>
+      <td>DDoS</td>
+      <td>383</td>
     </tr>
     <tr>
-      <th>10</th>
-      <th>XOR</th>
-      <th>382</th>
+      <td>10</td>
+      <td>XOR</td>
+      <td>382</td>
     </tr>
     <tr>
-      <th>11</th>
-      <th>French Toast Mafia</th>
-      <th>374</th>
+      <td>11</td>
+      <td>French Toast Mafia</td>
+      <td>374</td>
     </tr>
     <tr>
-      <th>12</th>
-      <th>Mr. Bean Squad</th>
-      <th>295</th>
+      <td>12</td>
+      <td>Mr. Bean Squad</td>
+      <td>295</td>
     </tr>
     <tr>
-      <th>13</th>
-      <th>_</th>
-      <th>280</th>
+      <td>13</td>
+      <td>_</td>
+      <td>280</td>
     </tr>
     <tr>
-      <th>14</th>
-      <th>Magicalest</th>
-      <th>255</th>
+      <td>14</td>
+      <td>Magicalest</td>
+      <td>255</td>
     </tr>
     <tr>
-      <th>15</th>
-      <th>▲ Triangle Formation ▲</th>
-      <th>247</th>
+      <td>15</td>
+      <td>▲ Triangle Formation ▲</td>
+      <td>247</td>
     </tr>
     <tr>
-      <th>16</th>
-      <th>Regret</th>
-      <th>142</th>
+      <td>16</td>
+      <td>Regret</td>
+      <td>142</td>
     </tr>
     <tr>
-      <th>17</th>
-      <th>Crazy C#s</th>
-      <th>140</th>
+      <td>17</td>
+      <td>Crazy C#s</td>
+      <td>140</td>
     </tr>
     <tr>
-      <th>18</th>
-      <th>Amazhang Trantastic Huanderful Liusers</th>
-      <th>130</th>
+      <td>18</td>
+      <td>Amazhang Trantastic Huanderful Liusers</td>
+      <td>130</td>
     </tr>
     <tr>
-      <th>19</th>
-      <th>hwat?</th>
-      <th>125</th>
+      <td>19</td>
+      <td>hwat?</td>
+      <td>125</td>
     </tr>
     <tr>
-      <th>20</th>
-      <th>Codebusters</th>
-      <th>121</th>
+      <td>20</td>
+      <td>Codebusters</td>
+      <td>121</td>
     </tr>
     <tr>
-      <th>21</th>
-      <th>) DROP TABLE; --</th>
-      <th>120</th>
+      <td>21</td>
+      <td>) DROP TABLE; --</td>
+      <td>120</td>
     </tr>
     <tr>
-      <th>22</th>
-      <th>Sleep (false)</th>
-      <th>118</th>
+      <td>22</td>
+      <td>Sleep (false)</td>
+      <td>118</td>
     </tr>
   </tbody>
 </table>
