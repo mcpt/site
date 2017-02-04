@@ -1,0 +1,32 @@
++++
+title = "Letter Swap (jdcc16c3c) Editorial"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/editorials">Editorials</a></li>
+    <li><a href="/editorials/jdcc">JDCC</a></li>
+    <li><a href="/editorials/jdcc/16">2016</a></li>
+    <li><a href="/editorials/jdcc/16/c3">January</a></li>
+    <li class="active">Letter Swap</li>
+  </ol>
+</div>
+
+<div class="row editorial-title">
+  <h1>Letter Swap Editorial <a href="/problems/jdcc16c3c"><small class="text-muted">jdcc15c3c</small></a></h1>
+  <i class="fa fa-pencil"></i><user>aurpine</user>
+  <hr>
+</div>
+
+<div class="row">
+  <p>First reverse the given string. We'll call the original string \(a\) and the target string \(b\). Although it doesn't matter which string is which since moving it from the original to the target and back takes the same amount of swaps. As such, in this editorial, I may change the target into the original. </p>
+  
+  <p>Now consider the problem like this: <code>0</code>s are blank, and you can move the <code>1</code>s. Each time you move a <code>1</code> you use one swap. Now iterate through string \(a\). If there is a <code>1</code>, you find the next <code>1</code> on string b to move. Note that the order does matter. The first <code>1</code> should also the be first <code>1</code> of the reversed string. </p>
+  
+  <p>The problem just becomes finding the differences between the indices of each <code>1</code>. For example, if there is one at index \(3), and its respective <code>1</code> is at \(7\), then you would need to use \(|7-3| = 4\) swaps. To do this, you have two lists containing the indices of the <code>1</code>s of the two strings. Generate these lists by iterating each string and inserting the index into the list if it is a <code>1</code>. The total number of swaps required is the sum of absolute differences of all pairs of indices. </p>
+
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <p>\(\mathcal O(L)\), where L is the length of the string. </p>
+</div>

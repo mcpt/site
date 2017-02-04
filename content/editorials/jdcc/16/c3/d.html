@@ -1,0 +1,34 @@
++++
+title = "Robot Dodgeball (jdcc16c3d) Editorial"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/editorials">Editorials</a></li>
+    <li><a href="/editorials/jdcc">JDCC</a></li>
+    <li><a href="/editorials/jdcc/16">2016</a></li>
+    <li><a href="/editorials/jdcc/16/c3">January</a></li>
+    <li class="active">Robot Dodgeball</li>
+  </ol>
+</div>
+
+<div class="row editorial-title" id="d">
+  <h1 class="h1-responsive">Robot Dodgeball <a href="/problems/jdcc16c3d"><small class="text-muted">jdcc16c3d</small></a></h1>
+  <i class="fa fa-pencil"></i><user>atarw</user>
+  <hr>
+</div>
+
+<div class="row">
+  <p>Since no friendly fire occurred, this means that each robot threw a dodgeball at a robot on the other team. Using this piece of information, it is possible to create a simple algorithm to solve this problem.</p>
+  
+  <p>Because it is known that robot \(R\) is on Team 1, this means that every robot that robot \(R\) threw a dodgeball at is on Team 2. In turn, the robots that were hit by throws from robots on Team 2 are on Team 1, and so on.</p>
+  
+  <p>By continuously assigning teams to robots using the logic described above, it is possible to determine which team each robot is on. To determine which robots are still standing, simply keep track of whether or not a robot has been hit by a dodgeball, and output the total number of robots on each team which haven't been hit by dodgeballs.</p>
+
+  <p>This type of problem is a graph theory colouring problem, and the above ideas can be implemented using DFS or BFS.</p>
+
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <p>\(\mathcal O(N)\), where \(N\) is the number of robots.</p>
+</div>

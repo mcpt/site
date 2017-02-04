@@ -1,0 +1,42 @@
++++
+title = "The Number Eight (jdcc16c3b) Editorial"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/editorials">Editorials</a></li>
+    <li><a href="/editorials/jdcc">JDCC</a></li>
+    <li><a href="/editorials/jdcc/16">2016</a></li>
+    <li><a href="/editorials/jdcc/16/c3">January</a></li>
+    <li class="active">The Number Eight</li>
+  </ol>
+</div>
+
+<div class="row editorial-title">
+  <h1>The Number Eight Editorial <a href="/problems/jdcc16c3b"><small class="text-muted">jdcc15c3b</small></a></h1>
+  <i class="fa fa-pencil"></i><user>aurpine</user>
+  <hr>
+</div>
+
+<div class="row">
+  <p>Do some math to hardcode the drawings. We can consider this as two operations: line across and lines down. </p>
+  
+  <h4 class="h4-responsive">Order</h4>
+  
+  <p>Do the operations in the order: across, down, across, down, across. </p>
+  
+  <h4 class="h4-responsive">Line Across</h4>
+  
+  <p>Print \(H+1/2\) stars. Let's call this number \(W\) because it is the width of the eight. </p>
+  
+  <h4 class="h4-responsive">Lines Down</h4>
+  
+  <p>Print a star; print \(W - 2\) spaces; print another star. (next line)</p>
+  
+  <p>Do the above \(W - 2\) times. </p>
+
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <p>\(\mathcal O(H^2)\)</p>
+</div>
