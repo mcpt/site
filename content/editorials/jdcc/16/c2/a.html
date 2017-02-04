@@ -1,0 +1,39 @@
++++
+title = "Simplify (jdcc16c2a) Editorial"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/editorials">Editorials</a></li>
+    <li><a href="/editorials/jdcc">JDCC</a></li>
+    <li><a href="/editorials/jdcc/16">2016</a></li>
+    <li><a href="/editorials/jdcc/16/c2">December</a></li>
+    <li class="active">Simplify</li>
+  </ol>
+</div>
+
+<div class="row editorial-title">
+  <h1>Simplify Editorial <a href="/problems/jdcc16c2a"><small class="text-muted">jdcc15c2a</small></a></h1>
+  <i class="fa fa-pencil"></i><user>aurpine</user>
+  <hr>
+</div>
+
+<div class="row">
+  <p>To simplify a fraction you find the greatest common denominator (GCD) and divide both the numerator and the denominator by it. </p>
+  
+  <p>Iterating through the smaller number is sufficient for the problem for \(\mathcal O(\sqrt {\min{(N, D)})}\)</p>
+
+  <p>However a faster algorithm is using Euclid's algorithm for GCD. </p>
+  
+  <pre class="language-cpp"><code>
+    int gcd(int a, int b) {
+        if(b == 0) return a;
+        return gcd(b, a % b);
+    }
+  </code></pre>
+  
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <p>\(\mathcal O(\log {\min{(N, D)}})\)</p>
+</div>

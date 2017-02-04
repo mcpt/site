@@ -1,0 +1,32 @@
++++
+title = "Shoe Rental (jdcc16c2c) Editorial"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/editorials">Editorials</a></li>
+    <li><a href="/editorials/jdcc">JDCC</a></li>
+    <li><a href="/editorials/jdcc/16">2016</a></li>
+    <li><a href="/editorials/jdcc/16/c2">December</a></li>
+    <li class="active">Shoe Rental</li>
+  </ol>
+</div>
+
+<div class="row editorial-title">
+  <h1>Shoe Rental Editorial <a href="/problems/jdcc16c2c"><small class="text-muted">jdcc15c2c</small></a></h1>
+  <i class="fa fa-pencil"></i><user>aurpine</user>
+  <hr>
+</div>
+
+<div class="row">
+  <p>This is a greedy solution. We will prioritize smaller shoe sizes so that we save large shoe sizes for people who may require them. </p>
+  
+  <p>To do this, we will sort the required sizes in ascending order. Then we process from the smallest one and see if there is a shoe available with size \(m-1\), then \(m\), then \(m+1\). </p>
+  
+  <p>Alternatively, you can use radix sort to get an array of how many people need each shoe size and do the similar process of assigning shoes. </p>
+
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <p>\(\mathcal O(N \log N)\) or \(\mathcal O(N)\) with radix sort. </p>
+</div>

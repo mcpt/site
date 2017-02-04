@@ -1,0 +1,32 @@
++++
+title = "Supermoon Viewing (jdcc16c2e) Editorial"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/editorials">Editorials</a></li>
+    <li><a href="/editorials/jdcc">JDCC</a></li>
+    <li><a href="/editorials/jdcc/16">2016</a></li>
+    <li><a href="/editorials/jdcc/16/c2">December</a></li>
+    <li class="active">Supermoon Viewing</li>
+  </ol>
+</div>
+
+<div class="row editorial-title">
+  <h1>Supermoon Viewing Editorial <a href="/problems/jdcc16c2e"><small class="text-muted">jdcc15c2e</small></a></h1>
+  <i class="fa fa-pencil"></i><user>aurpine</user>
+  <hr>
+</div>
+
+<div class="row">
+  <p>Considering edge cases gets you \(40\%\) of the points. These include: no area, circle within the other. </p>
+  
+  <p>The intersection of two circles can be seen as two chords. The area of a chord can be found by subtracting the area of a triangle by the area of the inner isosceles triangle. </p>
+  
+  <p>To make the problem simpler, translate the two circles onto the x-axis. One of which has a center on the origin. To do this, find the distance \(d\) between the two centers. Now the new centers are \((0, 0)\) and \((d, 0)\). Then solve for the points of intersection. Now you have all the pieces of information you need to find the areas. </p>
+  
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <p>\(\mathcal O(1)\)</p>
+</div>

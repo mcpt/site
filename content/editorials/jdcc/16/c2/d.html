@@ -1,0 +1,32 @@
++++
+title = "Pokemon Woes (jdcc16c2d) Editorial"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/editorials">Editorials</a></li>
+    <li><a href="/editorials/jdcc">JDCC</a></li>
+    <li><a href="/editorials/jdcc/16">2016</a></li>
+    <li><a href="/editorials/jdcc/16/c2">December</a></li>
+    <li class="active">Pokemon Woes</li>
+  </ol>
+</div>
+
+<div class="row editorial-title">
+  <h1>Pokemon Woes Editorial <a href="/problems/jdcc16c2d"><small class="text-muted">jdcc15c2d</small></a></h1>
+  <i class="fa fa-pencil"></i><user>atarw</user>
+  <hr>
+</div>
+
+<div class="row">
+  <p>First, calculate the distance between each pair of Pokemon present on the map, as well as Ash's home to each Pokemon, and store this in an array. Distances can be calculated using this formula: \(|x_{1} - x_{2}| + |y_{1} - y_{2}|\), where \((x_{1}, y_{1})\) and \((x_{2}, y_{2})\) are two coordinate locations.</p>
+    
+  <p>Next, we must try out various orders in which Ash can visit all the points, and choose the one which gives the minimum total distance. This is done using DFS, where the parameters passed in are the current location of Ash, and the Pokemon locations that have already been visited.</p>
+    
+  <p>To speed this up, use dynamic programming to store results calculated by the DFS. To do so, the Pokemon locations that have already been visited can be represented in binary, with the \(i^{th}\) bit being a \(0\) or \(1\) to represent whether or not the \(i^{th}\) Pokemon has already been visited.</p>
+
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <p>\(\mathcal O(N^2 + M2^M)\), where \(M\) is the number of Pokemon on the map.</p>
+</div>
