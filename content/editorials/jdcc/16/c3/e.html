@@ -16,13 +16,19 @@ title = "CPT Elections (jdcc16c3e) Editorial"
 
 <div class="row editorial-title">
   <h1>CPT Elections Editorial <a href="/problems/jdcc16c3e"><small class="text-muted">jdcc15c3e</small></a></h1>
-  <i class="fa fa-pencil"></i><user>aurpine</user>
+  <i class="fa fa-pencil"></i><user>atarw</user> <i class="fa fa-lightbulb-o"></i><user>Reyno Tilikaynen</user>
   <hr>
 </div>
 
 <div class="row">
-  <p>This method gets you \(70\%\) of the points. </p>
+  <p>This problem is almost identical to <a href="https://en.wikipedia.org/wiki/Bertrand's_ballot_theorem">Bertrand's Ballot Problem</a>, and is solved in a similar way. </p>
+    
+  <p>The answer to the problem is given by the formula \(\frac{N - KM}{N + M}{{N + M}\choose{N}}\), where \(N\) represents the votes that André received, \(M\) represents the votes that Bertrand received and \(K\) is the minimum difference between their votes. Note that \({{N}\choose{K}} = \frac{N!}{(N-K)!K!}\) is the choose function. Here is a detailed <a href="http://www-users.math.umn.edu/~reiner/Classes/Four_Proofs_of_Ballot_Theorem.pdf">proof</a> of the formula.</p>
+    
+  <p>To calculate the answer \(\mod 10^9+7\), use the property \((A \times B) \mod M \equiv ((A \mod M) \times (B \mod M)) \mod M\) when calculating the choose function.</p>
+
+  <p>For the division, use the property \((A \div B) \mod M \equiv ((A \mod M) \times (B^{-1} \mod M)) \mod M\), where \(B^{-1}\) is the <a href="https://en.wikipedia.org/wiki/Modular_multiplicative_inverse">modular inverse</a> of \(B \mod M\).</p>
   
   <h3 class="h3-responsive">Time Complexity</h3>
-  <p>\(\mathcal O(NK)\)</p>
+  <p>\(\mathcal O(min (N, M))\), due to the fact that the complexity of the choose function \({N}\choose{K}\) is \(\mathcal O(min (K, N - K))\)</p>
 </div>

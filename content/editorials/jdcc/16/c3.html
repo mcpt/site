@@ -1,0 +1,126 @@
++++
+title = "JDCC 2016 January Editorials"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/editorials">Editorials</a></li>
+    <li><a href="/editorials/jdcc">JDCC</a></li>
+    <li><a href="/editorials/jdcc/16">2016</a></li>
+    <li class="active">January</li>
+  </ol>
+</div>
+
+<div class="row">
+  <h1>JDCC 2016 January Editorials</h1>
+  <hr>
+  
+  <h2 class="h2-responsive">Problems</h2>
+  
+  <ol type="A" class="large-list">
+    <li><a href="#a">Triangle Types</a></li>
+    <li><a href="#b">The Number Eight</a></li>
+    <li><a href="#c">Letter Swap</a></li>
+    <li><a href="#d">Robot Dodgeball</a></li>
+    <li><a href="#e">CPT Elections</a></li>
+  </ol>
+  
+  <hr>
+</div>
+
+<div class="row editorial-title" id="a">
+  <h1 class="h1-responsive">Triangle Types <a href="/problems/jdcc16c3a"><small class="text-muted">jdcc16c3a</small></a></h1>
+  <i class="fa fa-pencil"></i><user>aurpine</user>
+  <hr>
+</div>
+
+<div class="row">
+  <p>There will always be two descriptions in the output. Thus, have two if structures, one for each set of three description and categorize accordingly. </p>
+  
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <p>\(\mathcal O(1)\)</p>
+</div>
+
+<div class="row editorial-title" id="b">
+  <h1 class="h1-responsive">The Number Eight <a href="/problems/jdcc16c3a"><small class="text-muted">jdcc16c3b</small></a></h1>
+  <i class="fa fa-pencil"></i><user>aurpine</user>
+  <hr>
+</div>
+
+<div class="row">
+  <p>Do some math to hardcode the drawings. We can consider this as two operations: line across and lines down. </p>
+  
+  <h4 class="h4-responsive">Order</h4>
+  
+  <p>Do the operations in the order: across, down, across, down, across. </p>
+  
+  <h4 class="h4-responsive">Line Across</h4>
+  
+  <p>Print \(H+1/2\) stars. Let's call this number \(W\) because it is the width of the eight. </p>
+  
+  <h4 class="h4-responsive">Lines Down</h4>
+  
+  <p>Print a star; print \(W - 2\) spaces; print another star. (next line)</p>
+  
+  <p>Do the above \(W - 2\) times. </p>
+
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <p>\(\mathcal O(H^2)\)</p>
+</div>
+
+<div class="row editorial-title" id="c">
+  <h1 class="h1-responsive">Letter Swap <a href="/problems/jdcc16c3c"><small class="text-muted">jdcc16c3c</small></a></h1>
+  <i class="fa fa-pencil"></i><user>aurpine</user>
+  <hr>
+</div>
+
+<div class="row">
+  <p>First reverse the given string. We'll call the original string \(a\) and the target string \(b\). Although it doesn't matter which string is which since moving it from the original to the target and back takes the same amount of swaps. As such, in this editorial, I may change the target into the original. </p>
+  
+  <p>Now consider the problem like this: <code>0</code>s are blank, and you can move the <code>1</code>s. Each time you move a <code>1</code> you use one swap. Now iterate through string \(a\). If there is a <code>1</code>, you find the next <code>1</code> on string b to move. Note that the order does matter. The first <code>1</code> should also the be first <code>1</code> of the reversed string. </p>
+  
+  <p>The problem just becomes finding the differences between the indices of each <code>1</code>. For example, if there is one at index \(3), and its respective <code>1</code> is at \(7\), then you would need to use \(|7-3| = 4\) swaps. To do this, you have two lists containing the indices of the <code>1</code>s of the two strings. Generate these lists by iterating each string and inserting the index into the list if it is a <code>1</code>. The total number of swaps required is the sum of absolute differences of all pairs of indices. </p>
+
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <p>\(\mathcal O(L)\), where L is the length of the string. </p>
+</div>
+
+<div class="row editorial-title" id="d">
+  <h1 class="h1-responsive">Robot Dodgeball <a href="/problems/jdcc16c3d"><small class="text-muted">jdcc16c3d</small></a></h1>
+  <i class="fa fa-pencil"></i><user>atarw</user>
+  <hr>
+</div>
+
+<div class="row">
+  <p>Since no friendly fire occurred, this means that each robot threw a dodgeball at a robot on the other team. Using this piece of information, it is possible to create a simple algorithm to solve this problem.</p>
+  
+  <p>Because it is known that robot \(R\) is on Team 1, this means that every robot that robot \(R\) threw a dodgeball at is on Team 2. In turn, the robots that were hit by throws from robots on Team 2 are on Team 1, and so on.</p>
+  
+  <p>By continuously assigning teams to robots using the logic described above, it is possible to determine which team each robot is on. To determine which robots are still standing, simply keep track of whether or not a robot has been hit by a dodgeball, and output the total number of robots on each team which haven't been hit by dodgeballs.</p>
+
+  <p>This type of problem is a graph theory colouring problem, and the above ideas can be implemented using DFS or BFS.</p>
+
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <p>\(\mathcal O(N)\), where \(N\) is the number of robots.</p>
+</div>
+
+<div class="row editorial-title" id="e">
+  <h1 class="h1-responsive">CPT Election <a href="/problems/jdcc16c3e"><small class="text-muted">jdcc16c3e</small></a></h1>
+  <i class="fa fa-pencil"></i><user>atarw</user> <i class="fa fa-lightbulb-o"></i><user>Reyno Tilikaynen</user>
+  <hr>
+</div>
+
+<div class="row">
+  <p>This problem is almost identical to <a href="https://en.wikipedia.org/wiki/Bertrand's_ballot_theorem">Bertrand's Ballot Problem</a>, and is solved in a similar way. </p>
+    
+  <p>The answer to the problem is given by the formula \(\frac{N - KM}{N + M}{{N + M}\choose{N}}\), where \(N\) represents the votes that André received, \(M\) represents the votes that Bertrand received and \(K\) is the minimum difference between their votes. Note that \({{N}\choose{K}} = \frac{N!}{(N-K)!K!}\) is the choose function. Here is a detailed <a href="http://www-users.math.umn.edu/~reiner/Classes/Four_Proofs_of_Ballot_Theorem.pdf">proof</a> of the formula.</p>
+    
+  <p>To calculate the answer \(\mod 10^9+7\), use the property \((A \times B) \mod M \equiv ((A \mod M) \times (B \mod M)) \mod M\) when calculating the choose function.</p>
+
+  <p>For the division, use the property \((A \div B) \mod M \equiv ((A \mod M) \times (B^{-1} \mod M)) \mod M\), where \(B^{-1}\) is the <a href="https://en.wikipedia.org/wiki/Modular_multiplicative_inverse">modular inverse</a> of \(B \mod M\).</p>
+  
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <p>\(\mathcal O(min (N, M))\), due to the fact that the complexity of the choose function \({N}\choose{K}\) is \(\mathcal O(min (K, N - K))\)</p>
+</div>
