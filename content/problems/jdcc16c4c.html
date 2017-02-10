@@ -1,0 +1,67 @@
++++
+title = "Big Integer Factorization (jdcc16c4c)"
++++
+
+<div class="row">
+  <span class="editorial-title">
+    <h1>Big Integer Factorization<small class="text-muted">jdcc16c4c</small></h1>
+    <i class="fa fa-pencil"></i><user>Mehwar Raza</user>
+    <hr>
+  </span>
+  
+	<p>It is a well-known fact that every natural number has a unique prime factorization. That is, you
+can uniquely express each natural number \(N\)​ as:</p>
+  
+	<p>$$ N= P_1^{M_1} \times P_2^{M_2} \times ... \times P_K^{M_K}</p>
+  
+	<p> Where \(P_1 \le P_2 \le ... \le P_K\) are prime numbers. For example, \( 28 = 2^{2} \times 7 \) and \( 3645 = 3^{6} \times 5 \)</p>
+	
+	<p> In general, finding the prime factorization of large numbers is difficult to do (and serves
+as a basis for many cryptographic systems). However, in some special cases it is easy
+to find a number’s prime factorization.</p>
+	
+	<p> One such case is when a number is a power of a smaller number. Given a number \(N\)​,
+can you figure out the prime factorization of \(N^{N}\)​​?</p>
+
+
+  <h2 class="h2-responsive">Input</h2>
+    
+  <p>Each test case contains one integer \(N\) \((2 \le N \le 2^{57} )\)</p>
+
+  <hr>
+
+  <h2 class="h2-responsive">Output</h2>
+  
+  <p>For each test case, output, on one line, prime factorization of the number.</p>
+
+  <hr>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input 1</h2>
+
+    <pre class="language-none"><code>6</code></pre>
+    
+  </div>
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output 1</h2>
+
+    <pre class="language-none"><code>2^6 * 3^6</code></pre>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input 2</h2>
+
+    <pre class="language-none"><code>197538393501504</code></pre>
+    
+  </div>
+  
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output 2</h2>
+
+    <pre class="language-none"><code>2^1185230361009024 * 3^790153574006016 * 11^592615180504512 * 31^987691967507520</code></pre>
+  </div>
+</div>

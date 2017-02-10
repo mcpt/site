@@ -1,0 +1,100 @@
++++
+title = "Gas N Go (jdcc16c4d)"
++++
+
+<div class="row">
+  <span class="editorial-title">
+    <h1>Gas N Go<small class="text-muted">jdcc16c4d</small></h1>
+    <i class="fa fa-pencil"></i><user>Reyno Tilikaynen</user>
+    <hr>
+  </span>
+  
+	<p>In this age of rising gas prices, Lyssa has decided to be more conscientious about the
+routes she takes when driving around. However, her goal isn’t to use as little gas as
+possible; it is to minimize her total spending on gas money. She will go to great lengths
+in order to secure a great deal on gas.</p>
+  
+  
+	<p>In her home, Lyssa has a map of all nearby gas stations, the price they sell gas at, and
+the roads that connect them. When she needs to drive somewhere, she begins her
+journey on an empty fuel tank at the gas station right beside her house. She then picks
+out a route that will minimize the amount of money she will spend on gas.</p>
+	
+	<p> Lyssa has added a large fuel tank to her car so that her car can hold as much gas as
+she wants. Her car is able to drive one kilometre on one litre of fuel (the huge tank
+makes her car quite a gas guzzler). Can you figure out the minimum amount of money
+Lyssa needs to spend on her trip?</p>
+
+  <h2 class="h2-responsive">Input</h2>
+    
+  <p>Each test case begins with integers \(N, M\) \(​(1 \le N ​\le 300, 1 \le M \le 44850)\), the number of
+gas stations near Lyssa’s house and the number of roads connecting them,
+respectively.</p>
+  <p>The next line contains N​ integers \(K_1, ..., K_N\), which denotes the price per litre at the \(i^{th}\) gas station.</p>
+	
+  <p> The next \(M\) lines each contain three integers \(A, B, C\) \((1 \le A, B \le N, 1\le C \le 1,000,000)\) which describe a road \(C\) kilometres long between gas stations \(A\) and \(B\).
+  
+  <p> Gas stations are numbers from 1 to \(N\). Lyssa begins her journey at gas station \(1\) and wishes to travel to gas station \(N\).</p>
+
+
+  <hr>
+
+  <h2 class="h2-responsive">Output</h2>
+  
+  <p>For each test case, output the minimum amount that Lyssa needs to spend on gas.</p>
+
+  <hr>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input 1</h2>
+
+    <pre class="language-none"><code>3 3
+10 1 5
+1 2 5
+1 3 6
+2 3 9
+</code></pre>
+    
+  </div>
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output 1</h2>
+
+    <pre class="language-none"><code>59</code></pre>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input 2</h2>
+
+    <pre class="language-none"><code>5 4
+5 4 3 2 1
+1 2 1
+2 3 1
+3 4 1
+4 5 1
+</code></pre>
+    
+  </div>
+  
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output 2</h2>
+
+    <pre class="language-none"><code>14</code></pre>
+  </div>
+</div>
+
+<div class="row">
+  <hr>
+  <h2 class="h2-responsive">Explanation of Sample Input</h2>
+  
+  <p>In the first case, Lyssa first buys 5 litres of gas at the first station, costing her $50. She
+then travels to the second station, buying 9 litres of gas there, costing her $9. She then
+uses that gas to travel to the third station.</p>
+  
+  <p>In the second case, Lyssa buys one litre of gas at each station she visits, for a total of
+5+4+3+2 = $14.</p>
+
+ </div>

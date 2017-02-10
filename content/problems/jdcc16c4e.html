@@ -1,0 +1,83 @@
++++
+title = "Mind Boggling (jdcc16c4e)"
++++
+
+<div class="row">
+  <span class="editorial-title">
+    <h1>Mind Boggling<small class="text-muted">jdcc16c4e</small></h1>
+    <i class="fa fa-pencil"></i><user>Reyno Tilikaynen</user>
+    <hr>
+  </span>
+  
+  <p>Boggle is a fast-paced word game played with a grid of letters. The objective of the
+game is to spell out words by stringing together letters on the grid that are adjacent
+vertically, horizontally, or diagonally. When spelling out a word, you can only visit every
+letter on the grid at most once. The player who finds most words wins (for this problem
+we allow duplicate words, as long as the path used is distinct).</p>
+  
+  
+  <p>For example, in the following three by three grid, we can spell out words like \(THAT\),
+\(CAT\), \(THE\), and \(CHEATER\):</p>
+	
+  <p>$$THE$$<br>$$CAT$$<br>$$ZRE$$</p>
+
+  <p>Boggle is Daniel’s favourite game and he has spent years training to become the best
+Boggler in the world. When he trains, he usually generates a random grid of letters and
+tries to find all the words in the grid. Of course, he can never be sure if he has found all
+the possible words.</p>
+
+  <p>However, if he knew the expected number of words that will appear on a random board,
+then he would be able to know if he came close. Being his programming friend, can you
+help him calculate expected number of words that appear?</p>
+
+
+  <h2 class="h2-responsive">Input</h2>
+    
+  <p>Each test case begins with integers \(N, M ​(1 \le N ​\le 30, 1 \le M ​\le 100,000)\), the side length
+of the square grid Daniel plays on and the number of words in Daniel’s vocabulary. The
+next M​ lines each contain a word in Daniel’s vocabulary. Each word will be at most 7
+characters long.</p>
+  <p>For \(20\%\) of the cases, \(M ​= 1\)</p>
+  <hr>
+
+  <h2 class="h2-responsive">Output</h2>
+  
+  <p>For each test case, output the expected number of words that occur, rounded to three
+decimal places.</p>
+
+  <hr>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input 1</h2>
+
+    <pre class="language-none"><code>3 1
+THE
+</code></pre>
+    
+  </div>
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output 1</h2>
+
+    <pre class="language-none"><code>0.009</code></pre>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input 2</h2>
+
+    <pre class="language-none"><code>30 2
+HELLO
+WORLD
+</code></pre>
+    
+  </div>
+  
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output 2</h2>
+
+    <pre class="language-none"><code>0.303</code></pre>
+  </div>
+</div>

@@ -1,0 +1,95 @@
++++
+title = "Vibberish or Cibberish? (jdcc16c4a)"
++++
+
+<div class="row">
+  <span class="editorial-title">
+    <h1>Vibberish or Cibberish? <small class="text-muted">jdcc16c4a</small></h1>
+    <i class="fa fa-pencil"></i><user>Mehwar Raza</user>
+    <hr>
+  </span>
+  
+  <p>After years of scanning the skies, humans have finally found evidence of extraterrestrial
+life. From a dark patch of the sky came an alien transmission - an attempt at contact.
+After months of painstaking analysis, it was determined that the aliens spoke two
+languages: Vibberish and Cibberish.</p>
+  
+  <p>Vibberish is a smooth and simple language that mostly uses words that have more vowels than consonants. On the other hand, the difficult-to-pronounce Cibberish language prefers words with more consonants than vowels.</p>
+  
+  <p>As the leading computer scientist at SETI, you have been tasked with detecting the
+language of a transmission. Given a sentence from the transmission, determine whether
+it is more likely to be Vibberish or Cibberish. (For our purposes, only ‘a’, ‘e’, ‘i’, ‘o’, and
+‘u’ are considered vowels).</p>
+
+  <h2 class="h2-responsive">Input</h2>
+    
+  <p>Each test case contains one sentence of the alien transmission. The sentence will
+contain only lower-case letters and spaces.</p>
+
+  <hr>
+
+  <h2 class="h2-responsive">Output</h2>
+  
+  <p>For each test case, output “Vibberish” if the text is most likely in Vibberish or “Cibberish”
+if the text is most likely in Cibberish. If it is equally likely to be Vibberish or Cibberish,
+then output “Gibberish”.</p>
+
+  <hr>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input 1</h2>
+
+    <pre class="language-none"><code>asdfeji isfldkj sfdjkdflj wjiewjlf</code></pre>
+    
+  </div>
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output 1</h2>
+
+    <pre class="language-none"><code>Cibberish</code></pre>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input 2</h2>
+
+    <pre class="language-none"><code>aeiou dundundun</code></pre>
+    
+  </div>
+  
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output 2</h2>
+
+    <pre class="language-none"><code>Gibberish</code></pre>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input 3</h2>
+
+    <pre class="language-none"><code>aeiou cool</code></pre>
+    
+  </div>
+
+<div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output 3</h2>
+
+    <pre class="language-none"><code>Vibberish</code></pre>
+  </div>
+</div>
+
+<div class="row">
+  <hr>
+  <h2 class="h2-responsive">Explanation of Sample Input</h2>
+  
+  <p>In the first case, all four words have more consonants than vowels, so it’s likely Cibberish.</p>
+  
+  <p>In the second case, one word has mostly vowels and one word has mostly consonants,so it’s Gibberish.</p>
+
+  <p>In the last case, there is one word with a vowel majority and no words with a consonant
+majority, so it’s likely Vibberish</p>
+
+ </div>
