@@ -4,7 +4,7 @@ title = "Phi Circuits (jdcc16c4b)"
 
 <div class="row">
   <span class="editorial-title">
-    <h1>Phi Circuits<small class="text-muted">jdcc16c4b</small></h1>
+    <h1>Phi Circuits<small class="text-muted"> jdcc16c4b</small></h1>
     <i class="fa fa-pencil"></i><user>Mehwar Raza</user>
     <hr>
   </span>
@@ -15,16 +15,16 @@ of the current received by the previous two electrical components. Resistors rec
 current equaling the absolute difference of the current received by the previous two
 electrical components.</p>
   
-  <p>Tyler has a special kind of LED (light emitting diode) that emits 1 lumen of light for every
-1 ampere of current it receives. Given a linear circuit described by a series of resistors
+  <p>Tyler has a special kind of LED (light emitting diode) that emits \(1\) lumen of light for every
+\(1\) ampere of current it receives. Given a linear circuit described by a series of resistors
 and LEDs determine the total number of lumens outputted by the LEDs in the circuit.</p>
 
   <h2 class="h2-responsive">Input</h2>
     
-  <p>Each test case contains a sequence of the characters ‘P’, ‘L’, and ‘R’ describing the
-circuit. The first two components are marked ‘P’ for power source and have 1 ampere of
+  <p>Each test case contains a sequence of the characters <code>P</code>, <code>L</code>, and <code>R</code> describing the
+circuit. The first two components are marked <code>P</code> for power source and have \(1\) ampere of
 current passing through them. All subsequent components are either LEDs or resistors,
-marked ‘L’ or ‘R’ respectively. The circuit does not contain more than 60 components.</p>
+marked <code>L</code> or <code>R</code> respectively. The circuit does not contain more than \(60\) components.</p>
 
   <hr>
 
@@ -68,12 +68,11 @@ marked ‘L’ or ‘R’ respectively. The circuit does not contain more than 6
   <hr>
   <h2 class="h2-responsive">Explanation of Sample Input</h2>
   
-  <p>In the first case, the first LED has 1+1 = 2 amperes of current and hence outputs 2
-lumens. The next four LEDs receive 3, 5, 8, and 13 amperes respectively, for a total of
-2+3+5+8+13 = 31 lumens.</p>
+  <p>In the first case, the first LED has \(1+1 =2\) amperes of current and hence outputs 2
+lumens. The next four LEDs receive \(3\), \(5\), \(8\), and \(13\) amperes respectively, for a total of
+\(2+3+5+8+13=31\) lumens.</p>
   
-  <p>In the second case, the first resistor carries |1-1| = 0 amperes and the second carries
-|1-0| = 1 ampere. Then the first LED carries 0+1 =1 ampere and the second receives
-1+1 = 2 amperes, for a total of 3 lumens of light.</p>
-
+  <p>In the second case, the first resistor carries \(\lvert 1-1 \rvert =0\) amperes and the second carries \(\lvert 1-0 \rvert =1\) ampere.
+      Then the first LED carries \(0+1=1\) ampere and the second receives
+      \(1+1=2\) amperes, for a total of \(3\) lumens of light.</p>
  </div>
