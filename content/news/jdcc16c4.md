@@ -1,0 +1,270 @@
++++
+date = "2017-03-05T00:15:39-15:00"
+title = "JDCC 2017 February Results"
+news = true
+
++++
+
+The current contest rankings and scores are as follows. There is 1 more competition.
+
+<!--more-->
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Team</th>
+      <th>November</th>
+      <th>December</th>
+      <th>January</th>
+      <th>February</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>sur++</td>
+      <td>518</td>
+      <td>658</td>
+      <td>648</td>
+      <td>542</td>
+      <td>2366</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Kevin</td>
+      <td>517</td>
+      <td>515</td>
+      <td>539</td>
+      <td>378</td>
+      <td>1949</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>The Tech Republic</td>
+      <td>458</td>
+      <td>414</td>
+      <td>606</td>
+      <td>440</td>
+      <td>1918</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>2b || !2b</td>
+      <td>514</td>
+      <td>426</td>
+      <td>520</td>
+      <td>379</td>
+      <td>1839</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>r3n3g4D35</td>
+      <td>494</td>
+      <td>329</td>
+      <td>608</td>
+      <td>394</td>
+      <td>1825</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Skunk</td>
+      <td>526</td>
+      <td>415</td>
+      <td>417</td>
+      <td>337</td>
+      <td>1695</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>Hoop Dreams</td>
+      <td>493</td>
+      <td>385</td>
+      <td>389</td>
+      <td>405</td>
+      <td>1672</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>String Quartet</td>
+      <td>424</td>
+      <td>391</td>
+      <td>402</td>
+      <td>378</td>
+      <td>1595</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>Mr. Bean Squad</td>
+      <td>295</td>
+      <td>384</td>
+      <td>446</td>
+      <td>322</td>
+      <td>1447</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Magicalest</td>
+      <td>255</td>
+      <td>385</td>
+      <td>351</td>
+      <td>365</td>
+      <td>1356</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>XOR</td>
+      <td>382</td>
+      <td>389</td>
+      <td>0</td>
+      <td>460</td>
+      <td>1231</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>DDoS</td>
+      <td>383</td>
+      <td>387</td>
+      <td>0</td>
+      <td>374</td>
+      <td>1144</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>▲ Triangle Formation ▲</td>
+      <td>247</td>
+      <td>378</td>
+      <td>341</td>
+      <td>0</td>
+      <td>966</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>_</td>
+      <td>280</td>
+      <td>258</td>
+      <td>0</td>
+      <td>286</td>
+      <td>824</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>Codebusters</td>
+      <td>121</td>
+      <td>265</td>
+      <td>264</td>
+      <td>135</td>
+      <td>785</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>Pumper Kids</td>
+      <td>0</td>
+      <td>242</td>
+      <td>268</td>
+      <td>224</td>
+      <td>734</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>Amazhang Trantastic 
+    Huanderful Liusers</td>
+      <td>130</td>
+      <td>155</td>
+      <td>281</td>
+      <td>139</td>
+      <td>705</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>) DROP TABLE; --</td>
+      <td>120</td>
+      <td>249</td>
+      <td>0</td>
+      <td>265</td>
+      <td>634</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>Crazy C#s</td>
+      <td>140</td>
+      <td>275</td>
+      <td>0</td>
+      <td>0</td>
+      <td>415</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>SnackOverflow</td>
+      <td>0</td>
+      <td>283</td>
+      <td>0</td>
+      <td>124</td>
+      <td>407</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>French Toast Mafia</td>
+      <td>374</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>374</td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>Sleep (false)</td>
+      <td>118</td>
+      <td>0</td>
+      <td>0</td>
+      <td>210</td>
+      <td>328</td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td>regret</td>
+      <td>142</td>
+      <td>139</td>
+      <td>0</td>
+      <td>0</td>
+      <td>281</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>The Caillous</td>
+      <td>0</td>
+      <td>135</td>
+      <td>0</td>
+      <td>0</td>
+      <td>135</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>hwat?</td>
+      <td>125</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>125</td>
+    </tr>
+    <tr>
+      <td>26</td>
+      <td>//No comment</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>26</td>
+      <td>Blitzkrieg</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
