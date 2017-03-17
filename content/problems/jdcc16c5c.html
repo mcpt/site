@@ -1,0 +1,66 @@
++++
+title = "Careless Sums (jdcc16c5c)"
++++
+
+<div class="row">
+  <span class="editorial-title">
+    <h1>Careless Sums <small class="text-muted"> jdcc16c5c</small></h1>
+    <i class="fa fa-pencil"></i><user>Reyno Tilikaynen</user>
+    <hr>
+  </span>
+
+  <p>Nicole's twin brother Andrew is much less stoked about learning how to add. Andrew is very lazy, so he dislikes the amount of effort required to add numbers together, especially when carrying is involved. Hence, Andrew has decided to use his sister's simplified adding algorithm for numbers rather than words. </p>
+  
+  <p>For two numbers, he will first add their one's digits together. If the sum is higher than \(10\), he subtracts \(10\). He makes the resulting sum the one's digit of the sum. He proceeds to do the same for the ten's place, hundred's place, etc. For example: </p>
+  
+  <pre class="language-none"><code>  123
++ 987
+= 000</code></pre>
+
+  <p>Note that no carrying occurs. Equipped with his fast addition algorithm, Andrew is able to breeze through his homework. Looking for a challenge, he has decided to find sums of ranges of numbers. That is, for two numbers \(N\), \(M\), he finds the sum of all the numbers between \(N\) and \(M\) inclusive. </p>
+  
+  <p>After practicing on all the numbers in the house, Andrew has challenged you to a race. Can you, with your all-powerful computer, beat Andrew in summing a range of numbers? </p>
+  
+  <h2 class="h2-responsive">Input</h2>
+
+  <p>Each test case contains two integers \(N\), \(M\) \((1 \le N \le M \le 10^18)\). </p>
+  
+  <p>For 40% of the points, \(M \le 10,000\).</p>
+
+  <hr>
+
+  <h2 class="h2-responsive">Output</h2>
+
+  <p>For each test case, output, on one line, the sum of the numbers between \(N\) and \(M\) inclusive according to Andrew's addition algorithm. </p>
+
+  <hr>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input 1</h2>
+
+    <pre class="language-none"><code>11 19</code></pre>
+
+  </div>
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output 1</h2>
+
+    <pre class="language-none"><code>95</code></pre>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input 2</h2>
+
+    <pre class="language-none"><code>41 100</code></pre>
+
+  </div>
+
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output 2</h2>
+
+    <pre class="language-none"><code>160</code></pre>
+  </div>
+</div>

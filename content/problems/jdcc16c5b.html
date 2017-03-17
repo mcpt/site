@@ -1,0 +1,68 @@
++++
+title = "Scientific Notation (jdcc16c5b)"
++++
+
+<div class="row">
+  <span class="editorial-title">
+    <h1>Scientific Notation <small class="text-muted"> jdcc16c5b</small></h1>
+    <i class="fa fa-pencil"></i><user>Reyno Tilikaynen</user>, <user>Mehwar Raza</user>
+    <hr>
+  </span>
+
+  <p>When working with numbers that are really big, it is common to use scientific notation to shorten their representation. In scientific notation, numbers are written in the form: </p>
+  
+  <p>$$M \times 10^N$$</p>
+
+  <p>Where \(M\) is a decimal number between \(1.00\) and \(9.99\). which we will always round to two decimal places, and \(N\) is an integer. For example: </p>
+  
+  <p>$$987 = 9.87 \times 10^2$$
+  $$1209 = 1.21 \times 10^3$$</p>
+
+  <p>We can also convert numbers out of scientific notation, rounding if needed. For example: </p>
+  
+  <p>$$1.21 \times 10^3 = 1210$$
+  $$ 9.87 \times 10^1 = 99$$</p>
+  
+  <p>Given a number in either decimal notation or scientific notation, convert the number to its alternate form.</p>
+
+  <h2 class="h2-responsive">Input</h2>
+
+  <p>Each test case contains one number \(N\) (\(1 \le N \le 10^9\)) represented either in decimal or scientific notation. \(N\) is guaranteed to fit in a 32-bit integer. </p>
+
+  <hr>
+
+  <h2 class="h2-responsive">Output</h2>
+
+  <p>For each test case, output \(N\) in scientific notation if \(N\) is in decimal notation or output \(N\) in decimal notation if it is in scientific notation. </p>
+
+  <hr>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input 1</h2>
+
+    <pre class="language-none"><code>987</code></pre>
+
+  </div>
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output 1</h2>
+
+    <pre class="language-none"><code>9.87 * 10^2</code></pre>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input 2</h2>
+
+    <pre class="language-none"><code>1.21 * 10^3</code></pre>
+
+  </div>
+
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output 2</h2>
+
+    <pre class="language-none"><code>1210</code></pre>
+  </div>
+</div>

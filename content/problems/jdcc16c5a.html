@@ -1,0 +1,64 @@
++++
+title = "Word Sums (jdcc16c5a)"
++++
+
+<div class="row">
+  <span class="editorial-title">
+    <h1>Word Sums <small class="text-muted"> jdcc16c5a</small></h1>
+    <i class="fa fa-pencil"></i><user>Reyno Tilikaynen</user>, <user>Mehwar Raza</user>
+    <hr>
+  </span>
+
+  <p>Nicole is ecstatic to have finally learned addition. Armed with this powerful technique, she has run around her house and added together every pair of numbers she could possibly find. Now that she is out of numbers, she wonders to herself: why should addition only be limited to numbers? Why can't we also add words together? </p>
+
+  <p>She has decided to add two words together as follows: take the first letter of both words, say <code>B</code> and <code>C</code>, figure out which letter in the alphabet they are (B = 2, C = 3), add those two numbers together, (\(2+3=5\)), then figure out which letter is fifth in the alphabet (<code>E</code>), and make that the first letter of the sum. If the sum is greater than \(26\), subtract \(26\) from the sum. Repeat the process with the remaining letters. For example, </p>
+  
+  <pre class="language-none"><code>  CAT
++ BZ
+= EAT</code></pre>
+
+  <p>Now that Nicole is no longer limited to numbers, she now has a new world of words that she can add. However, she has been having trouble adding some of the longer words together. As her favourite older sibling, could you help her add these long words?</p>
+
+  <h2 class="h2-responsive">Input</h2>
+
+  <p>Each test case contains two non-empty words containing at most \(1,000\) uppercase letters.</p>
+
+  <hr>
+
+  <h2 class="h2-responsive">Output</h2>
+
+  <p>For each test case, output the sum of the two words. </p>
+
+  <hr>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input 1</h2>
+
+    <pre class="language-none"><code>CAT
+BZ</code></pre>
+
+  </div>
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output 1</h2>
+
+    <pre class="language-none"><code>EAT</code></pre>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input 2</h2>
+
+    <pre class="language-none"><code>NICOLE
+ROCKS</code></pre>
+
+  </div>
+
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output 2</h2>
+
+    <pre class="language-none"><code>FXFZEE</code></pre>
+  </div>
+</div>

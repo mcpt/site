@@ -1,0 +1,70 @@
++++
+title = "Space Invaders (jdcc16c5d)"
++++
+
+<div class="row">
+  <span class="editorial-title">
+    <h1>Space Invaders <small class="text-muted"> jdcc16c5d</small></h1>
+    <i class="fa fa-pencil"></i><user>Reyno Tilikaynen</user>
+    <hr>
+  </span>
+
+  <p>The SETI signal is indisputable - an alien invasion of Flatland is imminent. The aliens have sent \(N\) ships, each of which has been determined to be at some position \((X_i, Y_i)\) and moving vertically down towards Flatland at velocity \(V_i\). Flatland is situated on the X-axis between \((-L, 0)\) and \((L, 0)\). </p>
+  
+  <p>Once a ships land, it is expected that the aliens will spread out across Flatland at a rate of \(W_i\). They have a large technological advantage and Flatland's current defenses will be no match for the invaders. However, there is still hope: a secret research weapon is being built which, if completed, will be able to push back the aliens. </p>
+  
+  <p>As Flatland's head of defense, you have been tasked with determining how long it will take for the invaders to entirely conquer Flatland. Using your estimate, the researchers will work hard to prepare the weapon in time. Don’t let them down! </p>
+  
+  <h2 class="h2-responsive">Input</h2>
+
+  <p>Each test case begins with two integers \(N\), \(L\) (\(1 \le N \le 10,000; 1 \le L \le 10^9\)). The next \(N\) lines each contain integers \(X, Y, V, W\) (\(-L \le X \le L; 1 \le Y, V, W \le 10^9\)), which represent the location of a ship, how fast it is moving, and how fast the aliens will spread out from the ship once it lands.</p>
+  
+  <p>For 40% of the points, \(M \le 10,000\).</p>
+
+  <hr>
+
+  <h2 class="h2-responsive">Output</h2>
+
+  <p>For each test case, output, on one line, the time until Flatland is conquered, rounded to two decimal places.</p>
+
+  <hr>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input 1</h2>
+
+    <pre class="language-none"><code>1 5
+0 3 1 2</code></pre>
+
+  </div>
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output 1</h2>
+
+    <pre class="language-none"><code>5.50</code></pre>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Input 2</h2>
+
+    <pre class="language-none"><code>2 4
+-2 5 5 1
+2 5 2 2</code></pre>
+
+  </div>
+
+  <div class="col-xs-6">
+    <h2 class="h2-responsive">Sample Output 2</h2>
+
+    <pre class="language-none"><code>3.50</code></pre>
+  </div>
+</div>
+
+<div class="row">
+  <hr>
+  <h2 class="h2-responsive">Explanation of Sample Input</h2>
+
+  <p>In the second case, the first ship touches down at \(X = -2\) after \(1\) second and the aliens begin spreading out at a rate of one unit per second. After \(2.5\) seconds, the second ship touches down, at which point the first ship has conquered the \([-4, 0.5]\) section of Flatland. The aliens then spread out from the second ship at a rate of \(2\) units per second, conquering the remaining portion of Flatland in one second. </p>
+</div>
