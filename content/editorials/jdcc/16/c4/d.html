@@ -1,0 +1,28 @@
++++
+title = "Gas N Go (jdcc16c4d) Editorial"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/editorials">Editorials</a></li>
+    <li><a href="/editorials/jdcc">JDCC</a></li>
+    <li><a href="/editorials/jdcc/16">2016</a></li>
+    <li><a href="/editorials/jdcc/16/c3">February</a></li>
+    <li class="active">Gas N Go</li>
+  </ol>
+</div>
+
+<div class="row editorial-title" id="d">
+  <h1 class="h1-responsive">Gas N Go <a href="/problems/jdcc16c4d"><small class="text-muted">jdcc16c4d</small></a></h1>
+  <i class="fa fa-pencil"></i><user>aurpine</user>
+  <hr>
+</div>
+
+<div class="row">
+  <p>We only want to buy gas from the cheapest place that we visited so far. Since our tank is infinite, we don't have to choose how much gas to buy, but instead buy it when we need it. We can't prioritize based solely on cost of gas to reach a station, but also the cost to buy gas. This can be done with 2D Dijkstra's. Cache the shortest distance to reach a station with a given cheapest station visited. When calculating the cost of gas, use the cheapest place visited. </p>
+
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <p>\(\mathcal O(N^3)\)</p>
+</div>

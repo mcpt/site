@@ -1,0 +1,30 @@
++++
+title = "Big Integer Factorization (jdcc16c4c) Editorial"
+
++++
+
+<div class="row">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/editorials">Editorials</a></li>
+    <li><a href="/editorials/jdcc">JDCC</a></li>
+    <li><a href="/editorials/jdcc/16">2016</a></li>
+    <li><a href="/editorials/jdcc/16/c4">February</a></li>
+    <li class="active">Big Integer Factorization</li>
+  </ol>
+</div>
+
+<div class="row editorial-title">
+  <h1>Big Integer Factorization Editorial <a href="/problems/jdcc16c4c"><small class="text-muted">jdcc15c4c</small></a></h1>
+  <i class="fa fa-pencil"></i><user>aurpine</user>
+  <hr>
+</div>
+
+<div class="row">
+  <p>If the prime factorization of a number \(N\) is \({f_1}^{p_1} \times {f_2}^{p_2} \times {f_3}^{p_3} \times \dots\), then the prime factorization of \(N^N\) is \({f_1}^{Np_1} \times {f_2}^{Np_2} \times {f_3}^{p_3} \times \dots\). </p>
+  
+  <p>We just need to find the prime factorization of \(N\) and multiply each power by \(N\) when we print it. There is at most one prime factor greater than \(\sqrt N\). Thus, we loop through all the whole numbers from \(2\) to \(\sqrt N\) and check if it divides \(N\) evenly. If so, then store how many times this number divides it. Divide the number \(N\) by the factors (as many times as the power) while searching so that we only have prime factors in our list. After we are done searching all the numbers and if the number is not 1, then it means this is the greatest factor. </p>
+
+  <h3 class="h3-responsive">Time Complexity</h3>
+  <p>\(\mathcal O(\sqrt{N})\)</p>
+</div>
