@@ -48,3 +48,18 @@ General site information and administrator contact information.
 ### Mobile
 
 The site natively has beautiful mobile support and sizing. No redirect page/domain. 
+
+## Deploying
+
+This project uses [Hugo](https://gohugo.io/), the static site generator. Make sure you have Hugo installed. First, clone the repository with submodules. 
+
+To test the site locally, use
+
+    hugo server
+
+To compile the site run
+
+    hugo
+
+The site will then be stored in public, and you'll be able to upload via ftp.
+
